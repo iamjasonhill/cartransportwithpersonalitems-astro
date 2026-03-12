@@ -56,12 +56,13 @@ const breadcrumbSchema = breadcrumbs.length > 0
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:locale" content={site.locale.replace('-', '_')} />
-    <meta property="og:image" content={new URL(site.socialImage, Astro.site ?? site.url).toString()} />
+    <meta property="og:image" content={new URL(site.seoAssets.ogImage, Astro.site ?? site.url).toString()} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(site.socialImage, Astro.site ?? site.url).toString()} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="twitter:image" content={new URL(site.seoAssets.twitterImage, Astro.site ?? site.url).toString()} />
+    <link rel="icon" href={site.seoAssets.favicon} />
+    <link rel="apple-touch-icon" href={site.seoAssets.appleTouchIcon} />
     <link rel="canonical" href={canonicalUrl} />
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
