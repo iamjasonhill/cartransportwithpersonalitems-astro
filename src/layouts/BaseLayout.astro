@@ -1,0 +1,93 @@
+---
+import { site } from '../lib/site';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  breadcrumbs?: BreadcrumbItem[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  breadcrumbs = [],
+  noindex = false,
+} = Astro.props;
+
+const canonicalUrl = new URL(canonicalPath, Astro.site ?? site.url).toString();
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.name,
+  url: site.url,
+};
+const breadcrumbSchema = breadcrumbs.length > 0
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    }
+  : null;
+---
+<!doctype html>
+<html lang={site.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow'} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content={site.locale.replace('-', '_')} />
+    <meta property="og:image" content={new URL(site.socialImage, Astro.site ?? site.url).toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(site.socialImage, Astro.site ?? site.url).toString()} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Primary">
+        <ul>
+          {site.navigation.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <nav aria-label="Footer">
+        <ul>
+          {site.trustLinks.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+          <li><a href="/sitemap.html">HTML Sitemap</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

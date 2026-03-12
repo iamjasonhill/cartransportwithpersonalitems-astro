@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../lib/site';
+
+const title = `${site.name} Core Service`;
+const description = `Understand the core service offered by ${site.name}, how it works, and how to get a quote.`;
+const breadcrumbs = [
+  { name: 'Home', url: site.url },
+  { name: 'Services', url: new URL('/services/', site.url).toString() },
+  { name: 'Core Service', url: new URL('/services/core-service/', site.url).toString() },
+];
+---
+<BaseLayout title={title} description={description} canonicalPath="/services/core-service/" breadcrumbs={breadcrumbs}>
+  <h1>Core Service</h1>
+  <p>This starter page gives you a structured service page with room for service areas, process, FAQs, proof, and a quote CTA.</p>
+
+  <section>
+    <h2>How it works</h2>
+    <p>Explain the service process in a way that is easy to scan and act on.</p>
+  </section>
+
+  <section>
+    <h2>Service areas</h2>
+    <p>List or link to the main areas you serve.</p>
+  </section>
+
+  <section>
+    <h2>FAQs</h2>
+    <p>Add recurring questions customers ask before converting.</p>
+  </section>
+
+  <section>
+    <h2>Get a quote</h2>
+    <p><a href="/contact/">Contact us</a> to request a quote.</p>
+  </section>
+</BaseLayout>

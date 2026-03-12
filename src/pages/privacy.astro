@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
+
+const title = `${site.name} Privacy Policy`;
+const description = `Read the privacy policy for ${site.name}.`;
+const breadcrumbs = [
+  { name: 'Home', url: site.url },
+  { name: 'Privacy', url: new URL('/privacy/', site.url).toString() },
+];
+---
+<BaseLayout title={title} description={description} canonicalPath="/privacy/" breadcrumbs={breadcrumbs}>
+  <h1>Privacy Policy</h1>
+  <p>Use this page to explain what information is collected, why it is used, and how people can contact you about privacy matters.</p>
+</BaseLayout>

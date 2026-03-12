@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../lib/site';
+
+const title = `${site.name} Services`;
+const description = `Explore the services available from ${site.name}.`;
+const breadcrumbs = [
+  { name: 'Home', url: site.url },
+  { name: 'Services', url: new URL('/services/', site.url).toString() },
+];
+---
+<BaseLayout title={title} description={description} canonicalPath="/services/" breadcrumbs={breadcrumbs}>
+  <h1>Services</h1>
+  <p>This page acts as a service hub and should link to the most important commercial pages.</p>
+  <ul>
+    <li><a href="/services/core-service/">Core Service</a></li>
+  </ul>
+</BaseLayout>
