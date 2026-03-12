@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
+
+const title = `${site.name} Terms of Service`;
+const description = `Read the terms of service for ${site.name}.`;
+const breadcrumbs = [
+  { name: 'Home', url: site.url },
+  { name: 'Terms', url: new URL('/terms/', site.url).toString() },
+];
+---
+<BaseLayout title={title} description={description} canonicalPath="/terms/" breadcrumbs={breadcrumbs}>
+  <h1>Terms of Service</h1>
+  <p>Use this page to outline the baseline service terms, expectations, and responsibilities for customers and the business.</p>
+</BaseLayout>
