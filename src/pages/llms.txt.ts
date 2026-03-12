@@ -13,6 +13,8 @@ export const GET: APIRoute = () => {
       '',
       `- ${site.url.replace(/\/$/, '')}/sitemap-index.xml`,
       `- ${site.url.replace(/\/$/, '')}/sitemap.html`,
+      `- ${site.url.replace(/\/$/, '')}/services/`,
+      `- ${site.url.replace(/\/$/, '')}/services/core-service/`,
       `- ${site.url.replace(/\/$/, '')}/about/`,
       `- ${site.url.replace(/\/$/, '')}/contact/`,
       `- ${site.url.replace(/\/$/, '')}/privacy/`,

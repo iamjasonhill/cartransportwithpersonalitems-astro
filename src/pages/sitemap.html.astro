@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
+
+const pages = [
+  { href: '/', label: 'Home' },
+  { href: '/services/', label: 'Services' },
+  { href: '/services/core-service/', label: 'Core Service' },
+  { href: '/about/', label: 'About' },
+  { href: '/contact/', label: 'Contact' },
+  { href: '/privacy/', label: 'Privacy' },
+  { href: '/terms/', label: 'Terms' },
+];
+---
+<BaseLayout
+  title={`${site.name} HTML Sitemap`}
+  description={`HTML sitemap for ${site.name}.`}
+  canonicalPath="/sitemap.html"
+  breadcrumbs={[
+    { name: 'Home', url: site.url },
+    { name: 'HTML Sitemap', url: `${site.url.replace(/\/$/, '')}/sitemap.html` },
+  ]}
+>
+  <h1>{site.name} HTML Sitemap</h1>
+  <ul>
+    {pages.map((page) => (
+      <li><a href={page.href}>{page.label}</a></li>
+    ))}
+  </ul>
+</BaseLayout>
