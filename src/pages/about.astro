@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
+
+const title = `About ${site.name}`;
+const description = `Learn about ${site.name}, who we help, and how we approach service delivery.`;
+const breadcrumbs = [
+  { name: 'Home', url: site.url },
+  { name: 'About', url: new URL('/about/', site.url).toString() },
+];
+---
+<BaseLayout title={title} description={description} canonicalPath="/about/" breadcrumbs={breadcrumbs}>
+  <h1>About {site.name}</h1>
+  <p>This page gives customers a clear explanation of who you are, what you do, and why they should trust you.</p>
+</BaseLayout>
