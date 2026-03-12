@@ -5,7 +5,12 @@ export const site = {
   locale: 'en-AU',
   defaultTitle: 'cartransportwithpersonalitems.com.au',
   defaultDescription: 'cartransportwithpersonalitems.com.au provides trusted service information, clear next steps, and a technically sound SEO baseline.',
-  socialImage: '/social-card.png',
+  seoAssets: {
+    ogImage: '/social-card.jpg',
+    twitterImage: '/social-card.jpg',
+    favicon: '/favicon.png',
+    appleTouchIcon: '/apple-touch-icon.png',
+  },
   navigation: [
     { href: '/', label: 'Home' },
     { href: '/services/', label: 'Services' },
