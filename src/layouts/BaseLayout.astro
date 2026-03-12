@@ -55,7 +55,7 @@ const breadcrumbSchema = breadcrumbs.length > 0
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content={site.name} />
-    <meta property="og:locale" content={site.locale} />
+    <meta property="og:locale" content={site.locale.replace('-', '_')} />
     <meta property="og:image" content={new URL(site.socialImage, Astro.site ?? site.url).toString()} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
