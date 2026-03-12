@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
+
+const title = `Contact ${site.name}`;
+const description = `Contact ${site.name} to discuss your requirements and request a quote.`;
+const breadcrumbs = [
+  { name: 'Home', url: site.url },
+  { name: 'Contact', url: new URL('/contact/', site.url).toString() },
+];
+---
+<BaseLayout title={title} description={description} canonicalPath="/contact/" breadcrumbs={breadcrumbs}>
+  <h1>Contact {site.name}</h1>
+  <p>Use this page for primary contact details, quote requests, and trust-building contact information.</p>
+</BaseLayout>
