@@ -1,28 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site } from '../lib/site';
 
-const title = `${site.name} | Trusted Service Delivery`;
-const description = `${site.name} helps customers understand services, locations, process, and the next step to get a quote.`;
-const breadcrumbs = [
-  { name: 'Home', url: site.url },
-];
+const seo = {
+  title: "cartransportwithpersonalitems.com.au | Trusted Service Delivery",
+  description: "cartransportwithpersonalitems.com.au helps customers understand services, locations, process, and the next step to get a quote.",
+};
+const pageTitle = "Car Transport With Personal Items";
+const contentHtml = "<p>Car Transport With Personal Items helps Queensland drivers move vehicles with approved personal belongings left inside. We handle bookings, carrier coordination and paperwork so you can transport your car and a declared list of items in one move when routes and carrier rules allow.</p>\n<h2>Service Overview</h2>\n<p>Our service transports cars with approved personal items left inside the vehicle where permitted. You must declare approved items before booking confirmation; final approval depends on the route, carrier and item type. We arrange pick-up, carrier allocation and delivery timing while making sure declared items meet carrier restrictions.</p>\n<p>This option is useful if you need to move luggage, small household items or tools that meet carrier size, weight and safety rules. We do not accept hazardous goods, loose liquids, perishable goods or items that risk damage to the vehicle or other loads.</p>\n<p>To get an accurate quote and confirm whether your items can travel with the car, provide the route, vehicle details and a clear list of items you intend to leave inside the car.</p>\n<h2>Pricing &amp; Cost</h2>\n<p>Costs depend on route distance, vehicle size, carrier type and whether the car travels on an open or enclosed trailer. Additional handling for declared personal items or deliveries that require special handling may affect the price.</p>\n<p>Typical quotes factor in pick-up and delivery locations, estimated kilometres, and any extra services like enclosed transport or expedited delivery. We base final pricing on the full route and the declared items, so please include those details when you request a price.</p>\n<p>To provide an accurate cost estimate, we need the pick-up and drop-off locations, vehicle make and model, rough vehicle condition (running or non-running) and a clear item list for anything you want left in the car.</p>\n<h2>How It Works</h2>\n<ol>\n<li>\n<p>Request a quote: Tell us that the pick-up and drop-off locations, vehicle details and a complete list of approved items you want inside the car so we can check route and carrier suitability.</p>\n</li>\n<li>\n<p>Confirmation and carrier allocation: Once items are checked and allowed for the route, we confirm that the booking, assign a carrier and provide an estimated pickup window and timing expectations.</p>\n</li>\n<li>\n<p>Pickup and condition check: The carrier performs a pre-transport inspection, notes the car condition and declared items, and provides a condition report before loading.</p>\n</li>\n<li>\n<p>Transit and communication: We keep you updated on carrier progress and expected delivery timing, and the carrier will advise of any route or timing changes.</p>\n</li>\n<li>\n<p>Delivery and final check: On arrival the carrier completes a delivery condition check and hands the vehicle over with the declared items. Any discrepancies are recorded in the delivery report.</p>\n</li>\n</ol>\n<h2>Service Areas</h2>\n<p>We operate across Queensland and connect into interstate networks where carriers permit personal items on specific routes. Availability of carrying personal items varies by route and carrier policy.</p>\n<p>For rural or remote pick-ups there may be additional handling or routing requirements; please list exact locations when requesting a quote so we can confirm feasibility and any extra costs.</p>\n<p>If you’re moving between major Queensland cities or to nearby states, include your full route when you Get Quote so we can check carrier rules and provide accurate timing and pricing.</p>\n<h2>Reviews &amp; Social Proof</h2>\n<p>Customers tell us that clear communication and realistic timing expectations matter most. We prioritise providing a written condition report at pickup and again at delivery so you know the vehicle and declared items are checked and documented.</p>\n<p>Carriers we work with follow declared-item handling procedures: items must be listed, packed or secured inside the car, and carriers confirm whether specific items are acceptable for the chosen route.</p>\n<p>Before pickup, you’ll receive carrier details, the scheduled pickup window and instructions for preparing the vehicle. During transit, we provide status updates so you know where the car is and when to expect delivery.</p>\n<p>If there are issues with access, timing or the declared contents, these are recorded in transport paperwork and communicated promptly. That transparency helps customers feel confident before handover and at delivery.</p>\n<h2>Frequently Asked Questions</h2>\n<h3>Shipping a Car with Personal Items: Is it Possible?</h3>\n<p>Yes, it can be possible if the items are declared and meet carrier and route restrictions. Final approval depends on the route, the carrier and the type of items being transported.</p>\n<h3>Can You Put Personal Belongings in Your Car When You Ship It?</h3>\n<p>You can leave approved belongings inside the vehicle, but you must declare them before confirming the booking. Carriers will check the item list and may refuse items that are hazardous, perishable or likely to shift during transport.</p>\n<h3>How to Ship a Car with Personal Items?</h3>\n<p>Request a quote with full route details, vehicle make/model and a clear list of the items you want to remain in the car. We’ll confirm whether the carrier and route accept those items and provide pickup timing and a condition report procedure.</p>\n<h3>Is Car Transport Safe?</h3>\n<p>Transport is generally safe when carriers follow standard handling and inspection procedures. We provide pre-transport and delivery condition checks, carrier information and regular status updates so you can track the vehicle and declared items throughout the move.</p>\n<h2>Next Step</h2>\n<p>To get pricing and confirm whether your items can travel with your car, use Get Quote to request a personalised cost and availability check.</p>\n";
 ---
-<BaseLayout title={title} description={description} canonicalPath="/" breadcrumbs={breadcrumbs}>
-  <h1>Trusted service delivery with a clear next step</h1>
-  <p>{site.name} starts with a technically sound Astro baseline designed for strong crawlability, clear trust signals, and fast future iteration.</p>
-  <section>
-    <h2>What this starter already includes</h2>
-    <ul>
-      <li>Canonical tags and metadata shell</li>
-      <li>XML sitemap, HTML sitemap, and robots.txt</li>
-      <li>llms.txt and basic schema defaults</li>
-      <li>Trust pages and a clean internal-link structure</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Get a quote</h2>
-    <p>Use this section as the first clear call to action on the homepage.</p>
-    <p><a href="/contact/">Contact us</a></p>
-  </section>
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <article class="prose max-w-3xl py-10">
+    <h1>{pageTitle}</h1>
+    <div class="mt-6" set:html={contentHtml} />
+  </article>
 </BaseLayout>
