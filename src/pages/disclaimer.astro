@@ -1,15 +1,43 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
 
 const seo = {
   title: "cartransportwithpersonalitems.com.au Disclaimer",
   description: "Read the general website disclaimer for cartransportwithpersonalitems.com.au, including limitations on website information, quotations, and third-party references.",
 };
 const pageTitle = "Disclaimer";
-const contentHtml = "<p>The information published on <a href=\"https://cartransportwithpersonalitems.com.au\">https://cartransportwithpersonalitems.com.au</a> is provided by Moveroo Cars for general information purposes only.</p>\n<h2>General information only</h2>\n<p>While we take care with the information we publish, content on this website should not be relied on as tailored advice.</p>\n<p>Website content is not a substitute for professional, legal, financial, or technical advice specific to your circumstances.</p>\n<h2>Accuracy of information</h2>\n<p>We aim to keep information current and useful, but we do not guarantee that all information on the website is complete, accurate, or up to date at all times.</p>\n<h2>No guarantee of availability or suitability</h2>\n<p>Website content does not guarantee service availability, route coverage, timing, suitability, or outcomes for a particular booking, quote request, transport request, or business need.</p>\n<h2>Third-party content and links</h2>\n<p>This website may include links to or references from third-party services or websites. We are not responsible for third-party content, availability, or policies.</p>\n<h2>Service and quote information</h2>\n<p>Any website content about pricing, service scope, timing, availability, route coverage, vehicle requirements, or transport arrangements is subject to confirmation and may change without notice.</p>\n<h2>Limitation of liability</h2>\n<p>To the maximum extent permitted by law, Moveroo Cars is not liable for loss arising from reliance on website content or from the use of linked third-party services.</p>\n<p>Nothing in this Disclaimer excludes, restricts, or modifies any right or remedy that cannot lawfully be excluded, including rights you may have under the Australian Consumer Law.</p>\n<h2>Personal responsibility</h2>\n<p>Before acting on information published on the website, you should consider whether it is appropriate for your circumstances and whether you need independent legal, financial, insurance, transport, or technical advice.</p>\n<h2>Contact</h2>\n<p>If you have questions about this Disclaimer, contact us at <a href=\"mailto:info@cartransportwithpersonalitems.com.au\">info@cartransportwithpersonalitems.com.au</a>.</p>\n<h2>Updates</h2>\n<p>We may update this Disclaimer from time to time. The current version applies from March 17, 2026.</p>\n";
+const canonicalPath = "/disclaimer/";
+const breadcrumbs = [
+  { name: "Home", url: site.url },
+  { name: pageTitle, url: new URL(canonicalPath, site.url).toString() },
+];
+const contentHtml = String.raw`
+<p>The information published on <a href="https://cartransportwithpersonalitems.com.au">https://cartransportwithpersonalitems.com.au</a> is provided by Moveroo Cars for general information purposes only.</p>
+<h2>General information only</h2>
+<p>While we take care with the information we publish, content on this website should not be relied on as tailored advice.</p>
+<p>Website content is not a substitute for professional, legal, financial, or technical advice specific to your circumstances.</p>
+<h2>Accuracy of information</h2>
+<p>We aim to keep information current and useful, but we do not guarantee that all information on the website is complete, accurate, or up to date at all times.</p>
+<h2>No guarantee of availability or suitability</h2>
+<p>Website content does not guarantee service availability, route coverage, timing, suitability, or outcomes for a particular booking, quote request, transport request, or business need.</p>
+<h2>Third-party content and links</h2>
+<p>This website may include links to or references from third-party services or websites. We are not responsible for third-party content, availability, or policies.</p>
+<h2>Service and quote information</h2>
+<p>Any website content about pricing, service scope, timing, availability, route coverage, vehicle requirements, or transport arrangements is subject to confirmation and may change without notice.</p>
+<h2>Limitation of liability</h2>
+<p>To the maximum extent permitted by law, Moveroo Cars is not liable for loss arising from reliance on website content or from the use of linked third-party services.</p>
+<p>Nothing in this Disclaimer excludes, restricts, or modifies any right or remedy that cannot lawfully be excluded, including rights you may have under the Australian Consumer Law.</p>
+<h2>Personal responsibility</h2>
+<p>Before acting on information published on the website, you should consider whether it is appropriate for your circumstances and whether you need independent legal, financial, insurance, transport, or technical advice.</p>
+<h2>Contact</h2>
+<p>If you have questions about this Disclaimer, contact us at <a href="mailto:info@cartransportwithpersonalitems.com.au">info@cartransportwithpersonalitems.com.au</a>.</p>
+<h2>Updates</h2>
+<p>We may update this Disclaimer from time to time. The current version applies from March 17, 2026.</p>
+`;
 ---
 
-<BaseLayout title={seo.title} description={seo.description}>
+<BaseLayout title={seo.title} description={seo.description} canonicalPath={canonicalPath} breadcrumbs={breadcrumbs}>
   <article class="prose max-w-3xl py-10">
     <h1>{pageTitle}</h1>
     <div class="mt-6" set:html={contentHtml} />
