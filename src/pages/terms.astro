@@ -1,15 +1,51 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
 
 const seo = {
   title: "cartransportwithpersonalitems.com.au Terms of Use",
-  description: "Read the terms that apply to your use of cartransportwithpersonalitems.com.au, your dealings with cartransportwithpersonalitems.com.au, and the limitations that apply under Australian law.",
+  description: "Read the terms that apply to your use of cartransportwithpersonalitems.com.au and the limitations that apply under Australian law.",
 };
 const pageTitle = "Terms of Use";
-const contentHtml = "<p>These Terms of Use apply to your use of <a href=\"https://cartransportwithpersonalitems.com.au\">https://cartransportwithpersonalitems.com.au</a> and the information published by Moveroo Cars. By accessing or using the website, you agree to use it lawfully and in accordance with these terms.</p>\n<h2>Website use</h2>\n<p>Your access to and use of this website is subject to these terms and to responsible, lawful use of the site.</p>\n<p>You agree not to misuse the website, interfere with its operation, or attempt to access restricted systems without authorisation.</p>\n<h2>Information and content</h2>\n<p>We aim to keep the information on this website accurate and useful, but we do not guarantee that all information is complete, current, or suitable for every purpose. Website content is general in nature and should be read together with any direct quote, booking confirmation, or service communication we provide to you.</p>\n<h2>Quotes and service information</h2>\n<p>Any quote, pricing, service description, transit estimate, delivery timing, or availability information published on the website is indicative only unless expressly confirmed by us in writing. Final pricing, scope, availability, and service terms may vary depending on the request, route, timing, collection and delivery details, depot requirements, or carrier requirements.</p>\n<p>Submitting a quote request or enquiry through the website does not create a binding service agreement. A booking or transport arrangement is only confirmed once we or an authorised operational partner confirm it with you.</p>\n<h2>User conduct</h2>\n<p>You must not use the website in a way that is unlawful, misleading, harmful, disruptive, or likely to interfere with the operation or security of the site.</p>\n<h2>Intellectual property</h2>\n<p>Unless otherwise stated, the content, branding, and materials on this website are owned by or licensed to Moveroo Australia and must not be reproduced without permission.</p>\n<h2>Third-party links</h2>\n<p>This website may contain links to third-party websites. We are not responsible for the content, policies, or availability of those third-party sites.</p>\n<h2>Bookings and third-party services</h2>\n<p>Where our services involve third-party providers, carriers, contractors, depots, or technology platforms, additional supplier terms may apply. We may also rely on operational partners to help quote, coordinate, store, schedule, or deliver parts of Car Transport With Personal Items.</p>\n<h2>Liability</h2>\n<p>The materials on this website are provided for general information only.</p>\n<p>To the maximum extent permitted by law, Moveroo Cars is not liable for loss arising from reliance on website information, site interruptions, delayed website availability, service timing assumptions, or third-party services linked from the website. This includes reliance on indicative timeframes or general service descriptions before a booking is confirmed.</p>\n<p>Nothing in these Terms of Use excludes, restricts, or modifies any consumer guarantee, right, or remedy you may have under the Australian Consumer Law or any other law that cannot lawfully be excluded.</p>\n<h2>Changes to the website</h2>\n<p>We may update, suspend, remove, or change any part of the website, including content, features, or service information, without notice.</p>\n<h2>Governing law</h2>\n<p>These Terms of Use are governed by the laws of Queensland, Australia, unless another mandatory legal framework applies.</p>\n<h2>Contact</h2>\n<p>For questions about these Terms of Use, contact us at <a href=\"mailto:info@cartransportwithpersonalitems.com.au\">info@cartransportwithpersonalitems.com.au</a>.</p>\n<h2>Updates to these terms</h2>\n<p>We may update these Terms of Use from time to time. The current version applies from March 17, 2026.</p>\n";
+const canonicalPath = "/terms/";
+const breadcrumbs = [
+  { name: "Home", url: site.url },
+  { name: pageTitle, url: new URL(canonicalPath, site.url).toString() },
+];
+const contentHtml = String.raw`
+<p>These Terms of Use apply to your use of <a href="https://cartransportwithpersonalitems.com.au">https://cartransportwithpersonalitems.com.au</a> and the information published by Moveroo Cars. By accessing or using the website, you agree to use it lawfully and in accordance with these terms.</p>
+<h2>Website use</h2>
+<p>Your access to and use of this website is subject to these terms and to responsible, lawful use of the site.</p>
+<p>You agree not to misuse the website, interfere with its operation, or attempt to access restricted systems without authorisation.</p>
+<h2>Information and content</h2>
+<p>We aim to keep the information on this website accurate and useful, but we do not guarantee that all information is complete, current, or suitable for every purpose. Website content is general in nature and should be read together with any direct quote, booking confirmation, or service communication we provide to you.</p>
+<h2>Quotes and service information</h2>
+<p>Any quote, pricing, service description, transit estimate, delivery timing, or availability information published on the website is indicative only unless expressly confirmed by us in writing. Final pricing, scope, availability, and service terms may vary depending on the request, route, timing, collection and delivery details, depot requirements, or carrier requirements.</p>
+<p>Submitting a quote request or enquiry through the website does not create a binding service agreement. A booking or transport arrangement is only confirmed once we or an authorised operational partner confirm it with you.</p>
+<h2>User conduct</h2>
+<p>You must not use the website in a way that is unlawful, misleading, harmful, disruptive, or likely to interfere with the operation or security of the site.</p>
+<h2>Intellectual property</h2>
+<p>Unless otherwise stated, the content, branding, and materials on this website are owned by or licensed to Moveroo Cars and must not be reproduced without permission.</p>
+<h2>Third-party links</h2>
+<p>This website may contain links to third-party websites. We are not responsible for the content, policies, or availability of those third-party sites.</p>
+<h2>Bookings and third-party services</h2>
+<p>Where our services involve third-party providers, carriers, contractors, depots, or technology platforms, additional supplier terms may apply. We may also rely on operational partners to help quote, coordinate, store, schedule, or deliver parts of Car Transport With Personal Items.</p>
+<h2>Liability</h2>
+<p>The materials on this website are provided for general information only.</p>
+<p>To the maximum extent permitted by law, Moveroo Cars is not liable for loss arising from reliance on website information, site interruptions, delayed website availability, service timing assumptions, or third-party services linked from the website. This includes reliance on indicative timeframes or general service descriptions before a booking is confirmed.</p>
+<p>Nothing in these Terms of Use excludes, restricts, or modifies any consumer guarantee, right, or remedy you may have under the Australian Consumer Law or any other law that cannot lawfully be excluded.</p>
+<h2>Changes to the website</h2>
+<p>We may update, suspend, remove, or change any part of the website, including content, features, or service information, without notice.</p>
+<h2>Governing law</h2>
+<p>These Terms of Use are governed by the laws of Queensland, Australia, unless another mandatory legal framework applies.</p>
+<h2>Contact</h2>
+<p>For questions about these Terms of Use, contact us at <a href="mailto:info@cartransportwithpersonalitems.com.au">info@cartransportwithpersonalitems.com.au</a>.</p>
+<h2>Updates to these terms</h2>
+<p>We may update these Terms of Use from time to time. The current version applies from March 17, 2026.</p>
+`;
 ---
 
-<BaseLayout title={seo.title} description={seo.description}>
+<BaseLayout title={seo.title} description={seo.description} canonicalPath={canonicalPath} breadcrumbs={breadcrumbs}>
   <article class="prose max-w-3xl py-10">
     <h1>{pageTitle}</h1>
     <div class="mt-6" set:html={contentHtml} />
