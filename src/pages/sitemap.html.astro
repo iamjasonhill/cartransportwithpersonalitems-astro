@@ -2,15 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../lib/site';
 
-const pages = [
+const basePages = [
   { href: '/', label: 'Home' },
   { href: '/services/', label: 'Services' },
   { href: '/services/core-service/', label: 'Core Service' },
   { href: '/about/', label: 'About' },
   { href: '/contact/', label: 'Contact' },
-  { href: '/privacy/', label: 'Privacy' },
-  { href: '/terms/', label: 'Terms' },
 ];
+const trustPages = Array.isArray(site.trustLinks) ? site.trustLinks : [];
+const pages = [...basePages, ...trustPages].filter(
+  (page, index, collection) => collection.findIndex((candidate) => candidate.href === page.href) === index,
+);
 ---
 <BaseLayout
   title={`${site.name} HTML Sitemap`}
