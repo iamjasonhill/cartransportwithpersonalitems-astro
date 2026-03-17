@@ -18,7 +18,21 @@ export const site = {
     { href: '/contact/', label: 'Contact' },
   ],
   trustLinks: [
-    { href: '/privacy/', label: 'Privacy' },
-    { href: '/terms/', label: 'Terms' },
+    {
+      href: '/privacy/',
+      label: 'Privacy',
+    },
+    {
+      href: '/terms/',
+      label: 'Terms',
+    },
+    {
+      href: '/cookie-policy/',
+      label: 'Cookie Policy',
+    },
+    {
+      href: '/disclaimer/',
+      label: 'Disclaimer',
+    },
   ],
 };
