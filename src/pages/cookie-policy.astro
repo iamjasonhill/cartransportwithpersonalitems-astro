@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
+
+const seo = {
+  title: "cartransportwithpersonalitems.com.au Cookie Policy",
+  description: "Understand how cartransportwithpersonalitems.com.au uses cookies and similar technologies on cartransportwithpersonalitems.com.au, including analytics, embedded tools, and visitor controls.",
+};
+const pageTitle = "Cookie Policy";
+const canonicalPath = "/cookie-policy/";
+const breadcrumbs = [
+  { name: "Home", url: site.url },
+  { name: pageTitle, url: new URL(canonicalPath, site.url).toString() },
+];
+const contentHtml = String.raw`
+<p>This Cookie Policy explains how Moveroo Cars uses cookies and similar technologies on <a href="https://cartransportwithpersonalitems.com.au">https://cartransportwithpersonalitems.com.au</a>.</p>
+<h2>What cookies are</h2>
+<p>Cookies are small text files stored on your device when you visit a website. They help websites function, remember preferences, and understand how visitors use the site.</p>
+<h2>How we use cookies</h2>
+<p>Cookies and similar technologies help us operate the website reliably and improve the experience for visitors over time.</p>
+<p>We may use cookies and similar technologies to:</p>
+<ul>
+<li>keep the website functioning properly</li>
+<li>understand traffic and usage patterns</li>
+<li>improve performance and user experience</li>
+<li>support quote forms, contact requests, preferences, and security features</li>
+</ul>
+<h2>Types of cookies</h2>
+<p>The website may use:</p>
+<ul>
+<li>essential cookies needed for core website functionality</li>
+<li>analytics cookies that help us understand usage patterns</li>
+<li>preference cookies that remember site settings where relevant</li>
+<li>embedded-service cookies where third-party tools are used to provide media, maps, or related website features</li>
+</ul>
+<h2>Third-party tools and technologies</h2>
+<p>We may use third-party services such as analytics platforms, website hosting tools, form providers, embedded media providers, mapping tools, chat tools, or advertising and remarketing tools. Those providers may place or read cookies or similar technologies in line with their own systems and policies. In practice, this may include tools that help us understand website usage, support quote or contact flows, or display website features such as maps, media, or chat widgets.</p>
+<h2>Managing cookies</h2>
+<p>Most browsers let you control cookies through their settings. You can remove or block cookies, although some site features may not work as expected if you do. If certain cookies or similar technologies are disabled, quote forms, embedded tools, or other interactive website features may not function properly.</p>
+<h2>Consent and browser controls</h2>
+<p>Where required, cookie preferences can be managed through browser settings or any cookie controls made available on the website. If you disable certain cookies, some parts of the site may not perform as intended.</p>
+<h2>More information</h2>
+<p>If you would like more information about how we handle personal information more broadly, please also review our Privacy Policy. If we add new website tools, advertising services, or embedded features that rely on cookies or similar technologies, this Cookie Policy may be updated to reflect those changes.</p>
+<h2>Contact</h2>
+<p>For questions about this Cookie Policy, contact us at <a href="mailto:info@cartransportwithpersonalitems.com.au">info@cartransportwithpersonalitems.com.au</a>.</p>
+<h2>Updates</h2>
+<p>We may update this Cookie Policy from time to time. The current version applies from March 17, 2026.</p>
+`;
+---
+
+<BaseLayout title={seo.title} description={seo.description} canonicalPath={canonicalPath} breadcrumbs={breadcrumbs}>
+  <article class="prose max-w-3xl py-10">
+    <h1>{pageTitle}</h1>
+    <div class="mt-6" set:html={contentHtml} />
+  </article>
+</BaseLayout>
