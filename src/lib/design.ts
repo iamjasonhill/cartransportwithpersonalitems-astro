@@ -1,8 +1,8 @@
 export const design = {
   version: 1,
   theme: {
-    family: "editorial",
-    templateFamily: "editorial",
+    family: "editorial_authority",
+    templateFamily: "editorial_authority",
   },
   palette: {"background":"#f8f5ef","surface":"#fffdf8","text":"#1f2937","muted":"#6b7280","border":"#e7dcc7","primary":"#92400e","secondary":"#7c3aed","accent":"#dc2626"},
   typography: {
