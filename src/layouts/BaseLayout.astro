@@ -36,6 +36,13 @@ const fontStylesheets = (() => {
 
   return Array.from(new Set(Array.isArray(design.typography?.fontUrls) ? design.typography.fontUrls : []));
 })();
+const themeFamily = typeof design.theme?.family === 'string' ? design.theme.family : 'service_classic';
+const isEditorialFamily = themeFamily === 'editorial_authority';
+const isConversionFamily = themeFamily === 'modern_conversion';
+const primaryCtaHref = site.navigation.find((item) => item.href.includes('contact'))?.href ?? '/contact/';
+const primaryNavItems = site.navigation.slice(0, 4);
+const footerNavItems = site.navigation.slice(0, 4);
+const footerTrustItems = [...site.trustLinks, { href: '/sitemap.html', label: 'HTML Sitemap' }];
 const themeStyle = [
   `--de-color-background: ${design.palette.background}`,
   `--de-color-surface: ${design.palette.surface}`,
@@ -104,24 +111,72 @@ const breadcrumbSchema = breadcrumbs.length > 0
   </head>
   <body class:list={['site-shell', `theme-${design.theme.family}`, `density-${design.density}`, `cta-${design.ctaStyle}`]} style={themeStyle}>
     <div class="site-frame">
-      <header class="site-header">
+      <header class:list={['site-header', `site-header-${themeFamily}`]}>
         <div class="site-container">
-          <div class="site-header-inner">
-            <a class="site-brand" href="/">
-              <span class="site-brand-mark">
-                <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
-              </span>
-              <span class="site-brand-copy">
-                <span class="site-brand-kicker">Deftly Site System</span>
-                <span class="site-brand-name">{site.name}</span>
-              </span>
-            </a>
-            <nav class="site-nav" aria-label="Primary">
-              {site.navigation.map((item) => (
-                <a href={item.href}>{item.label}</a>
-              ))}
-            </nav>
-          </div>
+          {isEditorialFamily ? (
+            <div class="site-header-inner site-header-inner-editorial">
+              <div class="site-header-brand-block">
+                <a class="site-brand" href="/">
+                  <span class="site-brand-mark">
+                    <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                  </span>
+                  <span class="site-brand-copy">
+                    <span class="site-brand-kicker">Editorial Authority</span>
+                    <span class="site-brand-name">{site.name}</span>
+                  </span>
+                </a>
+                <p class="site-header-note">Calmer navigation, stronger hierarchy, and a more considered service-reading rhythm.</p>
+              </div>
+              <div class="site-header-actions site-header-actions-editorial">
+                <nav class="site-nav" aria-label="Primary">
+                  {primaryNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+                <span class="site-header-utility">Expert-led service structure</span>
+              </div>
+            </div>
+          ) : isConversionFamily ? (
+            <div class="site-header-inner site-header-inner-conversion">
+              <a class="site-brand" href="/">
+                <span class="site-brand-mark">
+                  <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                </span>
+                <span class="site-brand-copy">
+                  <span class="site-brand-kicker">Modern Conversion</span>
+                  <span class="site-brand-name">{site.name}</span>
+                </span>
+              </a>
+              <div class="site-header-actions site-header-actions-conversion">
+                <nav class="site-nav" aria-label="Primary">
+                  {primaryNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+                <a class="site-header-cta" href={primaryCtaHref}>Start With A Quote</a>
+              </div>
+            </div>
+          ) : (
+            <div class="site-header-inner site-header-inner-classic">
+              <div class="site-header-brand-block">
+                <a class="site-brand" href="/">
+                  <span class="site-brand-mark">
+                    <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                  </span>
+                  <span class="site-brand-copy">
+                    <span class="site-brand-kicker">Service Classic</span>
+                    <span class="site-brand-name">{site.name}</span>
+                  </span>
+                </a>
+                <p class="site-header-note">Straightforward service structure with clear trust surfaces and practical next steps.</p>
+              </div>
+              <nav class="site-nav" aria-label="Primary">
+                {primaryNavItems.map((item) => (
+                  <a href={item.href}>{item.label}</a>
+                ))}
+              </nav>
+            </div>
+          )}
         </div>
       </header>
       <main class="site-main">
@@ -129,20 +184,79 @@ const breadcrumbSchema = breadcrumbs.length > 0
           <slot />
         </div>
       </main>
-      <footer class="site-footer">
+      <footer class:list={['site-footer', `site-footer-${themeFamily}`]}>
         <div class="site-container">
-          <div class="site-footer-inner">
-            <div class="site-brand-copy">
-              <span class="site-brand-name">{site.name}</span>
-              <span class="site-footer-note">Structured content, strong technical SEO, and a synced visual system.</span>
+          {isEditorialFamily ? (
+            <div class="site-footer-inner site-footer-inner-editorial">
+              <div class="site-footer-column site-footer-column-brand">
+                <span class="site-brand-name">{site.name}</span>
+                <span class="site-footer-note">A more editorial service shell with stronger reading rhythm and softer navigation chrome.</span>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Explore</span>
+                <nav class="site-footer-link-list" aria-label="Footer explore">
+                  {footerNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Trust & Discovery</span>
+                <nav class="site-footer-link-list" aria-label="Footer trust">
+                  {footerTrustItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
             </div>
-            <nav class="site-footer-nav" aria-label="Footer">
-              {site.trustLinks.map((item) => (
-                <a href={item.href}>{item.label}</a>
-              ))}
-              <a href="/sitemap.html">HTML Sitemap</a>
-            </nav>
-          </div>
+          ) : isConversionFamily ? (
+            <div class="site-footer-inner site-footer-inner-conversion">
+              <div class="site-footer-column site-footer-column-cta">
+                <span class="site-footer-label">Next Step</span>
+                <p class="site-footer-note">Keep the quote path visible while trust, process, and service detail remain close by.</p>
+                <a class="site-footer-cta" href={primaryCtaHref}>Request A Quote</a>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Explore</span>
+                <nav class="site-footer-link-list" aria-label="Footer explore">
+                  {footerNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Trust</span>
+                <nav class="site-footer-link-list" aria-label="Footer trust">
+                  {footerTrustItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          ) : (
+            <div class="site-footer-inner site-footer-inner-classic">
+              <div class="site-footer-column site-footer-column-brand">
+                <span class="site-brand-name">{site.name}</span>
+                <span class="site-footer-note">Structured content, strong technical SEO, and a synced visual system.</span>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Company</span>
+                <nav class="site-footer-link-list" aria-label="Footer company">
+                  {footerNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Trust</span>
+                <nav class="site-footer-link-list" aria-label="Footer trust">
+                  {footerTrustItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          )}
         </div>
       </footer>
     </div>
