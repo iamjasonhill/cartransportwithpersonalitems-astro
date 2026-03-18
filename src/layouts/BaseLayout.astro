@@ -39,6 +39,7 @@ const fontStylesheets = (() => {
 const themeFamily = typeof design.theme?.family === 'string' ? design.theme.family : 'service_classic';
 const isEditorialFamily = themeFamily === 'editorial_authority';
 const isConversionFamily = themeFamily === 'modern_conversion';
+const isCorporateFamily = themeFamily === 'corporate_command';
 const primaryCtaHref = site.navigation.find((item) => item.href.includes('contact'))?.href ?? '/contact/';
 const primaryNavItems = site.navigation.slice(0, 4);
 const footerNavItems = site.navigation.slice(0, 4);
@@ -136,6 +137,30 @@ const breadcrumbSchema = breadcrumbs.length > 0
                 <span class="site-header-utility">Expert-led service structure</span>
               </div>
             </div>
+          ) : isCorporateFamily ? (
+            <div class="site-header-inner site-header-inner-corporate">
+              <div class="site-header-brand-block">
+                <a class="site-brand" href="/">
+                  <span class="site-brand-mark">
+                    <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                  </span>
+                  <span class="site-brand-copy">
+                    <span class="site-brand-kicker">Corporate Command</span>
+                    <span class="site-brand-name">{site.name}</span>
+                  </span>
+                </a>
+                <p class="site-header-note">Formal navigation, stronger information hierarchy, and a more deliberate corporate service posture.</p>
+              </div>
+              <div class="site-header-actions site-header-actions-corporate">
+                <span class="site-header-utility">Structured Service Platform</span>
+                <nav class="site-nav" aria-label="Primary">
+                  {primaryNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+                <a class="site-header-cta" href={primaryCtaHref}>Request A Quote</a>
+              </div>
+            </div>
           ) : isConversionFamily ? (
             <div class="site-header-inner site-header-inner-conversion">
               <a class="site-brand" href="/">
@@ -195,6 +220,29 @@ const breadcrumbSchema = breadcrumbs.length > 0
               <div class="site-footer-column">
                 <span class="site-footer-label">Explore</span>
                 <nav class="site-footer-link-list" aria-label="Footer explore">
+                  {footerNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Trust & Discovery</span>
+                <nav class="site-footer-link-list" aria-label="Footer trust">
+                  {footerTrustItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          ) : isCorporateFamily ? (
+            <div class="site-footer-inner site-footer-inner-corporate">
+              <div class="site-footer-column site-footer-column-brand">
+                <span class="site-brand-name">{site.name}</span>
+                <span class="site-footer-note">Structured content, clearer operational trust surfaces, and a more formal closing rhythm.</span>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Capabilities</span>
+                <nav class="site-footer-link-list" aria-label="Footer capabilities">
                   {footerNavItems.map((item) => (
                     <a href={item.href}>{item.label}</a>
                   ))}

@@ -241,12 +241,29 @@ a:hover {
   align-items: start;
 }
 
+.site-header-inner-corporate,
+.site-footer-inner-corporate {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) auto;
+  align-items: start;
+}
+
 .site-header-actions-editorial {
+  justify-items: end;
+}
+
+.site-header-actions-corporate {
+  display: grid;
+  gap: 0.8rem;
   justify-items: end;
 }
 
 .site-footer-inner-editorial {
   grid-template-columns: minmax(0, 1.2fr) minmax(10rem, auto) minmax(12rem, auto);
+}
+
+.site-footer-inner-corporate {
+  grid-template-columns: minmax(0, 1.1fr) minmax(10rem, auto) minmax(12rem, auto);
 }
 
 .site-header-inner-conversion,
@@ -363,6 +380,79 @@ a:hover {
   background: white;
   color: var(--de-color-secondary);
   box-shadow: 0 22px 40px -28px rgba(255, 255, 255, 0.65);
+}
+
+.site-shell.theme-corporate_command .site-header {
+  padding-top: 0.85rem;
+}
+
+.site-shell.theme-corporate_command .site-header-inner {
+  border-color: color-mix(in srgb, var(--de-color-secondary) 34%, black);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--de-color-primary) 96%, black) 0%, color-mix(in srgb, var(--de-color-secondary) 84%, black) 100%);
+  box-shadow:
+    0 28px 72px -44px rgba(13, 59, 102, 0.72),
+    0 0 0 1px color-mix(in srgb, var(--de-color-secondary) 18%, transparent);
+  color: white;
+}
+
+.site-shell.theme-corporate_command .site-header .site-brand-kicker,
+.site-shell.theme-corporate_command .site-header .site-header-note,
+.site-shell.theme-corporate_command .site-header .site-header-utility {
+  color: color-mix(in srgb, white 76%, var(--de-color-accent));
+}
+
+.site-shell.theme-corporate_command .site-header .site-brand-mark {
+  border-color: color-mix(in srgb, white 18%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--de-color-accent) 18%, white);
+}
+
+.site-shell.theme-corporate_command .site-header .site-nav a {
+  color: color-mix(in srgb, white 92%, var(--de-color-accent));
+  font-weight: 700;
+}
+
+.site-shell.theme-corporate_command .site-header .site-nav a:hover {
+  background: color-mix(in srgb, white 12%, transparent);
+  color: white;
+}
+
+.site-shell.theme-corporate_command .site-header-cta {
+  background: white;
+  color: var(--de-color-primary);
+  box-shadow: 0 18px 42px -28px rgba(255, 255, 255, 0.42);
+}
+
+.site-shell.theme-corporate_command .site-main {
+  padding-top: 1.75rem;
+}
+
+.site-shell.theme-corporate_command .site-footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.site-shell.theme-corporate_command .site-footer-inner-corporate {
+  border-color: color-mix(in srgb, var(--de-color-primary) 62%, black);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--de-color-text) 94%, black) 0%, color-mix(in srgb, var(--de-color-primary) 88%, black) 100%);
+  box-shadow:
+    0 28px 64px -42px rgba(11, 31, 51, 0.88),
+    0 0 0 1px color-mix(in srgb, var(--de-color-secondary) 18%, transparent);
+  color: white;
+}
+
+.site-shell.theme-corporate_command .site-footer-inner-corporate .site-footer-note,
+.site-shell.theme-corporate_command .site-footer-inner-corporate .site-footer-label {
+  color: color-mix(in srgb, white 76%, var(--de-color-accent));
+}
+
+.site-shell.theme-corporate_command .site-footer-inner-corporate .site-footer-link-list a {
+  color: color-mix(in srgb, white 92%, var(--de-color-accent));
+}
+
+.site-shell.theme-corporate_command .site-footer-inner-corporate .site-footer-link-list a:hover {
+  color: white;
 }
 
 .site-shell.theme-editorial_authority .site-header-inner,
@@ -556,6 +646,47 @@ a:hover {
   background: linear-gradient(90deg, var(--de-color-primary), var(--de-color-accent));
 }
 
+.site-shell.theme-corporate_command .page-hero {
+  border-color: color-mix(in srgb, var(--de-color-secondary) 18%, var(--de-color-border));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--de-color-surface) 98%, white) 0%, color-mix(in srgb, var(--de-color-background) 90%, white) 100%);
+}
+
+.site-shell.theme-corporate_command .page-hero::after {
+  height: 0.55rem;
+  background: linear-gradient(90deg, var(--de-color-primary), var(--de-color-secondary), var(--de-color-accent));
+}
+
+.site-shell.theme-corporate_command .page-card,
+.site-shell.theme-corporate_command .content-page,
+.site-shell.theme-corporate_command .surface-tile {
+  border-color: color-mix(in srgb, var(--de-color-secondary) 18%, var(--de-color-border));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--de-color-surface) 98%, white) 0%, var(--de-color-surface) 100%);
+}
+
+.site-shell.theme-corporate_command .button-link {
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.site-shell.theme-corporate_command .button-link--primary {
+  box-shadow: 0 18px 36px -22px color-mix(in srgb, var(--de-color-primary) 70%, transparent);
+}
+
+.site-shell.theme-corporate_command .surface-tile {
+  position: relative;
+  overflow: hidden;
+}
+
+.site-shell.theme-corporate_command .surface-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 0.18rem;
+  background: linear-gradient(90deg, var(--de-color-secondary), var(--de-color-accent));
+}
+
 .surface-tile h2,
 .surface-tile h3,
 .page-card h2,
@@ -628,12 +759,15 @@ a:hover {
   .site-footer-inner-classic,
   .site-header-inner-editorial,
   .site-footer-inner-editorial,
+  .site-header-inner-corporate,
+  .site-footer-inner-corporate,
   .site-header-inner-conversion,
   .site-footer-inner-conversion {
     grid-template-columns: 1fr;
   }
 
   .site-header-actions-editorial,
+  .site-header-actions-corporate,
   .site-header-actions-conversion {
     justify-items: start;
     justify-content: flex-start;
