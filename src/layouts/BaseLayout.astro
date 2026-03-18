@@ -1,5 +1,7 @@
 ---
+import { design } from '../lib/design';
 import { site } from '../lib/site';
+import '../styles/theme.css';
 
 interface BreadcrumbItem {
   name: string;
@@ -26,6 +28,32 @@ const canonicalUrl = new URL(canonicalPath, Astro.site ?? site.url).toString();
 const socialImageUrl = new URL(site.seoAssets.ogImage, Astro.site ?? site.url).toString();
 const twitterImageUrl = new URL(site.seoAssets.twitterImage, Astro.site ?? site.url).toString();
 const faviconType = site.seoAssets.favicon.endsWith('.png') ? 'image/png' : 'image/svg+xml';
+const fontStylesheets = (() => {
+  const primaryFontUrl = typeof design.typography?.fontUrl === 'string' ? design.typography.fontUrl.trim() : '';
+  if (primaryFontUrl !== '') {
+    return [primaryFontUrl];
+  }
+
+  return Array.from(new Set(Array.isArray(design.typography?.fontUrls) ? design.typography.fontUrls : []));
+})();
+const themeStyle = [
+  `--de-color-background: ${design.palette.background}`,
+  `--de-color-surface: ${design.palette.surface}`,
+  `--de-color-text: ${design.palette.text}`,
+  `--de-color-muted: ${design.palette.muted}`,
+  `--de-color-border: ${design.palette.border}`,
+  `--de-color-primary: ${design.palette.primary}`,
+  `--de-color-secondary: ${design.palette.secondary}`,
+  `--de-color-accent: ${design.palette.accent}`,
+  `--de-font-heading: ${design.typography.headingStack}`,
+  `--de-font-body: ${design.typography.bodyStack}`,
+  `--de-radius: ${design.shape.radius}`,
+  `--de-shadow: ${design.shape.shadow}`,
+  `--de-content-width: ${design.layout.contentWidth}`,
+  `--de-section-gap: ${design.layout.sectionGap}`,
+  `--de-button-radius: ${design.ctaStyle === 'pill' ? '999px' : design.shape.radius}`,
+  `--de-pattern-background: url('${design.assets.patternBackground}')`,
+].join('; ');
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -68,31 +96,55 @@ const breadcrumbSchema = breadcrumbs.length > 0
     <link rel="icon" type={faviconType} href={site.seoAssets.favicon} />
     <link rel="apple-touch-icon" sizes="180x180" href={site.seoAssets.appleTouchIcon} />
     <link rel="canonical" href={canonicalUrl} />
+    {fontStylesheets.length > 0 && <link rel="preconnect" href="https://fonts.googleapis.com" />}
+    {fontStylesheets.length > 0 && <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />}
+    {fontStylesheets.map((fontUrl) => <link rel="stylesheet" href={fontUrl} />)}
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
   </head>
-  <body>
-    <header>
-      <nav aria-label="Primary">
-        <ul>
-          {site.navigation.map((item) => (
-            <li><a href={item.href}>{item.label}</a></li>
-          ))}
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer>
-      <nav aria-label="Footer">
-        <ul>
-          {site.trustLinks.map((item) => (
-            <li><a href={item.href}>{item.label}</a></li>
-          ))}
-          <li><a href="/sitemap.html">HTML Sitemap</a></li>
-        </ul>
-      </nav>
-    </footer>
+  <body class:list={['site-shell', `theme-${design.theme.family}`, `density-${design.density}`, `cta-${design.ctaStyle}`]} style={themeStyle}>
+    <div class="site-frame">
+      <header class="site-header">
+        <div class="site-container">
+          <div class="site-header-inner">
+            <a class="site-brand" href="/">
+              <span class="site-brand-mark">
+                <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+              </span>
+              <span class="site-brand-copy">
+                <span class="site-brand-kicker">Deftly Site System</span>
+                <span class="site-brand-name">{site.name}</span>
+              </span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+              {site.navigation.map((item) => (
+                <a href={item.href}>{item.label}</a>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main class="site-main">
+        <div class="site-container">
+          <slot />
+        </div>
+      </main>
+      <footer class="site-footer">
+        <div class="site-container">
+          <div class="site-footer-inner">
+            <div class="site-brand-copy">
+              <span class="site-brand-name">{site.name}</span>
+              <span class="site-footer-note">Structured content, strong technical SEO, and a synced visual system.</span>
+            </div>
+            <nav class="site-footer-nav" aria-label="Footer">
+              {site.trustLinks.map((item) => (
+                <a href={item.href}>{item.label}</a>
+              ))}
+              <a href="/sitemap.html">HTML Sitemap</a>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
