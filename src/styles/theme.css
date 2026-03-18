@@ -1,11 +1,11 @@
 :root {
-  --de-color-background: #f4f7fa;
+  --de-color-background: #f6f8fb;
   --de-color-surface: #ffffff;
   --de-color-text: #0f172a;
   --de-color-muted: #475569;
-  --de-color-border: #d8e1eb;
+  --de-color-border: #d7e1ec;
   --de-color-primary: #0f766e;
-  --de-color-secondary: #155e75;
+  --de-color-secondary: #1d4f73;
   --de-color-accent: #f59e0b;
   --de-font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
   --de-font-body: 'Public Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -15,56 +15,7 @@
   --de-section-gap: 5rem;
 }
 
-.site-shell.theme-professional {
-  --de-color-background: #f4f7fa;
-  --de-color-surface: #ffffff;
-  --de-color-text: #0f172a;
-  --de-color-muted: #475569;
-  --de-color-border: #d8e1eb;
-  --de-color-primary: #0f766e;
-  --de-color-secondary: #155e75;
-  --de-color-accent: #f59e0b;
-  --de-font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
-  --de-font-body: 'Public Sans', 'Helvetica Neue', Arial, sans-serif;
-  --de-radius: 1rem;
-  --de-shadow: 0 24px 60px -28px rgba(15, 23, 42, 0.32);
-  --de-content-width: 72rem;
-  --de-section-gap: 5rem;
-}
-
-.site-shell.theme-editorial {
-  --de-color-background: #f8f5ef;
-  --de-color-surface: #fffdf8;
-  --de-color-text: #1f2937;
-  --de-color-muted: #6b7280;
-  --de-color-border: #e7dcc7;
-  --de-color-primary: #92400e;
-  --de-color-secondary: #7c3aed;
-  --de-color-accent: #dc2626;
-  --de-font-heading: 'DM Serif Display', Georgia, serif;
-  --de-font-body: 'Source Serif 4', Georgia, serif;
-  --de-radius: 0.85rem;
-  --de-shadow: 0 28px 70px -32px rgba(31, 41, 55, 0.28);
-  --de-content-width: 70rem;
-  --de-section-gap: 5.25rem;
-}
-
-.site-shell.theme-service_bold {
-  --de-color-background: #eef6ff;
-  --de-color-surface: #ffffff;
-  --de-color-text: #111827;
-  --de-color-muted: #4b5563;
-  --de-color-border: #cfe0f5;
-  --de-color-primary: #0f4c81;
-  --de-color-secondary: #1d4ed8;
-  --de-color-accent: #f97316;
-  --de-font-heading: 'Instrument Sans', 'Avenir Next', sans-serif;
-  --de-font-body: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
-  --de-radius: 1.25rem;
-  --de-shadow: 0 32px 80px -36px rgba(15, 76, 129, 0.34);
-  --de-content-width: 76rem;
-  --de-section-gap: 4.5rem;
-}
+/* Theme tokens are sourced from src/lib/design.ts and injected by BaseLayout. */
 
 *,
 *::before,
