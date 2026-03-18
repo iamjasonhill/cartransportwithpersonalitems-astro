@@ -122,11 +122,9 @@ const breadcrumbSchema = breadcrumbs.length > 0
                     <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
                   </span>
                   <span class="site-brand-copy">
-                    <span class="site-brand-kicker">Editorial Authority</span>
                     <span class="site-brand-name">{site.name}</span>
                   </span>
                 </a>
-                <p class="site-header-note">Calmer navigation, stronger hierarchy, and a more considered service-reading rhythm.</p>
               </div>
               <div class="site-header-actions site-header-actions-editorial">
                 <nav class="site-nav" aria-label="Primary">
@@ -134,7 +132,6 @@ const breadcrumbSchema = breadcrumbs.length > 0
                     <a href={item.href}>{item.label}</a>
                   ))}
                 </nav>
-                <span class="site-header-utility">Expert-led service structure</span>
               </div>
             </div>
           ) : isCorporateFamily ? (
@@ -145,14 +142,11 @@ const breadcrumbSchema = breadcrumbs.length > 0
                     <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
                   </span>
                   <span class="site-brand-copy">
-                    <span class="site-brand-kicker">Corporate Command</span>
                     <span class="site-brand-name">{site.name}</span>
                   </span>
                 </a>
-                <p class="site-header-note">Formal navigation, stronger information hierarchy, and a more deliberate corporate service posture.</p>
               </div>
               <div class="site-header-actions site-header-actions-corporate">
-                <span class="site-header-utility">Structured Service Platform</span>
                 <nav class="site-nav" aria-label="Primary">
                   {primaryNavItems.map((item) => (
                     <a href={item.href}>{item.label}</a>
@@ -168,7 +162,6 @@ const breadcrumbSchema = breadcrumbs.length > 0
                   <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
                 </span>
                 <span class="site-brand-copy">
-                  <span class="site-brand-kicker">Modern Conversion</span>
                   <span class="site-brand-name">{site.name}</span>
                 </span>
               </a>
@@ -189,11 +182,9 @@ const breadcrumbSchema = breadcrumbs.length > 0
                     <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
                   </span>
                   <span class="site-brand-copy">
-                    <span class="site-brand-kicker">Service Classic</span>
                     <span class="site-brand-name">{site.name}</span>
                   </span>
                 </a>
-                <p class="site-header-note">Straightforward service structure with clear trust surfaces and practical next steps.</p>
               </div>
               <nav class="site-nav" aria-label="Primary">
                 {primaryNavItems.map((item) => (
@@ -215,7 +206,6 @@ const breadcrumbSchema = breadcrumbs.length > 0
             <div class="site-footer-inner site-footer-inner-editorial">
               <div class="site-footer-column site-footer-column-brand">
                 <span class="site-brand-name">{site.name}</span>
-                <span class="site-footer-note">A more editorial service shell with stronger reading rhythm and softer navigation chrome.</span>
               </div>
               <div class="site-footer-column">
                 <span class="site-footer-label">Explore</span>
@@ -238,7 +228,6 @@ const breadcrumbSchema = breadcrumbs.length > 0
             <div class="site-footer-inner site-footer-inner-corporate">
               <div class="site-footer-column site-footer-column-brand">
                 <span class="site-brand-name">{site.name}</span>
-                <span class="site-footer-note">Structured content, clearer operational trust surfaces, and a more formal closing rhythm.</span>
               </div>
               <div class="site-footer-column">
                 <span class="site-footer-label">Capabilities</span>
@@ -260,17 +249,11 @@ const breadcrumbSchema = breadcrumbs.length > 0
           ) : isConversionFamily ? (
             <div class="site-footer-stack site-footer-stack-conversion">
               <div class="site-footer-promo site-footer-promo-conversion">
-                <div class="site-footer-promo-copy">
-                  <span class="site-footer-label">Next Step</span>
-                  <p class="site-footer-promo-title">Keep the quote path visible without collapsing the close of the page.</p>
-                  <p class="site-footer-note">Service detail, trust links, and discovery stay in the footer while the closing action keeps its own panel.</p>
-                </div>
                 <a class="site-footer-cta" href={primaryCtaHref}>Request A Quote</a>
               </div>
               <div class="site-footer-inner site-footer-inner-conversion">
                 <div class="site-footer-column site-footer-column-brand">
                   <span class="site-brand-name">{site.name}</span>
-                  <span class="site-footer-note">Structured transport content, clearer trust surfaces, and a calmer close to the page.</span>
                 </div>
                 <div class="site-footer-column">
                   <span class="site-footer-label">Explore</span>
@@ -294,7 +277,6 @@ const breadcrumbSchema = breadcrumbs.length > 0
             <div class="site-footer-inner site-footer-inner-classic">
               <div class="site-footer-column site-footer-column-brand">
                 <span class="site-brand-name">{site.name}</span>
-                <span class="site-footer-note">Structured content, strong technical SEO, and a synced visual system.</span>
               </div>
               <div class="site-footer-column">
                 <span class="site-footer-label">Company</span>
