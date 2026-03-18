@@ -256,8 +256,7 @@ a:hover {
   gap: 0.85rem;
 }
 
-.site-shell.theme-modern_conversion .site-header-inner,
-.site-shell.theme-modern_conversion .site-footer-inner {
+.site-shell.theme-modern_conversion .site-header-inner {
   border-color: color-mix(in srgb, var(--de-color-primary) 18%, var(--de-color-border));
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--de-color-surface) 92%, white) 0%, var(--de-color-surface) 100%);
@@ -283,6 +282,40 @@ a:hover {
 
 .site-shell.theme-modern_conversion .site-main {
   padding-top: 1.5rem;
+}
+
+.site-shell.theme-modern_conversion .site-footer {
+  padding-bottom: 2rem;
+}
+
+.site-shell.theme-modern_conversion .site-footer-inner-conversion {
+  border-color: color-mix(in srgb, var(--de-color-secondary) 58%, black);
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--de-color-accent) 18%, transparent) 0, transparent 28%),
+    linear-gradient(140deg, color-mix(in srgb, var(--de-color-secondary) 88%, #020617) 0%, color-mix(in srgb, var(--de-color-text) 86%, black) 100%);
+  box-shadow:
+    0 30px 72px -40px rgba(2, 6, 23, 0.82),
+    0 0 0 1px color-mix(in srgb, var(--de-color-secondary) 24%, transparent);
+  color: white;
+}
+
+.site-shell.theme-modern_conversion .site-footer-inner-conversion .site-footer-note,
+.site-shell.theme-modern_conversion .site-footer-inner-conversion .site-footer-label {
+  color: color-mix(in srgb, white 72%, var(--de-color-accent));
+}
+
+.site-shell.theme-modern_conversion .site-footer-inner-conversion .site-footer-link-list a {
+  color: color-mix(in srgb, white 92%, var(--de-color-accent));
+}
+
+.site-shell.theme-modern_conversion .site-footer-inner-conversion .site-footer-link-list a:hover {
+  color: white;
+}
+
+.site-shell.theme-modern_conversion .site-footer-cta {
+  background: white;
+  color: var(--de-color-secondary);
+  box-shadow: 0 22px 40px -28px rgba(255, 255, 255, 0.65);
 }
 
 .site-shell.theme-editorial_authority .site-header-inner,
