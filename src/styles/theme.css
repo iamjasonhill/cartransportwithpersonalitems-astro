@@ -110,6 +110,14 @@ a:hover {
   line-height: 1.6;
 }
 
+.site-footer-promo-title {
+  margin: 0;
+  font-family: var(--de-font-heading);
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
 .site-header-utility,
 .site-footer-label {
   color: var(--de-color-muted);
@@ -244,8 +252,8 @@ a:hover {
 .site-header-inner-conversion,
 .site-footer-inner-conversion {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
+  grid-template-columns: minmax(0, 1.1fr) minmax(10rem, auto) minmax(12rem, auto);
+  align-items: start;
 }
 
 .site-header-actions-conversion {
@@ -285,7 +293,46 @@ a:hover {
 }
 
 .site-shell.theme-modern_conversion .site-footer {
+  padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.site-shell.theme-modern_conversion .site-footer-stack-conversion {
+  display: grid;
+  gap: 1rem;
+}
+
+.site-shell.theme-modern_conversion .site-footer-promo-conversion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--de-color-primary) 20%, var(--de-color-border));
+  border-radius: calc(var(--de-radius) + 0.2rem);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--de-color-surface) 98%, white) 0%, color-mix(in srgb, var(--de-color-background) 88%, white) 100%);
+  box-shadow:
+    0 20px 48px -34px color-mix(in srgb, var(--de-color-secondary) 24%, transparent),
+    var(--de-shadow);
+}
+
+.site-shell.theme-modern_conversion .site-footer-promo-copy {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 42rem;
+}
+
+.site-shell.theme-modern_conversion .site-footer-promo-conversion .site-footer-label {
+  color: color-mix(in srgb, var(--de-color-secondary) 68%, var(--de-color-muted));
+}
+
+.site-shell.theme-modern_conversion .site-footer-promo-conversion .site-footer-note {
+  color: color-mix(in srgb, var(--de-color-text) 76%, var(--de-color-muted));
+}
+
+.site-shell.theme-modern_conversion .site-footer-promo-conversion .site-footer-cta {
+  flex-shrink: 0;
 }
 
 .site-shell.theme-modern_conversion .site-footer-inner-conversion {
@@ -590,6 +637,11 @@ a:hover {
   .site-header-actions-conversion {
     justify-items: start;
     justify-content: flex-start;
+  }
+
+  .site-shell.theme-modern_conversion .site-footer-promo-conversion {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   /* Keep family-specific hero layouts aligned with the shared mobile collapse. */

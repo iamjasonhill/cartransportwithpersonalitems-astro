@@ -210,27 +210,36 @@ const breadcrumbSchema = breadcrumbs.length > 0
               </div>
             </div>
           ) : isConversionFamily ? (
-            <div class="site-footer-inner site-footer-inner-conversion">
-              <div class="site-footer-column site-footer-column-cta">
-                <span class="site-footer-label">Next Step</span>
-                <p class="site-footer-note">Keep the quote path visible while trust, process, and service detail remain close by.</p>
+            <div class="site-footer-stack site-footer-stack-conversion">
+              <div class="site-footer-promo site-footer-promo-conversion">
+                <div class="site-footer-promo-copy">
+                  <span class="site-footer-label">Next Step</span>
+                  <p class="site-footer-promo-title">Keep the quote path visible without collapsing the close of the page.</p>
+                  <p class="site-footer-note">Service detail, trust links, and discovery stay in the footer while the closing action keeps its own panel.</p>
+                </div>
                 <a class="site-footer-cta" href={primaryCtaHref}>Request A Quote</a>
               </div>
-              <div class="site-footer-column">
-                <span class="site-footer-label">Explore</span>
-                <nav class="site-footer-link-list" aria-label="Footer explore">
-                  {footerNavItems.map((item) => (
-                    <a href={item.href}>{item.label}</a>
-                  ))}
-                </nav>
-              </div>
-              <div class="site-footer-column">
-                <span class="site-footer-label">Trust</span>
-                <nav class="site-footer-link-list" aria-label="Footer trust">
-                  {footerTrustItems.map((item) => (
-                    <a href={item.href}>{item.label}</a>
-                  ))}
-                </nav>
+              <div class="site-footer-inner site-footer-inner-conversion">
+                <div class="site-footer-column site-footer-column-brand">
+                  <span class="site-brand-name">{site.name}</span>
+                  <span class="site-footer-note">Structured transport content, clearer trust surfaces, and a calmer close to the page.</span>
+                </div>
+                <div class="site-footer-column">
+                  <span class="site-footer-label">Explore</span>
+                  <nav class="site-footer-link-list" aria-label="Footer explore">
+                    {footerNavItems.map((item) => (
+                      <a href={item.href}>{item.label}</a>
+                    ))}
+                  </nav>
+                </div>
+                <div class="site-footer-column">
+                  <span class="site-footer-label">Trust</span>
+                  <nav class="site-footer-link-list" aria-label="Footer trust">
+                    {footerTrustItems.map((item) => (
+                      <a href={item.href}>{item.label}</a>
+                    ))}
+                  </nav>
+                </div>
               </div>
             </div>
           ) : (
