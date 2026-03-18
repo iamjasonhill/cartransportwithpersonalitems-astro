@@ -1,22 +1,22 @@
 export const design = {
   version: 1,
   theme: {
-    family: "editorial_authority",
-    templateFamily: "editorial_authority",
+    family: "modern_conversion",
+    templateFamily: "modern_conversion",
   },
-  palette: {"background":"#f8f5ef","surface":"#fffdf8","text":"#1f2937","muted":"#6b7280","border":"#e7dcc7","primary":"#92400e","secondary":"#7c3aed","accent":"#dc2626"},
+  palette: {"background":"#edf5ff","surface":"#ffffff","text":"#111827","muted":"#4b5563","border":"#c9dbf2","primary":"#0b63ce","secondary":"#123a7a","accent":"#f97316"},
   typography: {
     headingFont: "dm_serif_display",
     bodyFont: "public_sans",
     headingStack: "'DM Serif Display', Georgia, serif",
     bodyStack: "'Public Sans', 'Helvetica Neue', Arial, sans-serif",
-    scale: "editorial",
+    scale: "energetic",
     fontUrl: "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap",
     fontUrls: ["https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap"],
   },
-  shape: {"radius":"0.85rem","shadow":"0 28px 70px -32px rgba(31, 41, 55, 0.28)"},
+  shape: {"radius":"1.15rem","shadow":"0 32px 84px -38px rgba(11, 99, 206, 0.28)"},
   density: "comfortable",
-  layout: {"contentWidth":"70rem","sectionGap":"5.25rem"},
+  layout: {"contentWidth":"76rem","sectionGap":"4.5rem"},
   ctaStyle: "solid",
   imageryStyle: "editorial",
   assets: {
