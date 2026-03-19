@@ -1,22 +1,21 @@
 export const design = {
   version: 1,
   theme: {
-    family: "corporate_command",
-    templateFamily: "corporate_command",
+    family: "auvergne_authority",
+    templateFamily: "auvergne_authority",
   },
-  palette: {"background":"#edf3f9","surface":"#ffffff","text":"#0b1f33","muted":"#51657a","border":"#c8d5e4","primary":"#0d3b66","secondary":"#1459a6","accent":"#f59e0b"},
+  palette: {"background":"#0c0f14","surface":"#111520","text":"#e8e4dc","muted":"rgba(232, 228, 220, 0.64)","border":"rgba(232, 228, 220, 0.1)","primary":"#c9a84c","secondary":"#3d6b8e","accent":"#f0ece3"},
   typography: {
     headingFont: "dm_serif_display",
     bodyFont: "public_sans",
     headingStack: "'DM Serif Display', Georgia, serif",
     bodyStack: "'Public Sans', 'Helvetica Neue', Arial, sans-serif",
-    scale: "structured",
+    scale: "editorial",
     fontUrl: "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap",
-    fontUrls: ["https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap"],
   },
-  shape: {"radius":"0.72rem","shadow":"0 30px 78px -38px rgba(13, 59, 102, 0.28)"},
+  shape: {"radius":"0.45rem","shadow":"0 34px 88px -44px rgba(2, 6, 23, 0.82)"},
   density: "comfortable",
-  layout: {"contentWidth":"74rem","sectionGap":"4.75rem"},
+  layout: {"contentWidth":"80rem","sectionGap":"5.25rem"},
   ctaStyle: "solid",
   imageryStyle: "editorial",
   assets: {
