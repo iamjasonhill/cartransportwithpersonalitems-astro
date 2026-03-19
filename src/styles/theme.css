@@ -161,6 +161,11 @@ a:hover {
   gap: 0.85rem;
   text-decoration: none;
   color: inherit;
+  min-width: 0;
+}
+
+.site-brand--wordmark {
+  gap: 0;
 }
 
 .site-brand-mark {
@@ -175,6 +180,19 @@ a:hover {
 .site-brand-copy {
   display: grid;
   gap: 0.15rem;
+}
+
+.site-brand-wordmark {
+  display: inline-flex;
+  align-items: center;
+  max-width: min(100%, 18rem);
+}
+
+.site-brand-wordmark img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 3rem;
 }
 
 .site-brand-name {
@@ -965,6 +983,10 @@ a:hover {
   background: color-mix(in srgb, var(--de-color-surface) 92%, black);
 }
 
+.site-shell.theme-vantage_strategic .site-brand-wordmark {
+  max-width: min(100%, 20rem);
+}
+
 .site-shell.theme-vantage_strategic .site-nav a {
   color: color-mix(in srgb, var(--de-color-text) 86%, var(--de-color-primary));
   font-weight: 700;
@@ -1517,5 +1539,13 @@ a:hover {
   .site-nav,
   .site-footer-nav {
     width: 100%;
+  }
+
+  .site-brand-wordmark {
+    max-width: min(100%, 15rem);
+  }
+
+  .site-brand-wordmark img {
+    max-height: 2.5rem;
   }
 }
