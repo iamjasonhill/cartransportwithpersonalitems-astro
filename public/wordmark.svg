@@ -1,10 +1,50 @@
-<svg width="760" height="140" viewBox="0 0 760 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="760" height="140" rx="28" fill="#0F766E"/>
-  <path d="M66 34H120C139.882 34 156 50.1177 156 70C156 89.8823 139.882 106 120 106H66V34Z" fill="#F4F7FA"/>
-  <path d="M82 51H116C126.493 51 135 59.5066 135 70C135 80.4934 126.493 89 116 89H82V51Z" fill="#0F766E"/>
-  <path d="M96 64H138" stroke="#F59E0B" stroke-width="10" stroke-linecap="round"/>
-  <path d="M96 80H128" stroke="#F59E0B" stroke-width="10" stroke-linecap="round"/>
-  <text x="192" y="86" fill="#F4F7FA" font-family="Verdana, Arial, sans-serif" font-size="46" font-weight="700" letter-spacing="0.08em">
-    cartransportwithpersonalitems.com.au
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800');</style>
+  </defs>
+  <rect width="1800" height="480" fill="#07111f"/>
+
+  <!-- Left amber mark — simplified car icon -->
+  <rect x="80" y="148" width="188" height="72" fill="#e8edf5" opacity="0.92"/>
+  <polygon points="112,148 142,106 234,106 264,148" fill="#f0b429"/>
+  <!-- Car windows -->
+  <polygon points="120,144 142,112 170,112 170,144" fill="#07111f" opacity="0.6"/>
+  <polygon points="188,144 188,112 212,112 238,144" fill="#07111f" opacity="0.6"/>
+  <!-- Car stripe -->
+  <rect x="80" y="194" width="188" height="5" fill="#f0b429" opacity="0.55"/>
+  <!-- Rear wheel -->
+  <circle cx="116" cy="232" r="26" fill="#07111f"/>
+  <circle cx="116" cy="232" r="16" fill="#1a2e42"/>
+  <circle cx="116" cy="232" r="8" fill="#f0b429"/>
+  <!-- Front wheel -->
+  <circle cx="232" cy="232" r="26" fill="#07111f"/>
+  <circle cx="232" cy="232" r="16" fill="#1a2e42"/>
+  <circle cx="232" cy="232" r="8" fill="#f0b429"/>
+  <!-- Motion lines -->
+  <line x1="44" y1="164" x2="72" y2="164" stroke="#f0b429" stroke-width="3" opacity="0.7" stroke-linecap="square"/>
+  <line x1="36" y1="180" x2="72" y2="180" stroke="#f0b429" stroke-width="3" opacity="0.4" stroke-linecap="square"/>
+  <line x1="44" y1="196" x2="72" y2="196" stroke="#f0b429" stroke-width="3" opacity="0.2" stroke-linecap="square"/>
+
+  <!-- Divider line -->
+  <rect x="304" y="100" width="3" height="280" fill="#f0b429" opacity="0.35"/>
+
+  <!-- Main wordmark text -->
+  <text x="340" y="220" font-family="'Syne', 'Arial Black', sans-serif"
+        font-size="148" font-weight="800" fill="#e8edf5" letter-spacing="-4">CAR TRANSPORT</text>
+
+  <!-- Amber rule -->
+  <rect x="340" y="242" width="1410" height="4" fill="#f0b429" opacity="0.5"/>
+
+  <!-- Sub-wordmark -->
+  <text x="340" y="308" font-family="'Syne', 'Arial Black', sans-serif"
+        font-size="62" font-weight="400" fill="#f0b429" letter-spacing="18">WITH PERSONAL ITEMS</text>
+
+  <!-- Tagline -->
+  <text x="340" y="368" font-family="'Syne', 'Arial Black', sans-serif"
+        font-size="22" font-weight="400" fill="#e8edf5" opacity="0.35" letter-spacing="8">YOUR CAR. YOUR BELONGINGS. DELIVERED TOGETHER.</text>
+
+  <!-- Top amber cap line -->
+  <rect x="0" y="0" width="1800" height="6" fill="#f0b429"/>
+  <!-- Bottom amber line -->
+  <rect x="0" y="474" width="1800" height="6" fill="#f0b429" opacity="0.25"/>
 </svg>
