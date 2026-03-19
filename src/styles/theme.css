@@ -169,6 +169,11 @@ a:hover {
   flex-shrink: 0;
 }
 
+.site-brand--lockup {
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
 .site-brand-mark {
   width: 2.75rem;
   height: 2.75rem;
@@ -176,6 +181,10 @@ a:hover {
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--de-color-border) 85%, white);
   background: white;
+}
+
+.site-brand-mark--lockup {
+  flex: 0 0 auto;
 }
 
 .site-brand-copy {
@@ -196,6 +205,11 @@ a:hover {
   height: auto;
   max-width: none;
   max-height: 3rem;
+}
+
+.site-brand-wordmark--lockup {
+  width: min(100%, 16rem);
+  max-width: 16rem;
 }
 
 .site-brand-name {
@@ -991,6 +1005,11 @@ a:hover {
   max-width: 20rem;
 }
 
+.site-shell.theme-vantage_strategic .site-brand-wordmark--lockup {
+  width: min(100%, 17.5rem);
+  max-width: 17.5rem;
+}
+
 .site-shell.theme-vantage_strategic .site-nav a {
   color: color-mix(in srgb, var(--de-color-text) 86%, var(--de-color-primary));
   font-weight: 700;
@@ -1548,6 +1567,11 @@ a:hover {
   .site-brand-wordmark {
     width: min(100%, 15rem);
     max-width: 15rem;
+  }
+
+  .site-brand-wordmark--lockup {
+    width: min(100%, 12.5rem);
+    max-width: 12.5rem;
   }
 
   .site-brand-wordmark img {
