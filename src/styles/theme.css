@@ -247,7 +247,17 @@ a:hover {
   align-items: center;
 }
 
+.site-header-inner-meridian,
+.site-footer-inner-meridian {
+  display: grid;
+  align-items: center;
+}
+
 .site-header-inner-auvergne {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.site-header-inner-meridian {
   grid-template-columns: minmax(0, 1fr) auto;
 }
 
@@ -270,6 +280,14 @@ a:hover {
   gap: 0.9rem;
 }
 
+.site-header-actions-meridian {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.9rem;
+}
+
 .site-header-actions-corporate {
   display: grid;
   gap: 0.8rem;
@@ -282,6 +300,11 @@ a:hover {
 
 .site-footer-inner-auvergne {
   grid-template-columns: minmax(0, 1.2fr) minmax(10rem, auto) minmax(12rem, auto) minmax(10rem, auto);
+  align-items: end;
+}
+
+.site-footer-inner-meridian {
+  grid-template-columns: minmax(0, 1.2fr) minmax(10rem, auto) minmax(12rem, auto);
   align-items: end;
 }
 
@@ -420,8 +443,6 @@ a:hover {
   top: 0;
   z-index: 40;
   padding-top: 0;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 }
 
 .site-shell.theme-auvergne_authority .site-header-inner {
@@ -430,6 +451,8 @@ a:hover {
   background: color-mix(in srgb, var(--de-color-background) 92%, transparent);
   box-shadow: none;
   color: var(--de-color-text);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .site-shell.theme-auvergne_authority .site-brand-mark {
@@ -554,6 +577,163 @@ a:hover {
   border-color: color-mix(in srgb, var(--de-color-border) 92%, black);
   background: color-mix(in srgb, var(--de-color-surface) 92%, black);
   color: var(--de-color-text);
+}
+
+.site-shell.theme-meridian_infrastructure {
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--de-color-primary) 10%, transparent) 0, transparent 24%),
+    linear-gradient(180deg, color-mix(in srgb, var(--de-color-background) 96%, white) 0%, var(--de-color-background) 100%);
+}
+
+.site-shell.theme-meridian_infrastructure .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding-top: 0;
+}
+
+.site-shell.theme-meridian_infrastructure .site-header-inner {
+  border-color: color-mix(in srgb, var(--de-color-primary) 26%, var(--de-color-secondary));
+  border-radius: 0;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--de-color-secondary) 96%, black) 0%, color-mix(in srgb, var(--de-color-secondary) 84%, black) 100%);
+  box-shadow: none;
+  color: #fffaf3;
+}
+
+.site-shell.theme-meridian_infrastructure .site-brand-mark {
+  border-radius: 0;
+  border-color: color-mix(in srgb, white 16%, transparent);
+  background: color-mix(in srgb, var(--de-color-surface) 96%, white);
+}
+
+.site-shell.theme-meridian_infrastructure .site-nav a {
+  color: color-mix(in srgb, white 86%, var(--de-color-primary));
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.site-shell.theme-meridian_infrastructure .site-nav a:hover {
+  background: color-mix(in srgb, white 8%, transparent);
+  color: white;
+}
+
+.site-shell.theme-meridian_infrastructure .site-header-cta {
+  border-radius: 0;
+  background: var(--de-color-primary);
+  color: #fff7f0;
+  box-shadow: 0 18px 38px -28px color-mix(in srgb, var(--de-color-primary) 70%, transparent);
+}
+
+.site-shell.theme-meridian_infrastructure .site-main {
+  padding-top: 2rem;
+}
+
+.site-shell.theme-meridian_infrastructure .site-footer {
+  padding-top: 2.25rem;
+  padding-bottom: 2rem;
+}
+
+.site-shell.theme-meridian_infrastructure .site-footer-inner-meridian {
+  border-color: color-mix(in srgb, var(--de-color-primary) 22%, var(--de-color-secondary));
+  border-radius: 0;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--de-color-secondary) 94%, black) 0%, color-mix(in srgb, var(--de-color-secondary) 82%, black) 100%);
+  box-shadow: none;
+  color: #fffaf3;
+}
+
+.site-shell.theme-meridian_infrastructure .site-footer-inner-meridian .site-footer-label,
+.site-shell.theme-meridian_infrastructure .site-footer-inner-meridian .site-footer-note {
+  color: color-mix(in srgb, white 72%, var(--de-color-primary));
+}
+
+.site-shell.theme-meridian_infrastructure .site-footer-inner-meridian .site-footer-link-list a {
+  color: color-mix(in srgb, white 90%, var(--de-color-primary));
+}
+
+.site-shell.theme-meridian_infrastructure .site-footer-inner-meridian .site-footer-link-list a:hover {
+  color: white;
+}
+
+.site-shell.theme-meridian_infrastructure .page-hero {
+  border-color: color-mix(in srgb, var(--de-color-secondary) 22%, var(--de-color-border));
+  border-radius: 0;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--de-color-surface) 76%, white) 0%, color-mix(in srgb, var(--de-color-background) 92%, white) 100%);
+  box-shadow: 0 20px 46px -34px rgba(15, 45, 61, 0.18);
+}
+
+.site-shell.theme-meridian_infrastructure .page-hero::after {
+  height: 0.32rem;
+  background: linear-gradient(90deg, var(--de-color-secondary), var(--de-color-primary));
+}
+
+.site-shell.theme-meridian_infrastructure .page-card,
+.site-shell.theme-meridian_infrastructure .content-page,
+.site-shell.theme-meridian_infrastructure .surface-tile {
+  border-color: color-mix(in srgb, var(--de-color-secondary) 16%, var(--de-color-border));
+  border-radius: 0;
+  background: color-mix(in srgb, var(--de-color-surface) 92%, white);
+  box-shadow: 0 18px 40px -34px rgba(15, 45, 61, 0.14);
+}
+
+.site-shell.theme-meridian_infrastructure .surface-tile {
+  position: relative;
+  overflow: hidden;
+}
+
+.site-shell.theme-meridian_infrastructure .surface-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 0.14rem;
+  background: linear-gradient(90deg, var(--de-color-secondary), var(--de-color-primary));
+}
+
+.site-shell.theme-meridian_infrastructure .eyebrow {
+  border-radius: 0;
+  background: color-mix(in srgb, var(--de-color-primary) 10%, white);
+  color: var(--de-color-secondary);
+}
+
+.site-shell.theme-meridian_infrastructure .hero-copy h1,
+.site-shell.theme-meridian_infrastructure .content-page h1,
+.site-shell.theme-meridian_infrastructure .page-card h1,
+.site-shell.theme-meridian_infrastructure .surface-tile h2,
+.site-shell.theme-meridian_infrastructure .surface-tile h3,
+.site-shell.theme-meridian_infrastructure .page-card h2,
+.site-shell.theme-meridian_infrastructure .content-page h2,
+.site-shell.theme-meridian_infrastructure .rich-content h2,
+.site-shell.theme-meridian_infrastructure .page-card h3,
+.site-shell.theme-meridian_infrastructure .content-page h3,
+.site-shell.theme-meridian_infrastructure .rich-content h3 {
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.site-shell.theme-meridian_infrastructure .hero-copy p,
+.site-shell.theme-meridian_infrastructure .lede,
+.site-shell.theme-meridian_infrastructure .page-card p,
+.site-shell.theme-meridian_infrastructure .content-page p,
+.site-shell.theme-meridian_infrastructure .rich-content p,
+.site-shell.theme-meridian_infrastructure .page-card li,
+.site-shell.theme-meridian_infrastructure .content-page li,
+.site-shell.theme-meridian_infrastructure .rich-content li {
+  color: color-mix(in srgb, var(--de-color-text) 80%, var(--de-color-muted));
+}
+
+.site-shell.theme-meridian_infrastructure .button-link {
+  border-radius: 0;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-shell.theme-meridian_infrastructure .button-link--primary {
+  box-shadow: 0 16px 34px -26px color-mix(in srgb, var(--de-color-primary) 65%, transparent);
 }
 
 .site-shell.theme-corporate_command .site-header {
@@ -935,6 +1115,8 @@ a:hover {
   .site-footer-inner-editorial,
   .site-header-inner-auvergne,
   .site-footer-inner-auvergne,
+  .site-header-inner-meridian,
+  .site-footer-inner-meridian,
   .site-header-inner-corporate,
   .site-footer-inner-corporate,
   .site-header-inner-conversion,
@@ -944,6 +1126,7 @@ a:hover {
 
   .site-header-actions-editorial,
   .site-header-actions-auvergne,
+  .site-header-actions-meridian,
   .site-header-actions-corporate,
   .site-header-actions-conversion {
     justify-items: start;
