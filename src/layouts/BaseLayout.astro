@@ -55,6 +55,8 @@ const primaryCtaHref = site.navigation.find((item) => item.href.includes('contac
 const primaryNavItems = site.navigation.slice(0, 4);
 const footerNavItems = site.navigation.slice(0, 4);
 const footerTrustItems = [...site.trustLinks, { href: '/sitemap.html', label: 'HTML Sitemap' }];
+const wordmarkAsset = typeof design.assets?.wordmark === 'string' ? design.assets.wordmark.trim() : '';
+const useHeaderWordmark = wordmarkAsset !== '';
 const themeStyle = [
   `--de-color-background: ${design.palette.background}`,
   `--de-color-surface: ${design.palette.surface}`,
@@ -127,13 +129,21 @@ const breadcrumbSchema = breadcrumbs.length > 0
         <div class="site-container">
           {isHalcyonFamily ? (
             <div class="site-header-inner site-header-inner-halcyon">
-              <a class="site-brand" href="/">
-                <span class="site-brand-mark">
-                  <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
-                </span>
-                <span class="site-brand-copy">
-                  <span class="site-brand-name">{site.name}</span>
-                </span>
+              <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                {useHeaderWordmark ? (
+                  <span class="site-brand-wordmark">
+                    <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                  </span>
+                ) : (
+                  <>
+                    <span class="site-brand-mark">
+                      <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                    </span>
+                    <span class="site-brand-copy">
+                      <span class="site-brand-name">{site.name}</span>
+                    </span>
+                  </>
+                )}
               </a>
               <nav class="site-nav" aria-label="Primary">
                 {primaryNavItems.map((item) => (
@@ -144,13 +154,21 @@ const breadcrumbSchema = breadcrumbs.length > 0
             </div>
           ) : isVantageFamily ? (
             <div class="site-header-inner site-header-inner-vantage">
-              <a class="site-brand" href="/">
-                <span class="site-brand-mark">
-                  <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
-                </span>
-                <span class="site-brand-copy">
-                  <span class="site-brand-name">{site.name}</span>
-                </span>
+              <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                {useHeaderWordmark ? (
+                  <span class="site-brand-wordmark">
+                    <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                  </span>
+                ) : (
+                  <>
+                    <span class="site-brand-mark">
+                      <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                    </span>
+                    <span class="site-brand-copy">
+                      <span class="site-brand-name">{site.name}</span>
+                    </span>
+                  </>
+                )}
               </a>
               <div class="site-header-actions site-header-actions-vantage">
                 <nav class="site-nav" aria-label="Primary">
@@ -163,13 +181,21 @@ const breadcrumbSchema = breadcrumbs.length > 0
             </div>
           ) : isMeridianFamily ? (
             <div class="site-header-inner site-header-inner-meridian">
-              <a class="site-brand" href="/">
-                <span class="site-brand-mark">
-                  <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
-                </span>
-                <span class="site-brand-copy">
-                  <span class="site-brand-name">{site.name}</span>
-                </span>
+              <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                {useHeaderWordmark ? (
+                  <span class="site-brand-wordmark">
+                    <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                  </span>
+                ) : (
+                  <>
+                    <span class="site-brand-mark">
+                      <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                    </span>
+                    <span class="site-brand-copy">
+                      <span class="site-brand-name">{site.name}</span>
+                    </span>
+                  </>
+                )}
               </a>
               <div class="site-header-actions site-header-actions-meridian">
                 <nav class="site-nav" aria-label="Primary">
@@ -183,13 +209,21 @@ const breadcrumbSchema = breadcrumbs.length > 0
           ) : isEditorialFamily ? (
             <div class="site-header-inner site-header-inner-editorial">
               <div class="site-header-brand-block">
-                <a class="site-brand" href="/">
-                  <span class="site-brand-mark">
-                    <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
-                  </span>
-                  <span class="site-brand-copy">
-                    <span class="site-brand-name">{site.name}</span>
-                  </span>
+                <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                  {useHeaderWordmark ? (
+                    <span class="site-brand-wordmark">
+                      <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                    </span>
+                  ) : (
+                    <>
+                      <span class="site-brand-mark">
+                        <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                      </span>
+                      <span class="site-brand-copy">
+                        <span class="site-brand-name">{site.name}</span>
+                      </span>
+                    </>
+                  )}
                 </a>
               </div>
               <div class="site-header-actions site-header-actions-editorial">
@@ -202,13 +236,21 @@ const breadcrumbSchema = breadcrumbs.length > 0
             </div>
           ) : isAuvergneFamily ? (
             <div class="site-header-inner site-header-inner-auvergne">
-              <a class="site-brand" href="/">
-                <span class="site-brand-mark">
-                  <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
-                </span>
-                <span class="site-brand-copy">
-                  <span class="site-brand-name">{site.name}</span>
-                </span>
+              <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                {useHeaderWordmark ? (
+                  <span class="site-brand-wordmark">
+                    <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                  </span>
+                ) : (
+                  <>
+                    <span class="site-brand-mark">
+                      <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                    </span>
+                    <span class="site-brand-copy">
+                      <span class="site-brand-name">{site.name}</span>
+                    </span>
+                  </>
+                )}
               </a>
               <div class="site-header-actions site-header-actions-auvergne">
                 <nav class="site-nav" aria-label="Primary">
@@ -222,13 +264,21 @@ const breadcrumbSchema = breadcrumbs.length > 0
           ) : isCorporateFamily ? (
             <div class="site-header-inner site-header-inner-corporate">
               <div class="site-header-brand-block">
-                <a class="site-brand" href="/">
-                  <span class="site-brand-mark">
-                    <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
-                  </span>
-                  <span class="site-brand-copy">
-                    <span class="site-brand-name">{site.name}</span>
-                  </span>
+                <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                  {useHeaderWordmark ? (
+                    <span class="site-brand-wordmark">
+                      <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                    </span>
+                  ) : (
+                    <>
+                      <span class="site-brand-mark">
+                        <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                      </span>
+                      <span class="site-brand-copy">
+                        <span class="site-brand-name">{site.name}</span>
+                      </span>
+                    </>
+                  )}
                 </a>
               </div>
               <div class="site-header-actions site-header-actions-corporate">
@@ -242,13 +292,21 @@ const breadcrumbSchema = breadcrumbs.length > 0
             </div>
           ) : isConversionFamily ? (
             <div class="site-header-inner site-header-inner-conversion">
-              <a class="site-brand" href="/">
-                <span class="site-brand-mark">
-                  <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
-                </span>
-                <span class="site-brand-copy">
-                  <span class="site-brand-name">{site.name}</span>
-                </span>
+              <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                {useHeaderWordmark ? (
+                  <span class="site-brand-wordmark">
+                    <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                  </span>
+                ) : (
+                  <>
+                    <span class="site-brand-mark">
+                      <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                    </span>
+                    <span class="site-brand-copy">
+                      <span class="site-brand-name">{site.name}</span>
+                    </span>
+                  </>
+                )}
               </a>
               <div class="site-header-actions site-header-actions-conversion">
                 <nav class="site-nav" aria-label="Primary">
@@ -262,13 +320,21 @@ const breadcrumbSchema = breadcrumbs.length > 0
           ) : (
             <div class="site-header-inner site-header-inner-classic">
               <div class="site-header-brand-block">
-                <a class="site-brand" href="/">
-                  <span class="site-brand-mark">
-                    <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
-                  </span>
-                  <span class="site-brand-copy">
-                    <span class="site-brand-name">{site.name}</span>
-                  </span>
+                <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                  {useHeaderWordmark ? (
+                    <span class="site-brand-wordmark">
+                      <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                    </span>
+                  ) : (
+                    <>
+                      <span class="site-brand-mark">
+                        <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                      </span>
+                      <span class="site-brand-copy">
+                        <span class="site-brand-name">{site.name}</span>
+                      </span>
+                    </>
+                  )}
                 </a>
               </div>
               <nav class="site-nav" aria-label="Primary">
