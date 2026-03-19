@@ -166,6 +166,7 @@ a:hover {
 
 .site-brand--wordmark {
   gap: 0;
+  flex-shrink: 0;
 }
 
 .site-brand-mark {
@@ -185,13 +186,15 @@ a:hover {
 .site-brand-wordmark {
   display: inline-flex;
   align-items: center;
-  max-width: min(100%, 18rem);
+  width: min(100%, 18rem);
+  max-width: 18rem;
+  flex: 0 0 auto;
 }
 
 .site-brand-wordmark img {
-  width: auto;
+  width: 100%;
   height: auto;
-  max-width: 100%;
+  max-width: none;
   max-height: 3rem;
 }
 
@@ -984,7 +987,8 @@ a:hover {
 }
 
 .site-shell.theme-vantage_strategic .site-brand-wordmark {
-  max-width: min(100%, 20rem);
+  width: min(100%, 20rem);
+  max-width: 20rem;
 }
 
 .site-shell.theme-vantage_strategic .site-nav a {
@@ -1542,7 +1546,8 @@ a:hover {
   }
 
   .site-brand-wordmark {
-    max-width: min(100%, 15rem);
+    width: min(100%, 15rem);
+    max-width: 15rem;
   }
 
   .site-brand-wordmark img {
