@@ -55,8 +55,11 @@ const primaryCtaHref = site.navigation.find((item) => item.href.includes('contac
 const primaryNavItems = site.navigation.slice(0, 4);
 const footerNavItems = site.navigation.slice(0, 4);
 const footerTrustItems = [...site.trustLinks, { href: '/sitemap.html', label: 'HTML Sitemap' }];
+const logoAsset = typeof design.assets?.logo === 'string' ? design.assets.logo.trim() : '';
 const wordmarkAsset = typeof design.assets?.wordmark === 'string' ? design.assets.wordmark.trim() : '';
+const useHeaderLogo = logoAsset !== '';
 const useHeaderWordmark = wordmarkAsset !== '';
+const useHeaderBrandLockup = useHeaderLogo && useHeaderWordmark;
 const themeStyle = [
   `--de-color-background: ${design.palette.background}`,
   `--de-color-surface: ${design.palette.surface}`,
@@ -129,8 +132,17 @@ const breadcrumbSchema = breadcrumbs.length > 0
         <div class="site-container">
           {isHalcyonFamily ? (
             <div class="site-header-inner site-header-inner-halcyon">
-              <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
-                {useHeaderWordmark ? (
+              <a class:list={['site-brand', useHeaderBrandLockup && 'site-brand--lockup', !useHeaderBrandLockup && useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                {useHeaderBrandLockup ? (
+                  <>
+                    <span class:list={['site-brand-mark', 'site-brand-mark--lockup']}>
+                      <img src={logoAsset} alt={`${site.name} logo`} width="44" height="44" />
+                    </span>
+                    <span class:list={['site-brand-wordmark', 'site-brand-wordmark--lockup']}>
+                      <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                    </span>
+                  </>
+                ) : useHeaderWordmark ? (
                   <span class="site-brand-wordmark">
                     <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
                   </span>
@@ -154,8 +166,17 @@ const breadcrumbSchema = breadcrumbs.length > 0
             </div>
           ) : isVantageFamily ? (
             <div class="site-header-inner site-header-inner-vantage">
-              <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
-                {useHeaderWordmark ? (
+              <a class:list={['site-brand', useHeaderBrandLockup && 'site-brand--lockup', !useHeaderBrandLockup && useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                {useHeaderBrandLockup ? (
+                  <>
+                    <span class:list={['site-brand-mark', 'site-brand-mark--lockup']}>
+                      <img src={logoAsset} alt={`${site.name} logo`} width="44" height="44" />
+                    </span>
+                    <span class:list={['site-brand-wordmark', 'site-brand-wordmark--lockup']}>
+                      <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                    </span>
+                  </>
+                ) : useHeaderWordmark ? (
                   <span class="site-brand-wordmark">
                     <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
                   </span>
@@ -181,8 +202,17 @@ const breadcrumbSchema = breadcrumbs.length > 0
             </div>
           ) : isMeridianFamily ? (
             <div class="site-header-inner site-header-inner-meridian">
-              <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
-                {useHeaderWordmark ? (
+              <a class:list={['site-brand', useHeaderBrandLockup && 'site-brand--lockup', !useHeaderBrandLockup && useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                {useHeaderBrandLockup ? (
+                  <>
+                    <span class:list={['site-brand-mark', 'site-brand-mark--lockup']}>
+                      <img src={logoAsset} alt={`${site.name} logo`} width="44" height="44" />
+                    </span>
+                    <span class:list={['site-brand-wordmark', 'site-brand-wordmark--lockup']}>
+                      <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                    </span>
+                  </>
+                ) : useHeaderWordmark ? (
                   <span class="site-brand-wordmark">
                     <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
                   </span>
@@ -209,8 +239,17 @@ const breadcrumbSchema = breadcrumbs.length > 0
           ) : isEditorialFamily ? (
             <div class="site-header-inner site-header-inner-editorial">
               <div class="site-header-brand-block">
-                <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
-                  {useHeaderWordmark ? (
+                <a class:list={['site-brand', useHeaderBrandLockup && 'site-brand--lockup', !useHeaderBrandLockup && useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                  {useHeaderBrandLockup ? (
+                    <>
+                      <span class:list={['site-brand-mark', 'site-brand-mark--lockup']}>
+                        <img src={logoAsset} alt={`${site.name} logo`} width="44" height="44" />
+                      </span>
+                      <span class:list={['site-brand-wordmark', 'site-brand-wordmark--lockup']}>
+                        <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                      </span>
+                    </>
+                  ) : useHeaderWordmark ? (
                     <span class="site-brand-wordmark">
                       <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
                     </span>
@@ -236,8 +275,17 @@ const breadcrumbSchema = breadcrumbs.length > 0
             </div>
           ) : isAuvergneFamily ? (
             <div class="site-header-inner site-header-inner-auvergne">
-              <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
-                {useHeaderWordmark ? (
+              <a class:list={['site-brand', useHeaderBrandLockup && 'site-brand--lockup', !useHeaderBrandLockup && useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                {useHeaderBrandLockup ? (
+                  <>
+                    <span class:list={['site-brand-mark', 'site-brand-mark--lockup']}>
+                      <img src={logoAsset} alt={`${site.name} logo`} width="44" height="44" />
+                    </span>
+                    <span class:list={['site-brand-wordmark', 'site-brand-wordmark--lockup']}>
+                      <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                    </span>
+                  </>
+                ) : useHeaderWordmark ? (
                   <span class="site-brand-wordmark">
                     <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
                   </span>
@@ -264,8 +312,17 @@ const breadcrumbSchema = breadcrumbs.length > 0
           ) : isCorporateFamily ? (
             <div class="site-header-inner site-header-inner-corporate">
               <div class="site-header-brand-block">
-                <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
-                  {useHeaderWordmark ? (
+                <a class:list={['site-brand', useHeaderBrandLockup && 'site-brand--lockup', !useHeaderBrandLockup && useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                  {useHeaderBrandLockup ? (
+                    <>
+                      <span class:list={['site-brand-mark', 'site-brand-mark--lockup']}>
+                        <img src={logoAsset} alt={`${site.name} logo`} width="44" height="44" />
+                      </span>
+                      <span class:list={['site-brand-wordmark', 'site-brand-wordmark--lockup']}>
+                        <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                      </span>
+                    </>
+                  ) : useHeaderWordmark ? (
                     <span class="site-brand-wordmark">
                       <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
                     </span>
@@ -292,8 +349,17 @@ const breadcrumbSchema = breadcrumbs.length > 0
             </div>
           ) : isConversionFamily ? (
             <div class="site-header-inner site-header-inner-conversion">
-              <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
-                {useHeaderWordmark ? (
+              <a class:list={['site-brand', useHeaderBrandLockup && 'site-brand--lockup', !useHeaderBrandLockup && useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                {useHeaderBrandLockup ? (
+                  <>
+                    <span class:list={['site-brand-mark', 'site-brand-mark--lockup']}>
+                      <img src={logoAsset} alt={`${site.name} logo`} width="44" height="44" />
+                    </span>
+                    <span class:list={['site-brand-wordmark', 'site-brand-wordmark--lockup']}>
+                      <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                    </span>
+                  </>
+                ) : useHeaderWordmark ? (
                   <span class="site-brand-wordmark">
                     <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
                   </span>
@@ -320,8 +386,17 @@ const breadcrumbSchema = breadcrumbs.length > 0
           ) : (
             <div class="site-header-inner site-header-inner-classic">
               <div class="site-header-brand-block">
-                <a class:list={['site-brand', useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
-                  {useHeaderWordmark ? (
+                <a class:list={['site-brand', useHeaderBrandLockup && 'site-brand--lockup', !useHeaderBrandLockup && useHeaderWordmark && 'site-brand--wordmark']} href="/" aria-label={site.name}>
+                  {useHeaderBrandLockup ? (
+                    <>
+                      <span class:list={['site-brand-mark', 'site-brand-mark--lockup']}>
+                        <img src={logoAsset} alt={`${site.name} logo`} width="44" height="44" />
+                      </span>
+                      <span class:list={['site-brand-wordmark', 'site-brand-wordmark--lockup']}>
+                        <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
+                      </span>
+                    </>
+                  ) : useHeaderWordmark ? (
                     <span class="site-brand-wordmark">
                       <img src={wordmarkAsset} alt={`${site.name} wordmark`} width="320" height="72" />
                     </span>
