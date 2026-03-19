@@ -241,6 +241,16 @@ a:hover {
   align-items: start;
 }
 
+.site-header-inner-auvergne,
+.site-footer-inner-auvergne {
+  display: grid;
+  align-items: center;
+}
+
+.site-header-inner-auvergne {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
 .site-header-inner-corporate,
 .site-footer-inner-corporate {
   display: grid;
@@ -252,6 +262,14 @@ a:hover {
   justify-items: end;
 }
 
+.site-header-actions-auvergne {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.9rem;
+}
+
 .site-header-actions-corporate {
   display: grid;
   gap: 0.8rem;
@@ -260,6 +278,11 @@ a:hover {
 
 .site-footer-inner-editorial {
   grid-template-columns: minmax(0, 1.2fr) minmax(10rem, auto) minmax(12rem, auto);
+}
+
+.site-footer-inner-auvergne {
+  grid-template-columns: minmax(0, 1.2fr) minmax(10rem, auto) minmax(12rem, auto) minmax(10rem, auto);
+  align-items: end;
 }
 
 .site-footer-inner-corporate {
@@ -380,6 +403,156 @@ a:hover {
   background: white;
   color: var(--de-color-secondary);
   box-shadow: 0 22px 40px -28px rgba(255, 255, 255, 0.65);
+}
+
+.site-shell.theme-auvergne_authority {
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--de-color-primary) 10%, transparent) 0, transparent 22%),
+    linear-gradient(180deg, color-mix(in srgb, var(--de-color-background) 98%, black) 0%, var(--de-color-background) 100%);
+}
+
+.site-shell.theme-auvergne_authority::before {
+  opacity: 0.025;
+}
+
+.site-shell.theme-auvergne_authority .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding-top: 0;
+  backdrop-filter: blur(10px);
+}
+
+.site-shell.theme-auvergne_authority .site-header-inner {
+  border-color: color-mix(in srgb, var(--de-color-primary) 18%, var(--de-color-border));
+  border-radius: 0;
+  background: color-mix(in srgb, var(--de-color-background) 92%, transparent);
+  box-shadow: none;
+  color: var(--de-color-text);
+}
+
+.site-shell.theme-auvergne_authority .site-brand-mark {
+  border-radius: 0.3rem;
+  border-color: color-mix(in srgb, var(--de-color-primary) 22%, var(--de-color-border));
+  background: color-mix(in srgb, var(--de-color-surface) 92%, black);
+}
+
+.site-shell.theme-auvergne_authority .site-nav a {
+  color: color-mix(in srgb, var(--de-color-text) 70%, var(--de-color-primary));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-shell.theme-auvergne_authority .site-nav a:hover {
+  background: color-mix(in srgb, var(--de-color-primary) 8%, transparent);
+  color: var(--de-color-text);
+}
+
+.site-shell.theme-auvergne_authority .site-header-cta {
+  border: 1px solid color-mix(in srgb, var(--de-color-primary) 56%, transparent);
+  background: transparent;
+  color: var(--de-color-primary);
+}
+
+.site-shell.theme-auvergne_authority .site-header-cta:hover {
+  background: color-mix(in srgb, var(--de-color-primary) 10%, transparent);
+  color: var(--de-color-accent);
+}
+
+.site-shell.theme-auvergne_authority .site-main {
+  padding-top: 2.25rem;
+}
+
+.site-shell.theme-auvergne_authority .site-footer {
+  padding-top: 2.4rem;
+  padding-bottom: 2rem;
+}
+
+.site-shell.theme-auvergne_authority .site-footer-inner-auvergne {
+  border-color: color-mix(in srgb, var(--de-color-border) 92%, black);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--de-color-text);
+}
+
+.site-shell.theme-auvergne_authority .site-footer-inner-auvergne .site-footer-label,
+.site-shell.theme-auvergne_authority .site-footer-inner-auvergne .site-footer-note {
+  color: color-mix(in srgb, var(--de-color-text) 58%, var(--de-color-primary));
+}
+
+.site-shell.theme-auvergne_authority .site-footer-inner-auvergne .site-footer-link-list a {
+  color: color-mix(in srgb, var(--de-color-text) 88%, var(--de-color-primary));
+}
+
+.site-shell.theme-auvergne_authority .site-footer-inner-auvergne .site-footer-link-list a:hover {
+  color: var(--de-color-text);
+}
+
+.site-shell.theme-auvergne_authority .page-hero,
+.site-shell.theme-auvergne_authority .page-card,
+.site-shell.theme-auvergne_authority .content-page,
+.site-shell.theme-auvergne_authority .surface-tile {
+  border-color: color-mix(in srgb, var(--de-color-primary) 14%, var(--de-color-border));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--de-color-surface) 96%, black) 0%, color-mix(in srgb, var(--de-color-background) 92%, black) 100%);
+  box-shadow: 0 28px 68px -40px rgba(2, 6, 23, 0.88);
+}
+
+.site-shell.theme-auvergne_authority .page-hero::after,
+.site-shell.theme-auvergne_authority .page-card::after,
+.site-shell.theme-auvergne_authority .content-page::after {
+  height: 0.16rem;
+  background: linear-gradient(90deg, transparent 0%, var(--de-color-primary) 18%, var(--de-color-primary) 82%, transparent 100%);
+}
+
+.site-shell.theme-auvergne_authority .surface-tile {
+  position: relative;
+  overflow: hidden;
+}
+
+.site-shell.theme-auvergne_authority .surface-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 0.1rem;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--de-color-primary) 88%, white), transparent);
+}
+
+.site-shell.theme-auvergne_authority .hero-copy h1,
+.site-shell.theme-auvergne_authority .content-page h1,
+.site-shell.theme-auvergne_authority .page-card h1 {
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.site-shell.theme-auvergne_authority .eyebrow {
+  background: color-mix(in srgb, var(--de-color-primary) 10%, transparent);
+  color: var(--de-color-primary);
+}
+
+.site-shell.theme-auvergne_authority .hero-copy p,
+.site-shell.theme-auvergne_authority .lede,
+.site-shell.theme-auvergne_authority .page-card p,
+.site-shell.theme-auvergne_authority .content-page p,
+.site-shell.theme-auvergne_authority .rich-content p,
+.site-shell.theme-auvergne_authority .page-card li,
+.site-shell.theme-auvergne_authority .content-page li,
+.site-shell.theme-auvergne_authority .rich-content li {
+  color: color-mix(in srgb, var(--de-color-text) 78%, var(--de-color-muted));
+}
+
+.site-shell.theme-auvergne_authority .button-link--primary {
+  border-color: color-mix(in srgb, var(--de-color-primary) 58%, transparent);
+  background: transparent;
+  color: var(--de-color-primary);
+}
+
+.site-shell.theme-auvergne_authority .button-link--secondary {
+  border-color: color-mix(in srgb, var(--de-color-border) 92%, black);
+  background: color-mix(in srgb, var(--de-color-surface) 92%, black);
+  color: var(--de-color-text);
 }
 
 .site-shell.theme-corporate_command .site-header {
@@ -759,6 +932,8 @@ a:hover {
   .site-footer-inner-classic,
   .site-header-inner-editorial,
   .site-footer-inner-editorial,
+  .site-header-inner-auvergne,
+  .site-footer-inner-auvergne,
   .site-header-inner-corporate,
   .site-footer-inner-corporate,
   .site-header-inner-conversion,
@@ -767,6 +942,7 @@ a:hover {
   }
 
   .site-header-actions-editorial,
+  .site-header-actions-auvergne,
   .site-header-actions-corporate,
   .site-header-actions-conversion {
     justify-items: start;
