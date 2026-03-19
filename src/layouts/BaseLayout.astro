@@ -271,6 +271,7 @@ const breadcrumbSchema = breadcrumbs.length > 0
             <div class="site-footer-inner site-footer-inner-halcyon">
               <div class="site-footer-column site-footer-column-brand">
                 <span class="site-brand-name">{site.name}</span>
+                <p class="site-footer-note">&copy; <span data-current-year></span> {site.name}</p>
               </div>
               <div class="site-footer-column">
                 <span class="site-footer-label">Navigate</span>
@@ -293,6 +294,7 @@ const breadcrumbSchema = breadcrumbs.length > 0
             <div class="site-footer-inner site-footer-inner-meridian">
               <div class="site-footer-column site-footer-column-brand">
                 <span class="site-brand-name">{site.name}</span>
+                <p class="site-footer-note">&copy; <span data-current-year></span> {site.name}</p>
               </div>
               <div class="site-footer-column">
                 <span class="site-footer-label">Capabilities</span>
@@ -315,6 +317,7 @@ const breadcrumbSchema = breadcrumbs.length > 0
             <div class="site-footer-inner site-footer-inner-editorial">
               <div class="site-footer-column site-footer-column-brand">
                 <span class="site-brand-name">{site.name}</span>
+                <p class="site-footer-note">&copy; <span data-current-year></span> {site.name}</p>
               </div>
               <div class="site-footer-column">
                 <span class="site-footer-label">Explore</span>
@@ -337,6 +340,7 @@ const breadcrumbSchema = breadcrumbs.length > 0
             <div class="site-footer-inner site-footer-inner-auvergne">
               <div class="site-footer-column site-footer-column-brand">
                 <span class="site-brand-name">{site.name}</span>
+                <p class="site-footer-note">&copy; <span data-current-year></span> {site.name}</p>
               </div>
               <div class="site-footer-column">
                 <span class="site-footer-label">Navigate</span>
@@ -354,15 +358,12 @@ const breadcrumbSchema = breadcrumbs.length > 0
                   ))}
                 </nav>
               </div>
-              <div class="site-footer-column site-footer-column-meta">
-                <span class="site-footer-label">All rights reserved</span>
-                <p class="site-footer-note">&copy; <span data-current-year></span> {site.name}</p>
-              </div>
             </div>
           ) : isCorporateFamily ? (
             <div class="site-footer-inner site-footer-inner-corporate">
               <div class="site-footer-column site-footer-column-brand">
                 <span class="site-brand-name">{site.name}</span>
+                <p class="site-footer-note">&copy; <span data-current-year></span> {site.name}</p>
               </div>
               <div class="site-footer-column">
                 <span class="site-footer-label">Capabilities</span>
@@ -389,6 +390,7 @@ const breadcrumbSchema = breadcrumbs.length > 0
               <div class="site-footer-inner site-footer-inner-conversion">
                 <div class="site-footer-column site-footer-column-brand">
                   <span class="site-brand-name">{site.name}</span>
+                  <p class="site-footer-note">&copy; <span data-current-year></span> {site.name}</p>
                 </div>
                 <div class="site-footer-column">
                   <span class="site-footer-label">Explore</span>
@@ -412,6 +414,7 @@ const breadcrumbSchema = breadcrumbs.length > 0
             <div class="site-footer-inner site-footer-inner-classic">
               <div class="site-footer-column site-footer-column-brand">
                 <span class="site-brand-name">{site.name}</span>
+                <p class="site-footer-note">&copy; <span data-current-year></span> {site.name}</p>
               </div>
               <div class="site-footer-column">
                 <span class="site-footer-label">Company</span>
@@ -434,12 +437,10 @@ const breadcrumbSchema = breadcrumbs.length > 0
         </div>
       </footer>
     </div>
-    {isAuvergneFamily && (
-      <script is:inline>
-        document.querySelectorAll('[data-current-year]').forEach((node) => {
-          node.textContent = String(new Date().getFullYear());
-        });
-      </script>
-    )}
+    <script is:inline>
+      document.querySelectorAll('[data-current-year]').forEach((node) => {
+        node.textContent = String(new Date().getFullYear());
+      });
+    </script>
   </body>
 </html>
