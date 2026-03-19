@@ -45,6 +45,7 @@ const fontStylesheets = (() => {
 })();
 const themeFamily = typeof design.theme?.family === 'string' ? design.theme.family : 'service_classic';
 const isAuvergneFamily = themeFamily === 'auvergne_authority';
+const isMeridianFamily = themeFamily === 'meridian_infrastructure';
 const isEditorialFamily = themeFamily === 'editorial_authority';
 const isConversionFamily = themeFamily === 'modern_conversion';
 const isCorporateFamily = themeFamily === 'corporate_command';
@@ -122,7 +123,26 @@ const breadcrumbSchema = breadcrumbs.length > 0
     <div class="site-frame">
       <header class:list={['site-header', `site-header-${themeFamily}`]}>
         <div class="site-container">
-          {isEditorialFamily ? (
+          {isMeridianFamily ? (
+            <div class="site-header-inner site-header-inner-meridian">
+              <a class="site-brand" href="/">
+                <span class="site-brand-mark">
+                  <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                </span>
+                <span class="site-brand-copy">
+                  <span class="site-brand-name">{site.name}</span>
+                </span>
+              </a>
+              <div class="site-header-actions site-header-actions-meridian">
+                <nav class="site-nav" aria-label="Primary">
+                  {primaryNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+                <a class="site-header-cta" href={primaryCtaHref}>Engage Us</a>
+              </div>
+            </div>
+          ) : isEditorialFamily ? (
             <div class="site-header-inner site-header-inner-editorial">
               <div class="site-header-brand-block">
                 <a class="site-brand" href="/">
@@ -229,7 +249,29 @@ const breadcrumbSchema = breadcrumbs.length > 0
       </main>
       <footer class:list={['site-footer', `site-footer-${themeFamily}`]}>
         <div class="site-container">
-          {isEditorialFamily ? (
+          {isMeridianFamily ? (
+            <div class="site-footer-inner site-footer-inner-meridian">
+              <div class="site-footer-column site-footer-column-brand">
+                <span class="site-brand-name">{site.name}</span>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Capabilities</span>
+                <nav class="site-footer-link-list" aria-label="Footer capabilities">
+                  {footerNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Trust & Discovery</span>
+                <nav class="site-footer-link-list" aria-label="Footer trust">
+                  {footerTrustItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          ) : isEditorialFamily ? (
             <div class="site-footer-inner site-footer-inner-editorial">
               <div class="site-footer-column site-footer-column-brand">
                 <span class="site-brand-name">{site.name}</span>
@@ -353,7 +395,7 @@ const breadcrumbSchema = breadcrumbs.length > 0
       </footer>
     </div>
     {isAuvergneFamily && (
-      <script>
+      <script is:inline>
         document.querySelectorAll('[data-current-year]').forEach((node) => {
           node.textContent = String(new Date().getFullYear());
         });

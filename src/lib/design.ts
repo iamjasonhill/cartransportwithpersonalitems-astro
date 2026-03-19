@@ -1,21 +1,21 @@
 export const design = {
   version: 1,
   theme: {
-    family: "auvergne_authority",
-    templateFamily: "auvergne_authority",
+    family: "meridian_infrastructure",
+    templateFamily: "meridian_infrastructure",
   },
-  palette: {"background":"#0c0f14","surface":"#111520","text":"#e8e4dc","muted":"rgba(232, 228, 220, 0.64)","border":"rgba(232, 228, 220, 0.1)","primary":"#c9a84c","secondary":"#3d6b8e","accent":"#f0ece3"},
+  palette: {"background":"#f2ede4","surface":"#ece6dc","text":"#1a2a2e","muted":"#4a5a5e","border":"#d5cfc5","primary":"#e05a2b","secondary":"#0f2d3d","accent":"#e05a2b"},
   typography: {
     headingFont: "dm_serif_display",
     bodyFont: "public_sans",
     headingStack: "'DM Serif Display', Georgia, serif",
     bodyStack: "'Public Sans', 'Helvetica Neue', Arial, sans-serif",
-    scale: "editorial",
+    scale: "structured",
     fontUrl: "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap",
   },
-  shape: {"radius":"0.45rem","shadow":"0 34px 88px -44px rgba(2, 6, 23, 0.82)"},
+  shape: {"radius":"0","shadow":"0 24px 56px -36px rgba(15, 45, 61, 0.18)"},
   density: "comfortable",
-  layout: {"contentWidth":"80rem","sectionGap":"5.25rem"},
+  layout: {"contentWidth":"80rem","sectionGap":"5rem"},
   ctaStyle: "solid",
   imageryStyle: "editorial",
   assets: {
