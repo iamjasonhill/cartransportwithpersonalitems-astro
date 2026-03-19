@@ -45,6 +45,7 @@ const fontStylesheets = (() => {
 })();
 const themeFamily = typeof design.theme?.family === 'string' ? design.theme.family : 'service_classic';
 const isHalcyonFamily = themeFamily === 'halcyon_boutique';
+const isVantageFamily = themeFamily === 'vantage_strategic';
 const isAuvergneFamily = themeFamily === 'auvergne_authority';
 const isMeridianFamily = themeFamily === 'meridian_infrastructure';
 const isEditorialFamily = themeFamily === 'editorial_authority';
@@ -140,6 +141,25 @@ const breadcrumbSchema = breadcrumbs.length > 0
                 ))}
               </nav>
               <a class="site-header-cta" href={primaryCtaHref}>Enquire</a>
+            </div>
+          ) : isVantageFamily ? (
+            <div class="site-header-inner site-header-inner-vantage">
+              <a class="site-brand" href="/">
+                <span class="site-brand-mark">
+                  <img src={design.assets.logo} alt={`${site.name} logo`} width="44" height="44" />
+                </span>
+                <span class="site-brand-copy">
+                  <span class="site-brand-name">{site.name}</span>
+                </span>
+              </a>
+              <div class="site-header-actions site-header-actions-vantage">
+                <nav class="site-nav" aria-label="Primary">
+                  {primaryNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+                <a class="site-header-cta" href={primaryCtaHref}>Talk To Us</a>
+              </div>
             </div>
           ) : isMeridianFamily ? (
             <div class="site-header-inner site-header-inner-meridian">
@@ -276,6 +296,29 @@ const breadcrumbSchema = breadcrumbs.length > 0
               <div class="site-footer-column">
                 <span class="site-footer-label">Navigate</span>
                 <nav class="site-footer-link-list" aria-label="Footer navigation">
+                  {footerNavItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Trust & Discovery</span>
+                <nav class="site-footer-link-list" aria-label="Footer trust">
+                  {footerTrustItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          ) : isVantageFamily ? (
+            <div class="site-footer-inner site-footer-inner-vantage">
+              <div class="site-footer-column site-footer-column-brand">
+                <span class="site-brand-name">{site.name}</span>
+                <p class="site-footer-note">&copy; <span data-current-year></span> {site.name}</p>
+              </div>
+              <div class="site-footer-column">
+                <span class="site-footer-label">Strategy</span>
+                <nav class="site-footer-link-list" aria-label="Footer strategy">
                   {footerNavItems.map((item) => (
                     <a href={item.href}>{item.label}</a>
                   ))}
