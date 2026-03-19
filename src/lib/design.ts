@@ -1,21 +1,21 @@
 export const design = {
   version: 1,
   theme: {
-    family: "meridian_infrastructure",
-    templateFamily: "meridian_infrastructure",
+    family: "halcyon_boutique",
+    templateFamily: "halcyon_boutique",
   },
-  palette: {"background":"#f2ede4","surface":"#ece6dc","text":"#1a2a2e","muted":"#4a5a5e","border":"#d5cfc5","primary":"#e05a2b","secondary":"#0f2d3d","accent":"#e05a2b"},
+  palette: {"background":"#ffffff","surface":"#f7f4ef","text":"#2a2520","muted":"#998e82","border":"#ede9e2","primary":"#1c4a32","secondary":"#2a2520","accent":"#2a6b48"},
   typography: {
     headingFont: "dm_serif_display",
     bodyFont: "public_sans",
     headingStack: "'DM Serif Display', Georgia, serif",
     bodyStack: "'Public Sans', 'Helvetica Neue', Arial, sans-serif",
-    scale: "structured",
+    scale: "editorial",
     fontUrl: "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap",
   },
-  shape: {"radius":"0","shadow":"0 24px 56px -36px rgba(15, 45, 61, 0.18)"},
+  shape: {"radius":"0.5rem","shadow":"0 22px 54px -36px rgba(28, 74, 50, 0.12)"},
   density: "comfortable",
-  layout: {"contentWidth":"80rem","sectionGap":"5rem"},
+  layout: {"contentWidth":"82rem","sectionGap":"5.5rem"},
   ctaStyle: "solid",
   imageryStyle: "editorial",
   assets: {
