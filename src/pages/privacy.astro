@@ -3,8 +3,8 @@ import BrandLayout from '../layouts/BrandLayout.astro';
 import { privacySections } from '../lib/content';
 import { site } from '../lib/site';
 
-const title = `${site.name} Privacy Policy`;
-const description = `Read how ${site.organizationName} collects, uses, stores, and discloses personal information for ${site.name}.`;
+const title = `Privacy Policy | ${site.name}`;
+const description = `Read how ${site.organizationName} collects, uses, stores, and protects personal information for ${site.name}.`;
 const breadcrumbs = [
   { name: 'Home', url: site.url },
   { name: 'Privacy', url: new URL('/privacy/', site.url).toString() },

@@ -3,8 +3,8 @@ import BrandLayout from '../layouts/BrandLayout.astro';
 import { disclaimerSections } from '../lib/content';
 import { site } from '../lib/site';
 
-const title = `${site.name} Disclaimer`;
-const description = `Read the website disclaimer for ${site.name}.`;
+const title = `Disclaimer | ${site.name}`;
+const description = `Read the website disclaimer covering pricing, timing, route coverage, and general service information for ${site.name}.`;
 const breadcrumbs = [
   { name: 'Home', url: site.url },
   { name: 'Disclaimer', url: new URL('/disclaimer/', site.url).toString() },

@@ -29,9 +29,9 @@ export const site = {
   locale: 'en-AU',
   organizationName: 'Moveroo Cars',
   contactEmail: 'info@cartransportwithpersonalitems.com.au',
-  defaultTitle: 'Car Transport With Personal Items',
+  defaultTitle: 'Car Transport With Personal Items in Australia',
   defaultDescription:
-    'Book vehicle transport with approved personal items left inside, with clearer route checks, declared-item approval, and practical booking guidance.',
+    'Get a quote to move your car with approved personal items left inside, with route checks, declared-item approval, and clear booking guidance Australia-wide.',
   seoAssets: {
     ogImage: '/social-card.jpg',
     twitterImage: '/social-card.jpg',
