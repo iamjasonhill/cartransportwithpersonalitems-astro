@@ -80,6 +80,18 @@ const breadcrumbSchema = breadcrumbs.length > 0
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u='//stats.redirection.com.au/';
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', '8']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.async = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+      })();
+    </script>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     {breadcrumbSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
   </head>
