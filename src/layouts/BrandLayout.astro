@@ -7,11 +7,14 @@ interface BreadcrumbItem {
   url: string;
 }
 
+type JsonLdSchema = Record<string, unknown>;
+
 interface Props {
   title: string;
   description: string;
   canonicalPath: string;
   breadcrumbs?: BreadcrumbItem[];
+  structuredData?: JsonLdSchema[];
   noindex?: boolean;
   navCtaLabel?: string;
   navCtaHref?: string;
@@ -22,6 +25,7 @@ const {
   description,
   canonicalPath,
   breadcrumbs = [],
+  structuredData = [],
   noindex = false,
   navCtaLabel = 'Request A Route Review',
   navCtaHref = '/contact/',
@@ -34,9 +38,37 @@ const faviconType = site.seoAssets.favicon.endsWith('.png') ? 'image/png' : 'ima
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${site.url}#organization`,
   name: site.organizationName,
   url: site.url,
+  description: site.defaultDescription,
   email: site.contactEmail,
+  image: socialImageUrl,
+  areaServed: {
+    '@type': 'Country',
+    name: 'Australia',
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: site.contactEmail,
+      availableLanguage: site.locale,
+      url: new URL('/contact/', site.url).toString(),
+    },
+  ],
+};
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${site.url}#website`,
+  url: site.url,
+  name: site.name,
+  description: site.defaultDescription,
+  inLanguage: site.locale,
+  publisher: {
+    '@id': `${site.url}#organization`,
+  },
 };
 const breadcrumbSchema = breadcrumbs.length > 0
   ? {
@@ -50,6 +82,7 @@ const breadcrumbSchema = breadcrumbs.length > 0
       })),
     }
   : null;
+const schemas = [organizationSchema, websiteSchema, breadcrumbSchema, ...structuredData].filter(Boolean);
 ---
 <!doctype html>
 <html lang={site.locale}>
@@ -92,8 +125,9 @@ const breadcrumbSchema = breadcrumbs.length > 0
         g.async = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
       })();
     </script>
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-    {breadcrumbSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+    {schemas.map((schema) => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body>
     <div class="brand-shell">

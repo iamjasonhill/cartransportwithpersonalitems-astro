@@ -9,8 +9,54 @@ const breadcrumbs = [
   { name: 'Home', url: site.url },
   { name: 'Services', url: new URL('/services/', site.url).toString() },
 ];
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${site.url}/services/#service`,
+  name: site.name,
+  serviceType: 'Interstate car transport with approved personal items',
+  description: [...serviceDetails.overview, ...serviceDetails.pricing].join(' '),
+  url: new URL('/services/', site.url).toString(),
+  provider: {
+    '@id': `${site.url}#organization`,
+  },
+  areaServed: [
+    {
+      '@type': 'Country',
+      name: 'Australia',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Queensland',
+    },
+  ],
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: new URL('/contact/', site.url).toString(),
+    availableLanguage: site.locale,
+  },
+  termsOfService: new URL('/terms/', site.url).toString(),
+};
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
-<BrandLayout title={title} description={description} canonicalPath="/services/" breadcrumbs={breadcrumbs}>
+<BrandLayout
+  title={title}
+  description={description}
+  canonicalPath="/services/"
+  breadcrumbs={breadcrumbs}
+  structuredData={[serviceSchema, faqSchema]}
+>
   <section class="hero">
     <div class="hero-grid hero-grid--single">
       <div class="hero-copy hero-copy--compact">

@@ -1,10 +1,40 @@
 ---
 import BrandHomepage from '../components/BrandHomepage.astro';
 import BrandLayout from '../layouts/BrandLayout.astro';
+import { homepage } from '../lib/content';
+import { site } from '../lib/site';
 
 const title = 'Car Transport With Personal Items in Australia';
 const description = 'Get a quote to move your car with approved personal items left inside, with route checks, declared-item approval, and clear booking guidance Australia-wide.';
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${site.url}/services/#service`,
+  name: site.name,
+  serviceType: 'Interstate car transport with approved personal items',
+  description: homepage.intro,
+  url: new URL('/services/', site.url).toString(),
+  provider: {
+    '@id': `${site.url}#organization`,
+  },
+  areaServed: [
+    {
+      '@type': 'Country',
+      name: 'Australia',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Queensland',
+    },
+  ],
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: new URL('/contact/', site.url).toString(),
+    availableLanguage: site.locale,
+  },
+  termsOfService: new URL('/terms/', site.url).toString(),
+};
 ---
-<BrandLayout title={title} description={description} canonicalPath="/">
+<BrandLayout title={title} description={description} canonicalPath="/" structuredData={[serviceSchema]}>
   <BrandHomepage />
 </BrandLayout>
