@@ -4,6 +4,7 @@ import { publicPages, site } from '../lib/site';
 export const prerender = true;
 
 export const GET: APIRoute = () => {
+  const baseUrl = site.url.replace(/\/$/, '');
   const pageLines = publicPages.map((page) => `- ${site.url.replace(/\/$/, '')}${page.href}`);
 
   return new Response(
