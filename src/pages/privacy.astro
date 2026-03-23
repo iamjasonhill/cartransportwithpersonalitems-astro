@@ -6,9 +6,59 @@ import { site } from '../lib/site';
 const title = `${site.name} Privacy Policy`;
 const description = `Read how ${site.organizationName} collects, uses, stores, and discloses personal information for ${site.name}.`;
 const breadcrumbs = [
-  { name: 'Home', url: site.url },
-  { name: 'Privacy', url: new URL('/privacy/', site.url).toString() },
+  { name: "Home", url: site.url },
+  { name: pageTitle, url: new URL(canonicalPath, site.url).toString() },
 ];
+const contentHtml = String.raw`
+<p>Moveroo Cars respects your privacy and is committed to handling personal information in an open and transparent way. This Privacy Policy explains how we collect, hold, use, and disclose personal information when you use <a href="https://cartransportwithpersonalitems.com.au">https://cartransportwithpersonalitems.com.au</a>, contact us, request a quote, or make an enquiry about Car Transport With Personal Items.</p>
+<p>This policy is intended to describe our privacy practices in an Australian context, including how you can access or correct your information and how privacy complaints can be raised with us. Where the Privacy Act 1988 (Cth) and the Australian Privacy Principles apply to our operations, this policy is intended to support those requirements.</p>
+<h2>What is personal information?</h2>
+<p>Personal information generally means information or an opinion about an identified individual, or an individual who is reasonably identifiable.</p>
+<h2>What personal information we may collect</h2>
+<p>We collect information you choose to share with us and limited technical information generated when you browse the site.</p>
+<p>We may collect:</p>
+<ul>
+<li>contact details you provide through quote, enquiry, booking, or contact forms</li>
+<li>service details related to transport requests, schedules, pickup and delivery needs, or related enquiries</li>
+<li>communications you send to us by email, phone, or website forms</li>
+<li>website usage information such as browser, device, referral source, and visit activity</li>
+</ul>
+<h2>How we collect personal information</h2>
+<p>We may collect personal information directly from you when you submit a quote request, booking request, enquiry, or other form through the website, speak with us by phone, or communicate with us by email or other channels.</p>
+<p>We may also collect limited technical and usage information automatically through cookies, analytics tools, and similar website technologies. In some cases, we may receive information from service providers, contractors, referral sources, or business partners where reasonably necessary to provide services, coordinate transport activity, or respond to a quote or service enquiry.</p>
+<h2>Why we collect, hold, use, and disclose personal information</h2>
+<p>We use information to:</p>
+<ul>
+<li>respond to enquiries and quote requests</li>
+<li>manage bookings and service communication</li>
+<li>deliver, support, and improve our services</li>
+<li>maintain site security and diagnose issues</li>
+<li>understand how people use the website</li>
+<li>meet our legal, regulatory, and record-keeping obligations</li>
+</ul>
+<h2>Disclosure of personal information</h2>
+<p>We may disclose personal information to service providers, contractors, technology partners, payment processors, professional advisers, or other parties where reasonably necessary to operate the website, run our business, or provide requested services.</p>
+<p>This may include subcontractors, carriers, depots, communications providers, cloud or CRM platforms, and other support providers used to operate Car Transport With Personal Items, coordinate transport requests, and respond to customer enquiries.</p>
+<h2>How long we retain information</h2>
+<p>We keep information for as long as it is reasonably needed to respond to enquiries, deliver services, maintain records, resolve disputes, or comply with legal obligations.</p>
+<h2>Cookies, analytics, and website tracking</h2>
+<p>Like most modern websites, we use website technologies that help us understand visits and improve site performance.</p>
+<p>We may use cookies, analytics tools, and similar technologies to understand traffic, improve website performance, and support forms or service functionality. You can usually adjust cookie settings through your browser, although some parts of the website may not function as intended if certain technologies are disabled.</p>
+<h2>Overseas disclosure</h2>
+<p>Our business operations are Australian-focused, but some technology or cloud service providers we use may store or process information outside Australia. Where this occurs, we take reasonable steps to ensure those providers handle information in a manner consistent with our privacy expectations and applicable legal requirements.</p>
+<h2>Data security</h2>
+<p>We take reasonable steps to protect the information we hold from misuse, interference, loss, and unauthorised access or disclosure.</p>
+<h2>Access and correction</h2>
+<p>You may request access to personal information we hold about you, and you may also request correction if you believe the information is inaccurate, incomplete, or out of date. We may need to verify your identity before actioning a request.</p>
+<h2>Privacy complaints</h2>
+<p>If you believe we have handled your personal information in a way that is inconsistent with this policy, please contact us first so we can investigate and respond. If you are not satisfied with our response, you may wish to contact the Office of the Australian Information Commissioner (OAIC) via <a href="https://www.oaic.gov.au">https://www.oaic.gov.au</a>.</p>
+<h2>Direct marketing</h2>
+<p>Where permitted, we may send service updates, quote follow-ups, or marketing communications that we believe may be relevant to you. You can opt out of marketing communications at any time by following the unsubscribe instructions in the message or by contacting us directly.</p>
+<h2>Contact</h2>
+<p>If you have privacy-related questions or requests, contact us at <a href="mailto:info@cartransportwithpersonalitems.com.au">info@cartransportwithpersonalitems.com.au</a>.</p>
+<h2>Updates to this policy</h2>
+<p>We may update this Privacy Policy from time to time. The current version applies from March 17, 2026.</p>
+`;
 ---
 <BrandLayout title={title} description={description} canonicalPath="/privacy/" breadcrumbs={breadcrumbs}>
   <section class="hero">

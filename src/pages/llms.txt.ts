@@ -11,7 +11,7 @@ export const GET: APIRoute = () => {
       '# llms.txt',
       `Site: ${site.name}`,
       `Canonical: ${site.url}`,
-      `Primary sitemap: ${site.url.replace(/\/$/, '')}/sitemap-index.xml`,
+      `Primary sitemap: ${baseUrl}/sitemap-index.xml`,
       '',
       `- ${site.url.replace(/\/$/, '')}/sitemap-index.xml`,
       `- ${site.url.replace(/\/$/, '')}/sitemap.html`,

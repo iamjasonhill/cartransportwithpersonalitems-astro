@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800');</style>
+    <pattern id="bgrid" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <line x1="80" y1="0" x2="80" y2="80" stroke="#f0b429" stroke-width="0.4" opacity="0.08"/>
+      <line x1="0" y1="80" x2="80" y2="80" stroke="#f0b429" stroke-width="0.4" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="1200" fill="#07111f"/>
+  <rect width="1600" height="1200" fill="url(#bgrid)"/>
+
+  <!-- Diagonal surface panel — right side (Vantage convention) -->
+  <polygon points="1100,0 1600,0 1600,1200 900,1200" fill="#0d1e35"/>
+
+  <!-- Horizon / road ground line -->
+  <rect x="0" y="820" width="1600" height="3" fill="#f0b429" opacity="0.4"/>
+
+  <!-- Road surface -->
+  <rect x="0" y="822" width="1600" height="378" fill="#0a1525"/>
+  <!-- Road markings -->
+  <rect x="0" y="900" width="140" height="8" fill="#f0b429" opacity="0.18"/>
+  <rect x="220" y="900" width="140" height="8" fill="#f0b429" opacity="0.18"/>
+  <rect x="440" y="900" width="140" height="8" fill="#f0b429" opacity="0.18"/>
+  <rect x="660" y="900" width="140" height="8" fill="#f0b429" opacity="0.18"/>
+  <rect x="880" y="900" width="140" height="8" fill="#f0b429" opacity="0.18"/>
+  <rect x="1100" y="900" width="140" height="8" fill="#f0b429" opacity="0.18"/>
+  <rect x="1320" y="900" width="140" height="8" fill="#f0b429" opacity="0.18"/>
+
+  <!-- === TRANSPORT CARRIER TRUCK === -->
+  <!-- Trailer frame -->
+  <rect x="120" y="700" width="1020" height="28" fill="#1a2e42"/>
+  <rect x="120" y="700" width="1020" height="6" fill="#f0b429" opacity="0.45"/>
+  <!-- Trailer side rails -->
+  <rect x="130" y="580" width="12" height="120" fill="#2a3e55"/>
+  <rect x="1098" y="580" width="12" height="120" fill="#2a3e55"/>
+  <!-- Rear crossbar -->
+  <rect x="130" y="622" width="380" height="10" fill="#2a3e55"/>
+  <!-- Front crossbar -->
+  <rect x="750" y="622" width="362" height="10" fill="#2a3e55"/>
+  <!-- Diagonal support struts -->
+  <line x1="130" y1="700" x2="290" y2="580" stroke="#2a3e55" stroke-width="6"/>
+  <line x1="510" y1="700" x2="510" y2="580" stroke="#2a3e55" stroke-width="6"/>
+  <line x1="800" y1="700" x2="800" y2="580" stroke="#2a3e55" stroke-width="6"/>
+  <line x1="1110" y1="700" x2="980" y2="580" stroke="#2a3e55" stroke-width="6"/>
+
+  <!-- Trailer wheels (6 wheels) -->
+  <circle cx="280" cy="782" r="60" fill="#0d1e35"/>
+  <circle cx="280" cy="782" r="40" fill="#1a2e42"/>
+  <circle cx="280" cy="782" r="18" fill="#f0b429" opacity="0.85"/>
+  <circle cx="400" cy="782" r="60" fill="#0d1e35"/>
+  <circle cx="400" cy="782" r="40" fill="#1a2e42"/>
+  <circle cx="400" cy="782" r="18" fill="#f0b429" opacity="0.85"/>
+  <circle cx="720" cy="782" r="60" fill="#0d1e35"/>
+  <circle cx="720" cy="782" r="40" fill="#1a2e42"/>
+  <circle cx="720" cy="782" r="18" fill="#f0b429" opacity="0.85"/>
+  <circle cx="840" cy="782" r="60" fill="#0d1e35"/>
+  <circle cx="840" cy="782" r="40" fill="#1a2e42"/>
+  <circle cx="840" cy="782" r="18" fill="#f0b429" opacity="0.85"/>
+
+  <!-- === TRUCK CAB === -->
+  <rect x="1060" y="590" width="260" height="150" fill="#1a2e42" rx="0"/>
+  <rect x="1062" y="592" width="256" height="100" fill="#0f2035"/>
+  <!-- Cab window -->
+  <rect x="1076" y="608" width="228" height="72" fill="#07111f"/>
+  <rect x="1078" y="610" width="224" height="68" fill="#0d1e35" opacity="0.8"/>
+  <!-- Windshield glare -->
+  <polygon points="1078,610 1118,610 1098,650" fill="#1a2e42" opacity="0.4"/>
+  <!-- Cab amber stripe -->
+  <rect x="1060" y="690" width="260" height="8" fill="#f0b429"/>
+  <!-- Cab headlights -->
+  <rect x="1298" y="630" width="20" height="14" fill="#f0b429" opacity="0.7"/>
+  <rect x="1298" y="652" width="20" height="14" fill="#f0b429" opacity="0.4"/>
+  <!-- Cab wheels -->
+  <circle cx="1090" cy="782" r="60" fill="#0d1e35"/>
+  <circle cx="1090" cy="782" r="40" fill="#1a2e42"/>
+  <circle cx="1090" cy="782" r="18" fill="#f0b429" opacity="0.85"/>
+  <circle cx="1270" cy="782" r="60" fill="#0d1e35"/>
+  <circle cx="1270" cy="782" r="40" fill="#1a2e42"/>
+  <circle cx="1270" cy="782" r="18" fill="#f0b429" opacity="0.85"/>
+  <!-- Exhaust stack -->
+  <rect x="1056" y="530" width="14" height="70" fill="#2a3e55"/>
+  <!-- Exhaust puff (subtle circles) -->
+  <circle cx="1063" cy="520" r="16" fill="#1a2e42" opacity="0.4"/>
+  <circle cx="1073" cy="498" r="20" fill="#1a2e42" opacity="0.2"/>
+  <circle cx="1057" cy="476" r="24" fill="#1a2e42" opacity="0.1"/>
+
+  <!-- === CAR 1 ON LOWER DECK === -->
+  <rect x="180" y="612" width="460" height="98" fill="#e8edf5" opacity="0.88"/>
+  <polygon points="240,612 306,552 534,552 600,612" fill="#f0b429" opacity="0.9"/>
+  <!-- Windows -->
+  <polygon points="256,608 306,560 354,560 354,608" fill="#07111f" opacity="0.65"/>
+  <polygon points="424,608 424,560 472,560 524,608" fill="#07111f" opacity="0.65"/>
+  <!-- Box in rear window -->
+  <rect x="366" y="568" width="44" height="34" fill="#f0b429" opacity="0.4"/>
+  <line x1="366" y1="585" x2="410" y2="585" stroke="#07111f" stroke-width="1.5" opacity="0.5"/>
+  <!-- Car stripe -->
+  <rect x="180" y="678" width="460" height="6" fill="#f0b429" opacity="0.5"/>
+  <!-- Car 1 wheels (sitting on carrier) -->
+  <circle cx="280" cy="706" r="38" fill="#07111f"/>
+  <circle cx="280" cy="706" r="24" fill="#1a2e42"/>
+  <circle cx="280" cy="706" r="12" fill="#f0b429"/>
+  <circle cx="540" cy="706" r="38" fill="#07111f"/>
+  <circle cx="540" cy="706" r="24" fill="#1a2e42"/>
+  <circle cx="540" cy="706" r="12" fill="#f0b429"/>
+
+  <!-- === CAR 2 ON UPPER DECK === -->
+  <rect x="660" y="510" width="420" height="90" fill="#e8edf5" opacity="0.85"/>
+  <polygon points="714,510 770,458 940,458 1002,510" fill="#f0b429" opacity="0.88"/>
+  <!-- Windows -->
+  <polygon points="728,506 770,466 814,466 814,506" fill="#07111f" opacity="0.65"/>
+  <polygon points="876,506 876,466 918,466 962,506" fill="#07111f" opacity="0.65"/>
+  <!-- Car stripe -->
+  <rect x="660" y="572" width="420" height="6" fill="#f0b429" opacity="0.5"/>
+  <!-- Car 2 wheels -->
+  <circle cx="756" cy="598" r="34" fill="#07111f"/>
+  <circle cx="756" cy="598" r="22" fill="#1a2e42"/>
+  <circle cx="756" cy="598" r="11" fill="#f0b429"/>
+  <circle cx="990" cy="598" r="34" fill="#07111f"/>
+  <circle cx="990" cy="598" r="22" fill="#1a2e42"/>
+  <circle cx="990" cy="598" r="11" fill="#f0b429"/>
+
+  <!-- === PERSONAL ITEMS BOXES — right panel === -->
+  <!-- Stack of boxes in right panel -->
+  <!-- Box 1 (large) -->
+  <rect x="1120" y="340" width="180" height="150" fill="#1a2e42"/>
+  <rect x="1122" y="342" width="176" height="146" fill="#0f2035" opacity="0.6"/>
+  <rect x="1120" y="340" width="180" height="6" fill="#f0b429" opacity="0.7"/>
+  <rect x="1120" y="340" width="6" height="150" fill="#f0b429" opacity="0.4"/>
+  <!-- Tape cross -->
+  <line x1="1120" y1="340" x2="1300" y2="490" stroke="#f0b429" stroke-width="3" opacity="0.25"/>
+  <line x1="1300" y1="340" x2="1120" y2="490" stroke="#f0b429" stroke-width="3" opacity="0.25"/>
+  <text x="1210" y="425" font-family="'Syne', 'Arial Black', sans-serif" font-size="11"
+        fill="#f0b429" text-anchor="middle" opacity="0.5" letter-spacing="2">FRAGILE</text>
+
+  <!-- Box 2 (medium, right) -->
+  <rect x="1320" y="390" width="140" height="100" fill="#1a2e42"/>
+  <rect x="1322" y="392" width="136" height="96" fill="#0f2035" opacity="0.6"/>
+  <rect x="1320" y="390" width="140" height="5" fill="#f0b429" opacity="0.6"/>
+  <rect x="1320" y="390" width="5" height="100" fill="#f0b429" opacity="0.35"/>
+  <!-- Handle -->
+  <rect x="1368" y="386" width="44" height="6" fill="#f0b429" opacity="0.55"/>
+
+  <!-- Box 3 (small, stacked) -->
+  <rect x="1120" y="230" width="120" height="108" fill="#1a2e42"/>
+  <rect x="1122" y="232" width="116" height="104" fill="#0f2035" opacity="0.6"/>
+  <rect x="1120" y="230" width="120" height="5" fill="#f0b429" opacity="0.6"/>
+  <rect x="1120" y="230" width="5" height="108" fill="#f0b429" opacity="0.35"/>
+
+  <!-- Box 4 (small) -->
+  <rect x="1258" y="272" width="100" height="68" fill="#1a2e42"/>
+  <rect x="1260" y="274" width="96" height="64" fill="#0f2035" opacity="0.6"/>
+  <rect x="1258" y="272" width="100" height="4" fill="#f0b429" opacity="0.55"/>
+
+  <!-- Box labels -->
+  <text x="1375" y="448" font-family="'Syne', 'Arial Black', sans-serif" font-size="10"
+        fill="#f0b429" text-anchor="middle" opacity="0.45" letter-spacing="1">HANDLE WITH CARE</text>
+
+  <!-- === MOTION LINES — left of truck === -->
+  <line x1="44" y1="680" x2="108" y2="680" stroke="#f0b429" stroke-width="5" opacity="0.7" stroke-linecap="square"/>
+  <line x1="24" y1="720" x2="108" y2="720" stroke="#f0b429" stroke-width="5" opacity="0.45" stroke-linecap="square"/>
+  <line x1="44" y1="760" x2="108" y2="760" stroke="#f0b429" stroke-width="5" opacity="0.22" stroke-linecap="square"/>
+
+  <!-- === TEXT OVERLAYS === -->
+  <!-- Top left eyebrow -->
+  <rect x="80" y="90" width="32" height="4" fill="#f0b429"/>
+  <text x="124" y="100" font-family="'Syne', 'Arial Black', sans-serif" font-size="14"
+        fill="#f0b429" letter-spacing="5" opacity="0.9">DOOR TO DOOR TRANSPORT</text>
+
+  <!-- Main heading -->
+  <text x="80" y="198" font-family="'Syne', 'Arial Black', sans-serif" font-size="88"
+        font-weight="800" fill="#f4f7fc" letter-spacing="-2">YOUR CAR.</text>
+  <text x="80" y="294" font-family="'Syne', 'Arial Black', sans-serif" font-size="88"
+        font-weight="800" fill="#f0b429" letter-spacing="-2">YOUR STUFF.</text>
+  <text x="80" y="390" font-family="'Syne', 'Arial Black', sans-serif" font-size="88"
+        font-weight="800" fill="#f4f7fc" letter-spacing="-2">ONE JOURNEY.</text>
+
+  <!-- Amber accent line under heading -->
+  <rect x="80" y="420" width="560" height="5" fill="#f0b429" opacity="0.55"/>
+
+  <!-- Sub text -->
+  <text x="80" y="474" font-family="'Syne', 'Arial Black', sans-serif" font-size="20"
+        font-weight="400" fill="#e8edf5" opacity="0.5" letter-spacing="2">INTERSTATE · INTERSTATE · NATIONWIDE</text>
+
+  <!-- Top amber cap -->
+  <rect x="0" y="0" width="1600" height="6" fill="#f0b429"/>
+</svg>
