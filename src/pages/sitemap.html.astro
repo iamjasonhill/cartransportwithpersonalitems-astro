@@ -1,16 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site } from '../lib/site';
-
-const pages = [
-  { href: '/', label: 'Home' },
-  { href: '/services/', label: 'Services' },
-  { href: '/services/core-service/', label: 'Core Service' },
-  { href: '/about/', label: 'About' },
-  { href: '/contact/', label: 'Contact' },
-  { href: '/privacy/', label: 'Privacy' },
-  { href: '/terms/', label: 'Terms' },
-];
+import { publicPages, site } from '../lib/site';
 ---
 <BaseLayout
   title={`${site.name} HTML Sitemap`}
@@ -23,7 +13,7 @@ const pages = [
 >
   <h1>{site.name} HTML Sitemap</h1>
   <ul>
-    {pages.map((page) => (
+    {publicPages.map((page) => (
       <li><a href={page.href}>{page.label}</a></li>
     ))}
   </ul>

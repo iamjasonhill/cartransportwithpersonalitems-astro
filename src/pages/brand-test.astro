@@ -1,0 +1,11 @@
+---
+import BrandHomepage from '../components/BrandHomepage.astro';
+import BrandLayout from '../layouts/BrandLayout.astro';
+import { site } from '../lib/site';
+
+const title = `Brand Test | ${site.name}`;
+const description = 'Experimental branded homepage concept for Car Transport With Personal Items.';
+---
+<BrandLayout title={title} description={description} canonicalPath="/brand-test/" noindex={true}>
+  <BrandHomepage />
+</BrandLayout>

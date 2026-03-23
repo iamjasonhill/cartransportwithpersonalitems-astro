@@ -1,15 +1,53 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BrandLayout from '../layouts/BrandLayout.astro';
+import { privacySections } from '../lib/content';
 import { site } from '../lib/site';
 
 const title = `${site.name} Privacy Policy`;
-const description = `Read the privacy policy for ${site.name}.`;
+const description = `Read how ${site.organizationName} collects, uses, stores, and discloses personal information for ${site.name}.`;
 const breadcrumbs = [
   { name: 'Home', url: site.url },
   { name: 'Privacy', url: new URL('/privacy/', site.url).toString() },
 ];
 ---
-<BaseLayout title={title} description={description} canonicalPath="/privacy/" breadcrumbs={breadcrumbs}>
-  <h1>Privacy Policy</h1>
-  <p>Use this page to explain what information is collected, why it is used, and how people can contact you about privacy matters.</p>
-</BaseLayout>
+<BrandLayout title={title} description={description} canonicalPath="/privacy/" breadcrumbs={breadcrumbs}>
+  <section class="hero">
+    <div class="hero-grid hero-grid--single">
+      <div class="hero-copy hero-copy--compact">
+        <p class="eyebrow">Trust and privacy</p>
+        <h1 class="hero-title hero-title--wide">Privacy handled in a straightforward way.</h1>
+        <p class="hero-intro">
+          This policy explains what information {site.organizationName} may collect, why it is used, and how privacy-related requests can be handled for {site.name}.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">What this policy covers</p>
+          <h2 class="section-heading">Clarity matters as much here as it does in the booking flow.</h2>
+        </div>
+        <p class="section-intro">
+          The policy is written to be practical rather than inflated. It covers what is collected, how it is used, who it may be shared with, and what you can do if you need access or correction.
+        </p>
+      </div>
+
+      <div class="callout-grid page-copy">
+        {privacySections.map((section) => (
+          <article class="content-card">
+            <h3>{section.heading}</h3>
+            {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+            {section.bullets && (
+              <ul>
+                {section.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BrandLayout>

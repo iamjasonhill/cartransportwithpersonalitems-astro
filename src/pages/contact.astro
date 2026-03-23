@@ -1,15 +1,56 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BrandLayout from '../layouts/BrandLayout.astro';
+import { contactPage, contactEmail } from '../lib/content';
 import { site } from '../lib/site';
 
 const title = `Contact ${site.name}`;
-const description = `Contact ${site.name} to discuss your requirements and request a quote.`;
+const description = `Contact ${site.organizationName} to discuss route availability, declared items, and quote requirements for ${site.name}.`;
 const breadcrumbs = [
   { name: 'Home', url: site.url },
   { name: 'Contact', url: new URL('/contact/', site.url).toString() },
 ];
 ---
-<BaseLayout title={title} description={description} canonicalPath="/contact/" breadcrumbs={breadcrumbs}>
-  <h1>Contact {site.name}</h1>
-  <p>Use this page for primary contact details, quote requests, and trust-building contact information.</p>
-</BaseLayout>
+<BrandLayout title={title} description={description} canonicalPath="/contact/" breadcrumbs={breadcrumbs}>
+  <section class="hero">
+    <div class="hero-grid hero-grid--single">
+      <div class="hero-copy hero-copy--compact">
+        <p class="eyebrow">Contact the team</p>
+        <h1 class="hero-title hero-title--wide">Send the route. Send the vehicle. Send what is staying inside.</h1>
+        <p class="hero-intro">{contactPage.intro}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="split-grid page-copy">
+        <div class="content-card">
+          <h3>What to include in the enquiry</h3>
+          <ul>
+            {contactPage.checklist.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div class="content-card">
+          <h3>Where to send it</h3>
+          <p>Email is the clearest starting point for this service because it lets you include the route, timing, vehicle details, and the approved items in one place.</p>
+          <p><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+          <p>{contactPage.closing}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="cta-panel">
+        <div class="cta-inner">
+          <div class="cta-copy">
+            <h2>Good quote requests start with complete details.</h2>
+            <p>The clearer the route and declared contents are from the start, the easier it is to confirm fit, timing, and any restrictions before pickup is booked.</p>
+          </div>
+          <a class="button button-primary" href={`mailto:${contactEmail}`}>Email The Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BrandLayout>

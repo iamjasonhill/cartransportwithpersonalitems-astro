@@ -1,9 +1,11 @@
 import type { APIRoute } from 'astro';
-import { site } from '../lib/site';
+import { publicPages, site } from '../lib/site';
 
 export const prerender = true;
 
 export const GET: APIRoute = () => {
+  const pageLines = publicPages.map((page) => `- ${site.url.replace(/\/$/, '')}${page.href}`);
+
   return new Response(
     [
       '# llms.txt',
@@ -13,13 +15,7 @@ export const GET: APIRoute = () => {
       '',
       `- ${site.url.replace(/\/$/, '')}/sitemap-index.xml`,
       `- ${site.url.replace(/\/$/, '')}/sitemap.html`,
-      `- ${site.url.replace(/\/$/, '')}/`,
-      `- ${site.url.replace(/\/$/, '')}/services/`,
-      `- ${site.url.replace(/\/$/, '')}/services/core-service/`,
-      `- ${site.url.replace(/\/$/, '')}/about/`,
-      `- ${site.url.replace(/\/$/, '')}/contact/`,
-      `- ${site.url.replace(/\/$/, '')}/privacy/`,
-      `- ${site.url.replace(/\/$/, '')}/terms/`,
+      ...pageLines,
     ].join('\n'),
     {
       headers: {

@@ -1,15 +1,60 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BrandLayout from '../layouts/BrandLayout.astro';
+import { aboutPage } from '../lib/content';
 import { site } from '../lib/site';
 
 const title = `About ${site.name}`;
-const description = `Learn about ${site.name}, who we help, and how we approach service delivery.`;
+const description = `Learn how ${site.organizationName} runs ${site.name} and why the booking process focuses on declared-item approval and route fit.`;
 const breadcrumbs = [
   { name: 'Home', url: site.url },
   { name: 'About', url: new URL('/about/', site.url).toString() },
 ];
 ---
-<BaseLayout title={title} description={description} canonicalPath="/about/" breadcrumbs={breadcrumbs}>
-  <h1>About {site.name}</h1>
-  <p>This page gives customers a clear explanation of who you are, what you do, and why they should trust you.</p>
-</BaseLayout>
+<BrandLayout title={title} description={description} canonicalPath="/about/" breadcrumbs={breadcrumbs}>
+  <section class="hero">
+    <div class="hero-grid hero-grid--single">
+      <div class="hero-copy hero-copy--compact">
+        <p class="eyebrow">About the brand</p>
+        <h1 class="hero-title hero-title--wide">A smaller, sharper transport brand with a practical job to do.</h1>
+        <p class="hero-intro">{aboutPage.intro}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">What the brand is trying to be</p>
+          <h2 class="section-heading">Calm, direct, and useful when the move is already complicated enough.</h2>
+        </div>
+        <p class="section-intro">
+          The site does not need to pretend to be a giant marketplace. It works better when it feels like a focused service brand that understands a specific booking edge-case and explains it well.
+        </p>
+      </div>
+
+      <div class="callout-grid page-copy">
+        {aboutPage.paragraphs.map((paragraph, index) => (
+          <article class="content-card">
+            <h3>{index === 0 ? 'Focused operation' : index === 1 ? 'Why that focus matters' : 'How the site should behave'}</h3>
+            <p>{paragraph}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="cta-panel">
+        <div class="cta-inner">
+          <div class="cta-copy">
+            <h2>Built around route fit, not broad promises.</h2>
+            <p>The brand should always feel honest about what affects approval and timing. That honesty is part of why the service feels more trustworthy.</p>
+          </div>
+          <a class="button button-primary" href="/services/">See The Service</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BrandLayout>

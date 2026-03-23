@@ -1,0 +1,121 @@
+---
+import '../styles/brand.css';
+import { site } from '../lib/site';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  breadcrumbs?: BreadcrumbItem[];
+  noindex?: boolean;
+  navCtaLabel?: string;
+  navCtaHref?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  breadcrumbs = [],
+  noindex = false,
+  navCtaLabel = 'Request A Route Review',
+  navCtaHref = '/contact/',
+} = Astro.props;
+
+const canonicalUrl = new URL(canonicalPath, Astro.site ?? site.url).toString();
+const socialImageUrl = new URL(site.seoAssets.ogImage, Astro.site ?? site.url).toString();
+const twitterImageUrl = new URL(site.seoAssets.twitterImage, Astro.site ?? site.url).toString();
+const faviconType = site.seoAssets.favicon.endsWith('.png') ? 'image/png' : 'image/svg+xml';
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.organizationName,
+  url: site.url,
+  email: site.contactEmail,
+};
+const breadcrumbSchema = breadcrumbs.length > 0
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    }
+  : null;
+---
+<!doctype html>
+<html lang={site.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow'} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content={site.locale.replace('-', '_')} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:alt" content={`${site.name} social share image`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={twitterImageUrl} />
+    <link rel="icon" type={faviconType} href={site.seoAssets.favicon} />
+    <link rel="apple-touch-icon" sizes="180x180" href={site.seoAssets.appleTouchIcon} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    {breadcrumbSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+  </head>
+  <body>
+    <div class="brand-shell">
+      <header class="topbar">
+        <a class="brand-lockup" href="/" aria-label={`${site.name} homepage`}>
+          <span class="brand-mark">CT</span>
+          <span>{site.name}</span>
+        </a>
+        <nav class="topnav" aria-label="Primary">
+          {site.navigation.map((item) => (
+            <a href={item.href}>{item.label}</a>
+          ))}
+          <a href={navCtaHref}>{navCtaLabel}</a>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer>
+        <div class="footer-inner">
+          <div>{site.organizationName}</div>
+          <div class="footer-links">
+            {site.navigation.map((item) => (
+              <a href={item.href}>{item.label}</a>
+            ))}
+            {site.trustLinks.map((item) => (
+              <a href={item.href}>{item.label}</a>
+            ))}
+            <a href="/sitemap.html">HTML Sitemap</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

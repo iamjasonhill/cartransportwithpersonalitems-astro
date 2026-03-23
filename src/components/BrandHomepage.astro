@@ -1,0 +1,157 @@
+---
+import { faqs, processSteps } from '../lib/content';
+---
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Queensland-based vehicle transport</p>
+      <h1 class="hero-title">Take the car. Take the essentials. Keep the move simpler.</h1>
+      <p class="hero-intro">
+        Car Transport With Personal Items is built for interstate moves where approved belongings can stay inside the car,
+        the route is checked properly, and the booking makes sense before pickup day arrives.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/contact/">Request A Route Review</a>
+        <a class="button button-secondary" href="/services/">See How The Service Works</a>
+      </div>
+      <div class="hero-notes">
+        <div class="hero-note">
+          <strong>Declared upfront</strong>
+          <span>The route, vehicle, and approved contents are reviewed together instead of being treated like a standard car-only move.</span>
+        </div>
+        <div class="hero-note">
+          <strong>Built for real relocations</strong>
+          <span>Useful when you need a few essentials to travel with the vehicle and want to avoid splitting everything into separate freight jobs.</span>
+        </div>
+        <div class="hero-note">
+          <strong>Practical next step</strong>
+          <span>The quote process asks for the details that actually affect approval, timing, and pricing so the answer is more useful from the start.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="visual-card">
+        <img src="/brand-test-hero.svg" alt="Loaded car travelling across a warm desert highway illustration." />
+        <div class="route-pill">
+          <strong>Brand position</strong>
+          <span>Practical interstate car transport for customers who want approved belongings left inside and a cleaner moving day.</span>
+        </div>
+        <div class="visual-meta">
+          <strong>Why it stands out</strong>
+          <span>Warm highway tones, stronger typography, and a transport-first story instead of another anonymous service template.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="proof-strip">
+  <div class="proof-frame">
+    <div class="proof-item">
+      <strong>Route fit first</strong>
+      <p>We start with the route, the vehicle, and the approved contents because that is what decides whether the booking is viable.</p>
+    </div>
+    <div class="proof-item">
+      <strong>Fewer moving parts</strong>
+      <p>The service suits people who want the car and a few essentials moved together instead of juggling a separate freight booking as well.</p>
+    </div>
+    <div class="proof-item">
+      <strong>Clear next step</strong>
+      <p>The goal is not to impress you with filler. It is to make it obvious what to send so the team can give you a useful answer quickly.</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <p class="section-kicker">Why customers use this service</p>
+        <h2 class="section-heading">Built for moves where the car and the essentials need to stay together.</h2>
+      </div>
+      <p class="section-intro">
+        This is for customers who want a practical interstate move, not extra organising. The service works best when the route, the car, and the approved items are treated as one job from the start.
+      </p>
+    </div>
+
+    <div class="difference-grid">
+      <article class="difference-block">
+        <h3>Keep a few essentials with the vehicle</h3>
+        <p>That can mean fewer bookings to coordinate and fewer decisions to chase while you are already planning an interstate move.</p>
+      </article>
+      <article class="difference-block">
+        <h3>Know where the booking stands before pickup</h3>
+        <p>Declared contents, carrier approval, and route fit are checked early so customers are not left making assumptions the week the vehicle is due to move.</p>
+      </article>
+      <article class="difference-block">
+        <h3>Get a more grounded answer</h3>
+        <p>The quote is based on the real job details, which makes the pricing guidance and the preparation advice far more useful.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="process-band">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <p class="section-kicker">Booking logic</p>
+        <h2 class="section-heading">The proof is in how the booking is handled.</h2>
+      </div>
+      <p class="section-intro">
+        This service is more credible when the page is honest about approvals, declared items, and handover paperwork. Those details are the trust signals.
+      </p>
+    </div>
+
+    <div class="step-grid">
+      {processSteps.map((step, index) => (
+        <article class="step-card">
+          <span>{index + 1}</span>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <p class="section-kicker">Common questions</p>
+        <h2 class="section-heading">The details matter, so the answers should too.</h2>
+      </div>
+      <p class="section-intro">
+        These are the practical questions customers ask when they are trying to work out whether this booking style fits their move and what they should prepare before asking for a quote.
+      </p>
+    </div>
+
+    <div class="faq-grid">
+      {faqs.map((faq) => (
+        <article class="faq-card">
+          <h3>{faq.question}</h3>
+          <p>{faq.answer}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="cta-panel">
+      <div class="cta-inner">
+        <div class="cta-copy">
+          <h2>Start with the route and the contents, not guesswork.</h2>
+          <p>
+            Send the origin, destination, vehicle details, and the approved items you want left inside. The team can then confirm fit, restrictions,
+            likely handling requirements, and the most useful next step.
+          </p>
+        </div>
+        <a class="button button-primary" href="/contact/">Talk To The Team</a>
+      </div>
+    </div>
+  </div>
+</section>

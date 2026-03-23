@@ -1,0 +1,53 @@
+---
+import BrandLayout from '../layouts/BrandLayout.astro';
+import { cookieSections } from '../lib/content';
+import { site } from '../lib/site';
+
+const title = `${site.name} Cookie Policy`;
+const description = `Read how ${site.organizationName} uses cookies and similar technologies on ${site.domain}.`;
+const breadcrumbs = [
+  { name: 'Home', url: site.url },
+  { name: 'Cookie Policy', url: new URL('/cookie-policy/', site.url).toString() },
+];
+---
+<BrandLayout title={title} description={description} canonicalPath="/cookie-policy/" breadcrumbs={breadcrumbs}>
+  <section class="hero">
+    <div class="hero-grid hero-grid--single">
+      <div class="hero-copy hero-copy--compact">
+        <p class="eyebrow">Cookie policy</p>
+        <h1 class="hero-title hero-title--wide">A plain explanation of how website cookies may be used.</h1>
+        <p class="hero-intro">
+          This page explains how {site.organizationName} may use cookies and similar technologies to keep the site working, understand traffic, and support forms or related website features.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">What to expect</p>
+          <h2 class="section-heading">Short, practical, and tied to how the site actually behaves.</h2>
+        </div>
+        <p class="section-intro">
+          This policy is not meant to overwhelm people. It just explains what cookies are, what kinds may be used, and how browser settings can affect website behaviour.
+        </p>
+      </div>
+
+      <div class="callout-grid page-copy">
+        {cookieSections.map((section) => (
+          <article class="content-card">
+            <h3>{section.heading}</h3>
+            {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+            {section.bullets && (
+              <ul>
+                {section.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BrandLayout>

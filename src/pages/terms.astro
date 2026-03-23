@@ -1,15 +1,48 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BrandLayout from '../layouts/BrandLayout.astro';
+import { termsSections } from '../lib/content';
 import { site } from '../lib/site';
 
-const title = `${site.name} Terms of Service`;
-const description = `Read the terms of service for ${site.name}.`;
+const title = `${site.name} Terms of Use`;
+const description = `Read the website terms of use for ${site.name}.`;
 const breadcrumbs = [
   { name: 'Home', url: site.url },
   { name: 'Terms', url: new URL('/terms/', site.url).toString() },
 ];
 ---
-<BaseLayout title={title} description={description} canonicalPath="/terms/" breadcrumbs={breadcrumbs}>
-  <h1>Terms of Service</h1>
-  <p>Use this page to outline the baseline service terms, expectations, and responsibilities for customers and the business.</p>
-</BaseLayout>
+<BrandLayout title={title} description={description} canonicalPath="/terms/" breadcrumbs={breadcrumbs}>
+  <section class="hero">
+    <div class="hero-grid hero-grid--single">
+      <div class="hero-copy hero-copy--compact">
+        <p class="eyebrow">Terms of use</p>
+        <h1 class="hero-title hero-title--wide">Ground rules for using the website and service information.</h1>
+        <p class="hero-intro">
+          These terms explain how website content should be used, when quotes become binding, and how third-party carriers or platforms may affect the service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">What the terms do</p>
+          <h2 class="section-heading">Keep expectations clear before a booking is ever confirmed.</h2>
+        </div>
+        <p class="section-intro">
+          The website should feel plain-spoken here too. The terms set out what the site content means, what it does not guarantee, and where third-party suppliers may introduce separate conditions.
+        </p>
+      </div>
+
+      <div class="split-grid page-copy">
+        {termsSections.map((section) => (
+          <article class="content-card">
+            <h3>{section.heading}</h3>
+            {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BrandLayout>

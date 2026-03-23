@@ -1,98 +1,18 @@
 ---
-import { site } from '../lib/site';
+import BrandLayout from './BrandLayout.astro';
 
-interface BreadcrumbItem {
-  name: string;
-  url: string;
-}
-
-interface Props {
-  title: string;
-  description: string;
-  canonicalPath: string;
-  breadcrumbs?: BreadcrumbItem[];
-  noindex?: boolean;
-}
-
-const {
-  title,
-  description,
-  canonicalPath,
-  breadcrumbs = [],
-  noindex = false,
-} = Astro.props;
-
-const canonicalUrl = new URL(canonicalPath, Astro.site ?? site.url).toString();
-const socialImageUrl = new URL(site.seoAssets.ogImage, Astro.site ?? site.url).toString();
-const twitterImageUrl = new URL(site.seoAssets.twitterImage, Astro.site ?? site.url).toString();
-const faviconType = site.seoAssets.favicon.endsWith('.png') ? 'image/png' : 'image/svg+xml';
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: site.name,
-  url: site.url,
-};
-const breadcrumbSchema = breadcrumbs.length > 0
-  ? {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: breadcrumbs.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        item: item.url,
-      })),
-    }
-  : null;
+const { title, description, canonicalPath, breadcrumbs, noindex } = Astro.props;
 ---
-<!doctype html>
-<html lang={site.locale}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow'} />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:site_name" content={site.name} />
-    <meta property="og:locale" content={site.locale.replace('-', '_')} />
-    <meta property="og:image" content={socialImageUrl} />
-    <meta property="og:image:alt" content={`${site.name} social share image`} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={twitterImageUrl} />
-    <link rel="icon" type={faviconType} href={site.seoAssets.favicon} />
-    <link rel="apple-touch-icon" sizes="180x180" href={site.seoAssets.appleTouchIcon} />
-    <link rel="canonical" href={canonicalUrl} />
-    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
-  </head>
-  <body>
-    <header>
-      <nav aria-label="Primary">
-        <ul>
-          {site.navigation.map((item) => (
-            <li><a href={item.href}>{item.label}</a></li>
-          ))}
-        </ul>
-      </nav>
-    </header>
-    <main>
+<BrandLayout
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath}
+  breadcrumbs={breadcrumbs}
+  noindex={noindex}
+>
+  <section class="page-band">
+    <div class="section-inner page-prose">
       <slot />
-    </main>
-    <footer>
-      <nav aria-label="Footer">
-        <ul>
-          {site.trustLinks.map((item) => (
-            <li><a href={item.href}>{item.label}</a></li>
-          ))}
-          <li><a href="/sitemap.html">HTML Sitemap</a></li>
-        </ul>
-      </nav>
-    </footer>
-  </body>
-</html>
+    </div>
+  </section>
+</BrandLayout>

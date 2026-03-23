@@ -1,28 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BrandHomepage from '../components/BrandHomepage.astro';
+import BrandLayout from '../layouts/BrandLayout.astro';
 import { site } from '../lib/site';
 
-const title = `${site.name} | Trusted Service Delivery`;
-const description = `${site.name} helps customers understand services, locations, process, and the next step to get a quote.`;
-const breadcrumbs = [
-  { name: 'Home', url: site.url },
-];
+const title = `${site.name} | Vehicle Transport With Approved Personal Items`;
+const description = 'Book vehicle transport with approved items left inside the car, with route checks, declared-item approval, and clear booking guidance.';
 ---
-<BaseLayout title={title} description={description} canonicalPath="/" breadcrumbs={breadcrumbs}>
-  <h1>Trusted service delivery with a clear next step</h1>
-  <p>{site.name} starts with a technically sound Astro baseline designed for strong crawlability, clear trust signals, and fast future iteration.</p>
-  <section>
-    <h2>What this starter already includes</h2>
-    <ul>
-      <li>Canonical tags and metadata shell</li>
-      <li>XML sitemap, HTML sitemap, and robots.txt</li>
-      <li>llms.txt and basic schema defaults</li>
-      <li>Trust pages and a clean internal-link structure</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Get a quote</h2>
-    <p>Use this section as the first clear call to action on the homepage.</p>
-    <p><a href="/contact/">Contact us</a></p>
-  </section>
-</BaseLayout>
+<BrandLayout title={title} description={description} canonicalPath="/">
+  <BrandHomepage />
+</BrandLayout>

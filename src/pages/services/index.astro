@@ -1,18 +1,135 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BrandLayout from '../../layouts/BrandLayout.astro';
+import { faqs, processSteps, serviceDetails } from '../../lib/content';
 import { site } from '../../lib/site';
 
 const title = `${site.name} Services`;
-const description = `Explore the services available from ${site.name}.`;
+const description = `Understand how ${site.name} works, what affects pricing, and what to include in your enquiry.`;
 const breadcrumbs = [
   { name: 'Home', url: site.url },
   { name: 'Services', url: new URL('/services/', site.url).toString() },
 ];
 ---
-<BaseLayout title={title} description={description} canonicalPath="/services/" breadcrumbs={breadcrumbs}>
-  <h1>Services</h1>
-  <p>This page acts as a service hub and should link to the most important commercial pages.</p>
-  <ul>
-    <li><a href="/services/core-service/">Core Service</a></li>
-  </ul>
-</BaseLayout>
+<BrandLayout title={title} description={description} canonicalPath="/services/" breadcrumbs={breadcrumbs}>
+  <section class="hero">
+    <div class="hero-grid hero-grid--single">
+      <div class="hero-copy hero-copy--compact">
+        <p class="eyebrow">Service overview</p>
+        <h1 class="hero-title hero-title--wide">A narrower transport service with a clearer booking path.</h1>
+        <p class="hero-intro">
+          This is not a generic “ship any car any way” promise. The service is designed for routes where approved personal items can remain in the vehicle and the booking can be assessed properly before collection.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">How the service is positioned</p>
+          <h2 class="section-heading">Explain the offer cleanly, then prove it with process.</h2>
+        </div>
+        <p class="section-intro">
+          Customers mainly need to know whether the route is suitable, whether the belongings can stay inside, and what information they should send so the quote reflects the actual job.
+        </p>
+      </div>
+
+      <div class="split-grid page-copy">
+        <div class="content-card">
+          <h3>Service overview</h3>
+          {serviceDetails.overview.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <div class="content-card">
+          <h3>Pricing and quote inputs</h3>
+          {serviceDetails.pricing.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-band">
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">How bookings are assessed</p>
+          <h2 class="section-heading">The process is part of the product.</h2>
+        </div>
+        <p class="section-intro">
+          Stronger trust comes from showing the real steps: declared contents, carrier approval, pickup paperwork, and delivery handover.
+        </p>
+      </div>
+
+      <div class="step-grid">
+        {processSteps.map((step, index) => (
+          <article class="step-card">
+            <span>{index + 1}</span>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="callout-grid page-copy">
+        <div class="content-card">
+          <h3>Service areas</h3>
+          {serviceDetails.serviceAreas.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <div class="content-card">
+          <h3>Trust signals customers look for</h3>
+          {serviceDetails.trust.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <div class="content-card">
+          <h3>What to send with the enquiry</h3>
+          <ul>
+            <li>pickup and delivery locations</li>
+            <li>preferred timing or collection window</li>
+            <li>vehicle make, model, and dimensions if relevant</li>
+            <li>the approved personal items you want left inside</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Frequently asked questions</p>
+          <h2 class="section-heading">Keep the answers practical.</h2>
+        </div>
+        <p class="section-intro">
+          The goal is not to flood the page with copy. It is to answer the transport questions that decide whether someone feels confident enough to enquire.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        {faqs.map((faq) => (
+          <article class="faq-card">
+            <h3>{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="cta-panel">
+        <div class="cta-inner">
+          <div class="cta-copy">
+            <h2>Ready to check whether the route works?</h2>
+            <p>Send the route, vehicle details, and the items you want to leave inside. The team can tell you what fits, what needs approval, and what the next step looks like.</p>
+          </div>
+          <a class="button button-primary" href="/contact/">Talk To The Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BrandLayout>

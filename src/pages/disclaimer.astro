@@ -1,0 +1,48 @@
+---
+import BrandLayout from '../layouts/BrandLayout.astro';
+import { disclaimerSections } from '../lib/content';
+import { site } from '../lib/site';
+
+const title = `${site.name} Disclaimer`;
+const description = `Read the website disclaimer for ${site.name}.`;
+const breadcrumbs = [
+  { name: 'Home', url: site.url },
+  { name: 'Disclaimer', url: new URL('/disclaimer/', site.url).toString() },
+];
+---
+<BrandLayout title={title} description={description} canonicalPath="/disclaimer/" breadcrumbs={breadcrumbs}>
+  <section class="hero">
+    <div class="hero-grid hero-grid--single">
+      <div class="hero-copy hero-copy--compact">
+        <p class="eyebrow">Disclaimer</p>
+        <h1 class="hero-title hero-title--wide">Useful service information, not personalised advice.</h1>
+        <p class="hero-intro">
+          This disclaimer explains the limits of the website content, including what it does not guarantee about pricing, route coverage, timing, or outcomes for a particular booking.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">What the disclaimer clarifies</p>
+          <h2 class="section-heading">Keep the website useful without overstating what it can promise.</h2>
+        </div>
+        <p class="section-intro">
+          The site should help customers understand the service clearly, but it should not be mistaken for tailored legal, financial, or transport advice. This page sets that boundary plainly.
+        </p>
+      </div>
+
+      <div class="split-grid page-copy">
+        {disclaimerSections.map((section) => (
+          <article class="content-card">
+            <h3>{section.heading}</h3>
+            {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BrandLayout>
