@@ -4,10 +4,20 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+const excludedSitemapPaths = new Set([
+  '/brand-test',
+  '/services/core-service',
+  '/sitemap.html',
+]);
+
 export default defineConfig({
   site: 'https://cartransportwithpersonalitems.com.au',
   integrations: [
     sitemap({
+      filter: (page) => {
+        const pathname = new URL(page).pathname.replace(/\/$/, '') || '/';
+        return !excludedSitemapPaths.has(pathname);
+      },
 			serialize: (item) => ({
 				...item,
 				lastmod: resolveSitemapLastmod(item.url),
