@@ -21,4 +21,4 @@
 
 ## Follow-Up
 
-- keep the ongoing contact-flow refactor separate from fleet-contract changes until it is ready to ship as its own commit
+- monitor the quoting contact endpoint and redirect rules after deployment to confirm `/contact` traffic resolves cleanly

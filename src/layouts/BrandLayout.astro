@@ -1,6 +1,6 @@
 ---
 import '../styles/brand.css';
-import { site } from '../lib/site';
+import { canonicalContactUrl, site } from '../lib/site';
 
 interface BreadcrumbItem {
   name: string;
@@ -28,7 +28,7 @@ const {
   structuredData = [],
   noindex = false,
   navCtaLabel = 'Request A Route Review',
-  navCtaHref = '/contact/',
+  navCtaHref = canonicalContactUrl,
 } = Astro.props;
 
 const canonicalUrl = new URL(canonicalPath, Astro.site ?? site.url).toString();
@@ -54,7 +54,7 @@ const organizationSchema = {
       contactType: 'customer support',
       email: site.contactEmail,
       availableLanguage: site.locale,
-      url: new URL('/contact/', site.url).toString(),
+      url: canonicalContactUrl,
     },
   ],
 };

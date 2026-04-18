@@ -51,4 +51,4 @@ Copy `.env.example` to `.env` when needed:
 
 ## Notes
 
-- there is already an in-progress local refactor in this repo around moving contact flows into the external quoting surface; the fleet-standard controller contract should be kept separate from that content-flow change
+- the primary contact flow now routes into the external quoting surface at `https://quoting.cartransportwithpersonalitems.com.au/contact`

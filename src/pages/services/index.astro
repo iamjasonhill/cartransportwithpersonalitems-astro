@@ -1,7 +1,7 @@
 ---
 import BrandLayout from '../../layouts/BrandLayout.astro';
 import { faqs, processSteps, serviceDetails } from '../../lib/content';
-import { site } from '../../lib/site';
+import { canonicalContactUrl, site } from '../../lib/site';
 
 const title = 'Car Transport Services With Personal Items | Australia';
 const description = `See how ${site.name.toLowerCase()} works, what affects pricing, and what to include for a faster quote across Australian routes.`;
@@ -32,7 +32,7 @@ const serviceSchema = {
   ],
   availableChannel: {
     '@type': 'ServiceChannel',
-    serviceUrl: new URL('/contact/', site.url).toString(),
+    serviceUrl: canonicalContactUrl,
     availableLanguage: site.locale,
   },
   termsOfService: new URL('/terms/', site.url).toString(),
@@ -173,7 +173,7 @@ const faqSchema = {
             <h2>Ready to check whether the route works?</h2>
             <p>Send the route, vehicle details, and the items you want to leave inside. The team can tell you what fits, what needs approval, and what the next step looks like.</p>
           </div>
-          <a class="button button-primary" href="/contact/">Talk To The Team</a>
+          <a class="button button-primary" href={canonicalContactUrl}>Talk To The Team</a>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ The current machine-readable deployment contract already includes:
 
 1. host normalization from `www` to apex
 2. security headers
-3. contact alias handling into the quoting contact endpoint when that local work is committed
+3. contact alias handling into the quoting contact endpoint
 
 ## Current Reading
 

@@ -32,6 +32,8 @@ This is a smaller branded service site focused on a specific transport use case 
 - `.env.example` added
 - `check:seo` added to the package baseline
 
-## Note On Existing Local Work
+## Additional Change On 2026-04-18
 
-There is an active in-progress local refactor around the contact flow and external quoting surface. That work should stay separate from the fleet-standard controller contract.
+- local `/contact` handling removed in favor of the canonical external quoting endpoint
+- shared CTA and schema links now point to `https://quoting.cartransportwithpersonalitems.com.au/contact`
+- Vercel redirects preserve `/contact` and related aliases for legacy traffic

@@ -2,7 +2,7 @@
 import BrandHomepage from '../components/BrandHomepage.astro';
 import BrandLayout from '../layouts/BrandLayout.astro';
 import { homepage } from '../lib/content';
-import { site } from '../lib/site';
+import { canonicalContactUrl, site } from '../lib/site';
 
 const title = 'Car Transport With Personal Items in Australia';
 const description = 'Get a quote to move your car with approved personal items left inside, with route checks, declared-item approval, and clear booking guidance Australia-wide.';
@@ -29,7 +29,7 @@ const serviceSchema = {
   ],
   availableChannel: {
     '@type': 'ServiceChannel',
-    serviceUrl: new URL('/contact/', site.url).toString(),
+    serviceUrl: canonicalContactUrl,
     availableLanguage: site.locale,
   },
   termsOfService: new URL('/terms/', site.url).toString(),

@@ -1,6 +1,46 @@
 {
   "redirects": [
     {
+      "source": "/contact",
+      "destination": "https://quoting.cartransportwithpersonalitems.com.au/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "https://quoting.cartransportwithpersonalitems.com.au/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "https://quoting.cartransportwithpersonalitems.com.au/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "https://quoting.cartransportwithpersonalitems.com.au/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-page",
+      "destination": "https://quoting.cartransportwithpersonalitems.com.au/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-page/",
+      "destination": "https://quoting.cartransportwithpersonalitems.com.au/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-au",
+      "destination": "https://quoting.cartransportwithpersonalitems.com.au/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-au/",
+      "destination": "https://quoting.cartransportwithpersonalitems.com.au/contact",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [
         {

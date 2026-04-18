@@ -3,11 +3,13 @@ export interface SiteLink {
   label: string;
 }
 
+export const canonicalContactUrl = 'https://quoting.cartransportwithpersonalitems.com.au/contact';
+
 export const navigation: SiteLink[] = [
   { href: '/', label: 'Home' },
   { href: '/services/', label: 'Services' },
   { href: '/about/', label: 'About' },
-  { href: '/contact/', label: 'Contact' },
+  { href: canonicalContactUrl, label: 'Contact' },
 ];
 
 export const trustLinks: SiteLink[] = [
@@ -40,4 +42,5 @@ export const site = {
   },
   navigation,
   trustLinks,
+  canonicalContactUrl,
 };

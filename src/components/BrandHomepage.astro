@@ -1,5 +1,6 @@
 ---
 import { faqs, processSteps } from '../lib/content';
+import { canonicalContactUrl } from '../lib/site';
 ---
 <section class="hero">
   <div class="hero-grid">
@@ -11,7 +12,7 @@ import { faqs, processSteps } from '../lib/content';
         the route is checked properly, and the booking makes sense before pickup day arrives.
       </p>
       <div class="hero-actions">
-        <a class="button button-primary" href="/contact/">Request A Route Review</a>
+        <a class="button button-primary" href={canonicalContactUrl}>Request A Route Review</a>
         <a class="button button-secondary" href="/services/">See How The Service Works</a>
       </div>
       <div class="hero-notes">
@@ -150,7 +151,7 @@ import { faqs, processSteps } from '../lib/content';
             likely handling requirements, and the most useful next step.
           </p>
         </div>
-        <a class="button button-primary" href="/contact/">Talk To The Team</a>
+        <a class="button button-primary" href={canonicalContactUrl}>Talk To The Team</a>
       </div>
     </div>
   </div>
