@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { publicPages, site } from '../lib/site';
+---
+
+<BaseLayout
+  title={`${site.name} sitemap`}
+  description={`Human-readable sitemap for ${site.name}.`}
+  canonicalPath="/sitemap/"
+  breadcrumbs={[
+    { name: 'Home', url: site.url },
+    { name: 'HTML Sitemap', url: `${site.url.replace(/\/$/, '')}/sitemap/` },
+  ]}
+>
+  <h1>{site.name} sitemap</h1>
+  <p>
+    A simple directory of the main pages, quote pathways, and policy pages used
+    across {site.name}.
+  </p>
+  <ul>
+    {publicPages.map((page) => (
+      <li><a href={page.href}>{page.label}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

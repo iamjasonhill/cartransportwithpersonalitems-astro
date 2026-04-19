@@ -22,6 +22,7 @@ export const trustLinks: SiteLink[] = [
 export const publicPages: SiteLink[] = [
   ...navigation,
   ...trustLinks,
+  { href: '/sitemap/', label: 'HTML Sitemap' },
 ];
 
 export const site = {
@@ -43,4 +44,8 @@ export const site = {
   navigation,
   trustLinks,
   canonicalContactUrl,
+  destinations: {
+    quote: canonicalContactUrl,
+    contact: canonicalContactUrl,
+  },
 };
