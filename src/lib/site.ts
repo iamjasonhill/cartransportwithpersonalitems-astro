@@ -48,4 +48,8 @@ export const site = {
     quote: canonicalContactUrl,
     contact: canonicalContactUrl,
   },
+  analytics: {
+    siteKey: 'cartransportwithpersonalitems',
+    trackedLinks: [] as Array<{ href: string; eventName: string }>,
+  },
 };

@@ -32,9 +32,11 @@ async function main() {
   }
 
   checks.push(['analytics wrapper exists', await exists('src/components/analytics/Analytics.astro')]);
+  checks.push(['ga4 wrapper exists', await exists('src/components/analytics/Ga4.astro')]);
   checks.push(['matomo wrapper exists', await exists('src/components/analytics/Matomo.astro')]);
   checks.push(['BrandLayout imports analytics wrapper', layout.includes("import Analytics from '../components/analytics/Analytics.astro';")]);
   checks.push(['BrandLayout renders analytics wrapper', layout.includes('<Analytics />')]);
+  checks.push(['analytics wrapper includes Ga4', analyticsWrapper.includes("import Ga4 from './Ga4.astro';")]);
   checks.push(['analytics wrapper includes Matomo', analyticsWrapper.includes("import Matomo from './Matomo.astro';")]);
   checks.push(['site config includes destinations', siteConfig.includes('destinations: {')]);
   checks.push(['BrandLayout links RSS feed', layout.includes('application/rss+xml')]);
@@ -55,6 +57,8 @@ async function main() {
   ]) {
     checks.push([`${relativePath} exists`, await exists(relativePath)]);
   }
+  checks.push(['.env.example includes PUBLIC_ANALYTICS_PROVIDER=', envExample.includes('PUBLIC_ANALYTICS_PROVIDER=')]);
+  checks.push(['.env.example includes PUBLIC_GA_MEASUREMENT_ID=', envExample.includes('PUBLIC_GA_MEASUREMENT_ID=')]);
   checks.push(['.env.example includes PUBLIC_MATOMO_BASE_URL=', envExample.includes('PUBLIC_MATOMO_BASE_URL=')]);
   checks.push(['.env.example includes PUBLIC_MATOMO_SITE_ID=', envExample.includes('PUBLIC_MATOMO_SITE_ID=')]);
 
