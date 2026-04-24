@@ -1,7 +1,7 @@
 ---
 import '../styles/brand.css';
 import Analytics from '../components/analytics/Analytics.astro';
-import { canonicalContactUrl, site } from '../lib/site';
+import { canonicalContactUrl, canonicalVehicleQuoteUrl, site } from '../lib/site';
 
 interface BreadcrumbItem {
   name: string;
@@ -28,8 +28,8 @@ const {
   breadcrumbs = [],
   structuredData = [],
   noindex = false,
-  navCtaLabel = 'Request A Route Review',
-  navCtaHref = canonicalContactUrl,
+  navCtaLabel = 'Get A Vehicle Quote',
+  navCtaHref = canonicalVehicleQuoteUrl,
 } = Astro.props;
 
 const canonicalUrl = new URL(canonicalPath, Astro.site ?? site.url).toString();
