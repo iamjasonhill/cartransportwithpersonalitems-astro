@@ -52,6 +52,8 @@ export const site = {
   },
   analytics: {
     siteKey: 'cartransportwithpersonalitems',
-    trackedLinks: [] as Array<{ href: string; eventName: string }>,
+    trackedLinks: [
+      { href: canonicalVehicleQuoteUrl, eventName: 'quote_vehicle_click' },
+    ] as Array<{ href: string; eventName: string }>,
   },
 };
