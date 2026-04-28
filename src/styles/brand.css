@@ -61,7 +61,6 @@ img {
   padding: 1rem 0 0;
   position: relative;
   z-index: 4;
-  animation: rise-in 0.8s ease both;
 }
 
 .brand-lockup {
@@ -195,7 +194,6 @@ img {
   margin: 0;
   font-size: clamp(3.6rem, 8vw, 7.1rem);
   line-height: 0.94;
-  animation: rise-in 0.95s cubic-bezier(0.2, 0.9, 0.2, 1) both;
 }
 
 .hero-title--wide {
@@ -216,7 +214,6 @@ img {
 .hero-intro {
   max-width: 37rem;
   margin: 1.45rem 0 0;
-  animation: rise-in 1.05s ease both;
 }
 
 .hero-actions {
@@ -224,7 +221,6 @@ img {
   flex-wrap: wrap;
   gap: 0.85rem;
   margin-top: 2rem;
-  animation: rise-in 1.15s ease both;
 }
 
 .hero-notes {
@@ -232,7 +228,6 @@ img {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.9rem;
   margin-top: 2.2rem;
-  animation: rise-in 1.25s ease both;
 }
 
 .hero-note {
