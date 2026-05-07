@@ -2,6 +2,14 @@
 
 Repo tracking note for Bossman, Fleet, and Paperclip review.
 
+## 2026-05-08 - Issue #46 Sitemap Compatibility Fix
+
+- Scope: Fleet issue `#46` for `cartransportwithpersonalitems.com.au`.
+- What changed: added `/sitemap.xml` as a sitemap-index alias, updated robots output to advertise both sitemap endpoints, and corrected the generated `llms.txt` absolute URL list so the quote/contact app handoff is not concatenated onto the site origin.
+- Verification: `npm run build` passed with 10 pages built; `npm run check:seo` passed; generated `dist/sitemap.xml`, `dist/robots.txt`, and `dist/llms.txt` contain the expected readiness surfaces.
+- Known check state: `npm run check` currently fails on existing analytics typing errors in `src/components/analytics/Analytics.astro`; this was not touched for the sitemap issue.
+- Remaining: deploy to production and ask Control / Domain Monitor to refresh the readiness signal.
+
 ## 2026-04-24 - Fleet Readiness Baseline
 
 - Scope: website controller for `cartransportwithpersonalitems.com.au`.
