@@ -27,6 +27,15 @@ assert(
   Array.isArray(vercelConfig.headers) && vercelConfig.headers.length >= 1,
   'vercel.json should keep the current security header contract'
 );
+assert(
+  vercelConfig.redirects?.some(
+    (redirect) =>
+      redirect.source === '/sitemap_index.xml' &&
+      redirect.destination === '/sitemap.xml' &&
+      redirect.permanent === true
+  ),
+  'vercel.json must permanently redirect Google-submitted /sitemap_index.xml to /sitemap.xml'
+);
 
 if (failures.length > 0) {
   console.error('Car Transport With Personal Items SEO checks failed:\n');
