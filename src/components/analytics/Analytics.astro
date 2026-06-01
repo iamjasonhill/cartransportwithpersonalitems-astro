@@ -1,13 +1,22 @@
 ---
 import Ga4 from './Ga4.astro';
-import Matomo from './Matomo.astro';
 import { site } from '../../lib/site';
 
-function cleanEnv(value) {
+type AnalyticsProvider = 'ga4' | null;
+
+interface AnalyticsConfig {
+  measurement_id?: string;
+  tag_url?: string;
+  send_page_view?: string;
+  anonymize_ip?: string;
+  site_key?: string;
+}
+
+function cleanEnv(value: unknown): string {
   return typeof value === 'string' ? value.trim() : '';
 }
 
-function parseJsonRecord(value) {
+function parseJsonRecord(value: string): AnalyticsConfig | null {
   if (!value) return null;
   try {
     const parsed = JSON.parse(value);
@@ -31,11 +40,11 @@ const gaTagUrl = cleanEnv(import.meta.env.PUBLIC_GA_TAG_URL) || 'https://www.goo
 const gaSendPageView = cleanEnv(import.meta.env.PUBLIC_GA_SEND_PAGE_VIEW) || 'true';
 const gaAnonymizeIp = cleanEnv(import.meta.env.PUBLIC_GA_ANONYMIZE_IP) || 'false';
 
-let provider = null;
-let config = {};
+let provider: AnalyticsProvider = null;
+let config: AnalyticsConfig = {};
 
 if (analyticsProvider && analyticsConfig) {
-  provider = analyticsProvider;
+  provider = analyticsProvider === 'ga4' ? 'ga4' : null;
   config = analyticsConfig;
 } else if (gaMeasurementId) {
   provider = 'ga4';
@@ -45,12 +54,6 @@ if (analyticsProvider && analyticsConfig) {
     send_page_view: gaSendPageView,
     anonymize_ip: gaAnonymizeIp,
     site_key: site.analytics.siteKey,
-  };
-} else if (import.meta.env.PUBLIC_MATOMO_BASE_URL && import.meta.env.PUBLIC_MATOMO_SITE_ID) {
-  provider = 'matomo';
-  config = {
-    base_url: import.meta.env.PUBLIC_MATOMO_BASE_URL,
-    site_id: import.meta.env.PUBLIC_MATOMO_SITE_ID,
   };
 }
 
@@ -67,4 +70,3 @@ const enabled = analyticsEnabled ? analyticsEnabled.toLowerCase() === 'true' : B
     trackedLinks={site.analytics.trackedLinks}
   />
 )}
-{import.meta.env.PROD && enabled && provider === 'matomo' && <Matomo />}
