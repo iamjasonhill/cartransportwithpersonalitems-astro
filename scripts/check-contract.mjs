@@ -5,6 +5,11 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const root = path.resolve(__dirname, '..');
+const vehicleAssistantLoader = 'src="https://quotes.moveroo.com.au/embed/vehicle-assistant/v1/loader.js"';
+
+function countOccurrences(haystack, needle) {
+  return haystack.split(needle).length - 1;
+}
 
 async function read(relativePath) {
   return fs.readFile(path.join(root, relativePath), 'utf8');
@@ -26,6 +31,7 @@ async function main() {
   const siteConfig = await read('src/lib/site.ts');
   const envExample = await read('.env.example');
   const analyticsWrapper = await read('src/components/analytics/Analytics.astro');
+  const vercelConfig = await read('vercel.json');
 
   for (const scriptName of ['check', 'check:contract', 'check:seo']) {
     checks.push([`package.json includes ${scriptName}`, Boolean(packageJson.scripts?.[scriptName])]);
@@ -37,6 +43,34 @@ async function main() {
   checks.push(['BrandLayout renders analytics wrapper', layout.includes('<Analytics />')]);
   checks.push(['analytics wrapper includes Ga4', analyticsWrapper.includes("import Ga4 from './Ga4.astro';")]);
   checks.push(['analytics wrapper is GA-only', !analyticsWrapper.includes('Matomo') && !analyticsWrapper.includes('matomo')]);
+  checks.push([
+    'vehicle assistant uses central loader',
+    layout.includes(vehicleAssistantLoader),
+  ]);
+  checks.push([
+    'vehicle assistant loads once in primary layout',
+    countOccurrences(layout, vehicleAssistantLoader) === 1,
+  ]);
+  checks.push([
+    'vehicle assistant channel is chatbot-widget',
+    layout.includes('data-channel="chatbot-widget"'),
+  ]);
+  checks.push([
+    'vehicle assistant surface is main-domain-sitewide',
+    layout.includes('data-surface="main-domain-sitewide"'),
+  ]);
+  checks.push([
+    'vehicle assistant CSP allows central script',
+    vercelConfig.includes("script-src 'self' 'unsafe-inline' https://quotes.moveroo.com.au"),
+  ]);
+  checks.push([
+    'vehicle assistant CSP allows central connect',
+    vercelConfig.includes('connect-src') && vercelConfig.includes('https://quotes.moveroo.com.au'),
+  ]);
+  checks.push([
+    'vehicle assistant CSP allows central frame',
+    vercelConfig.includes('frame-src https://quotes.moveroo.com.au'),
+  ]);
   checks.push(['site config includes destinations', siteConfig.includes('destinations: {')]);
   checks.push(['BrandLayout links RSS feed', layout.includes('application/rss+xml')]);
   checks.push(['BrandLayout links sitemap', layout.includes('rel="sitemap"')]);
