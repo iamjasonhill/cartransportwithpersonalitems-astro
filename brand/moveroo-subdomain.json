@@ -1,0 +1,238 @@
+{
+  "source_system": "site-repo-moveroo-subdomain-handoff",
+  "contract_version": 1,
+  "hostnames": ["quoting.cartransportwithpersonalitems.com.au"],
+  "property_slug": "cartransportwithpersonalitems-com-au",
+  "surface_slug": "cartransportwithpersonalitems-quoting",
+  "surface_type": "quote",
+  "canonical_role": "primary",
+  "canonical_hostname": "quoting.cartransportwithpersonalitems.com.au",
+  "brand": {
+    "display_name": "Car Transport With Personal Items",
+    "brand_key": "cartransportwithpersonalitems",
+    "mark_text": "CT",
+    "tagline": "Vehicle transport with approved personal items."
+  },
+  "copy": {
+    "eyebrow": "Vehicle transport with approved personal items",
+    "headline": "Get a route-reviewed vehicle quote",
+    "subheading": "Tell us the pickup, delivery, vehicle, and approved items you want left inside so the team can check the route properly.",
+    "primary_cta_label": "Start vehicle quote",
+    "secondary_cta_label": "Contact the team",
+    "footer_blurb": "Car Transport With Personal Items helps customers move a vehicle with approved belongings declared upfront.",
+    "contact_page": {
+      "hero_heading": "Talk to Car Transport With Personal Items",
+      "hero_subheading": "Send the route, vehicle details, and the items you want left inside so the team can review fit, restrictions, and next steps.",
+      "quote_section_heading": "Need a vehicle price first?",
+      "quote_section_body": "Start with the vehicle quote path so the route, car, and declared items can be reviewed together.",
+      "quote_primary_cta_label": "Start vehicle quote"
+    }
+  },
+  "theme": {
+    "theme_key": "cartransportwithpersonalitems",
+    "mode": "light",
+    "fonts": {
+      "body_family": "Manrope, system-ui, sans-serif",
+      "heading_family": "Fraunces, Georgia, serif",
+      "mark_family": "Syne, Arial Black, sans-serif"
+    },
+    "colors": {
+      "accent": "#f0b429",
+      "accent_strong": "#d99d1a",
+      "secondary_accent": "#ac4f2d",
+      "background": "#f8eee5",
+      "surface": "#fff6ec",
+      "text": "#181311",
+      "muted_text": "rgba(24, 19, 17, 0.76)",
+      "border": "rgba(24, 19, 17, 0.12)",
+      "header_background": "#07111f",
+      "header_border": "#f0b429",
+      "header_text": "#e8edf5",
+      "header_muted_text": "rgba(232, 237, 245, 0.72)",
+      "header_link": "#e8edf5",
+      "footer_background": "#07111f",
+      "footer_border": "#f0b429",
+      "footer_text": "#e8edf5",
+      "footer_muted_text": "rgba(232, 237, 245, 0.72)",
+      "footer_link": "#e8edf5",
+      "hero_gradient_start": "#07111f",
+      "hero_gradient_mid": "#0d1e35",
+      "hero_gradient_end": "#2a221d",
+      "hero_text": "#fff6ec"
+    },
+    "radius_scale": "0.25rem",
+    "shadow_style": "warm_transport",
+    "exact_tokens": {
+      "primary_cta": {
+        "background": "#181311",
+        "text": "#fff6ec",
+        "border": "#181311"
+      },
+      "accent_cta": {
+        "background": "#f0b429",
+        "text": "#07111f",
+        "border": "#f0b429"
+      },
+      "secondary_cta": {
+        "background": "rgba(255, 248, 241, 0.62)",
+        "text": "#181311",
+        "border": "rgba(24, 19, 17, 0.18)"
+      },
+      "dark_card": {
+        "background": "#07111f",
+        "text": "#e8edf5",
+        "muted_text": "rgba(232, 237, 245, 0.72)",
+        "border": "rgba(240, 180, 41, 0.35)"
+      },
+      "selected_choice": {
+        "background": "#fff3d6",
+        "text": "#181311",
+        "border": "#f0b429"
+      },
+      "field_focus": {
+        "border": "#f0b429",
+        "ring": "rgba(240, 180, 41, 0.26)"
+      },
+      "progress": {
+        "fill": "#f0b429",
+        "track": "rgba(24, 19, 17, 0.12)",
+        "current_step_background": "#07111f",
+        "current_step_text": "#fff6ec"
+      },
+      "vehicle_quote_panel": {
+        "rail_background": "#07111f",
+        "rail_text": "#e8edf5",
+        "accent_band": "#f0b429"
+      }
+    }
+  },
+  "visual_identity": {
+    "status": "approved",
+    "source_hostname": "cartransportwithpersonalitems.com.au",
+    "font_pairing": {
+      "heading": "fraunces",
+      "body": "manrope",
+      "mark": "syne",
+      "fallback": "editorial_serif_plus_sans"
+    },
+    "colors": {
+      "primary": "#07111f",
+      "accent": "#f0b429",
+      "accent_strong": "#d99d1a",
+      "secondary_accent": "#ac4f2d",
+      "background": "#f8eee5",
+      "surface": "#fff6ec",
+      "text": "#181311",
+      "muted_text": "rgba(24, 19, 17, 0.76)",
+      "hero_text": "#fff6ec",
+      "border": "rgba(24, 19, 17, 0.12)"
+    },
+    "style": {
+      "visual_profile": "site_owned_warm_vehicle_quote",
+      "hero_treatment": "compact_route_review_surface",
+      "button_treatment": "dark_ink_pill_cta",
+      "secondary_button_treatment": "warm_outline_pill_cta",
+      "card_treatment": "warm_paper_with_dark_transport_panels",
+      "logo_treatment": "source_mark_or_wordmark_preferred"
+    },
+    "logo": {
+      "source": "public/logo-mark.svg",
+      "wordmark_source": "public/wordmark.svg",
+      "alt": "Car Transport With Personal Items"
+    },
+    "motifs": [
+      "car_carrier",
+      "declared_items_box",
+      "route_review",
+      "amber_rule",
+      "handover_paperwork"
+    ],
+    "motif_policy": "Use sparse vehicle, route, declared-item, and paperwork cues outside form fields. Do not place motifs behind inputs or validation text."
+  },
+  "surface_design": {
+    "status": "approved",
+    "preferred_mode": "light",
+    "composition_profile": "standard_imported_vehicle_quote",
+    "surface_density": "comfortable",
+    "compatible_visual_profiles": [
+      "site_owned_warm_vehicle_quote",
+      "standard_imported_quote"
+    ],
+    "mobile_priority": "first_form_step",
+    "evidence": [
+      {
+        "field": "canonical_hostname",
+        "value": "quoting.cartransportwithpersonalitems.com.au",
+        "source_url": "src/lib/site.ts",
+        "source_type": "repo_config",
+        "confidence": "high"
+      },
+      {
+        "field": "primary_journey",
+        "value": "vehicle_quote",
+        "source_url": "src/lib/site.ts",
+        "source_type": "repo_config",
+        "confidence": "high"
+      },
+      {
+        "field": "brand_style",
+        "value": "warm sand, clay, dark navy, amber transport mark",
+        "source_url": "src/styles/brand.css",
+        "source_type": "repo_site_review",
+        "confidence": "high"
+      }
+    ]
+  },
+  "navigation": {
+    "show_household_quote_link": true,
+    "show_vehicle_quote_link": true,
+    "show_booking_link": true,
+    "show_contact_link": true,
+    "show_customer_portal_link": true,
+    "show_customer_portal_in_header": false,
+    "show_provider_login_link": false,
+    "show_admin_link": false
+  },
+  "navigation_intent": {
+    "primary_journey": "vehicle_quote",
+    "secondary_journeys": [
+      "household_quote",
+      "booking",
+      "contact",
+      "customer_portal"
+    ],
+    "link_prominence": {
+      "vehicle_quote": "primary",
+      "household_quote": "secondary",
+      "booking": "secondary",
+      "contact": "secondary",
+      "customer_portal": "footer_only"
+    }
+  },
+  "behavior": {
+    "show_phone_publicly": true,
+    "show_email_publicly": true,
+    "prefer_contact_page_over_direct_contact": false,
+    "allow_customer_portal_links": true,
+    "allow_provider_login_links": false,
+    "allow_admin_links": false
+  },
+  "links": {
+    "primary_cta_route": "quote.vehicle.index",
+    "household_quote_url": "/quote/household",
+    "vehicle_quote_url": "/quote/vehicle",
+    "booking_url": "/booking/create",
+    "contact_url": "/contact",
+    "customer_portal_url": "/customer/login",
+    "support_url": "/contact"
+  },
+  "contact": {
+    "public_phone": "+61721432557",
+    "public_phone_display": "+61 7 2143 2557",
+    "public_email": "removals@moveroo.com.au",
+    "public_email_href": "mailto:removals@moveroo.com.au"
+  },
+  "analytics": {
+    "status": "not_applicable"
+  }
+}
