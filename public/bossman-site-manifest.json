@@ -1,0 +1,34 @@
+{
+  "schema": "bossman-site-manifest.v1",
+  "domain": "cartransportwithpersonalitems.com.au",
+  "brandName": "Cartransportwithpersonalitems",
+  "productionUrl": "https://cartransportwithpersonalitems.com.au",
+  "repo": "iamjasonhill/cartransportwithpersonalitems-astro",
+  "platform": "astro",
+  "deployTarget": "Vercel",
+  "localPath": "/Users/jasonhill/Projects/Business/websites/MM-cartransportwithpersonalitems.com.au",
+  "owner": "site-repo",
+  "quoteTargets": [
+    "https://quotes.moveroo.com.au/embed/vehicle-assistant/v1/loader.js"
+  ],
+  "legalPages": [
+    "/privacy/",
+    "/terms/"
+  ],
+  "search": {
+    "status": "not-applicable"
+  },
+  "standards": {
+    "legalPages": "moveroo-aligned",
+    "imageQuality": "brand-pass-required",
+    "languageQuality": "basic-hygiene-required",
+    "search": "not-applicable",
+    "quoteLinkSecurity": "quote-subdomain-required",
+    "astroBuild": "static-astro"
+  },
+  "evidence": {
+    "brandTokens": "brand/tokens.json"
+  },
+  "notes": "Bossman site manifest for repo-owned implementation truth. Bossman imports this as evidence but does not overwrite accepted truth without review.",
+  "updatedAt": "2026-06-18"
+}
