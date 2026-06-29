@@ -122,6 +122,7 @@ const schemas = [organizationSchema, websiteSchema, breadcrumbSchema, ...structu
     ))}
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="brand-shell">
       <header class="topbar">
         <a class="brand-lockup" href="/">
@@ -136,7 +137,7 @@ const schemas = [organizationSchema, websiteSchema, breadcrumbSchema, ...structu
         </nav>
       </header>
 
-      <main>
+      <main id="main-content">
         <slot />
       </main>
 
@@ -164,3 +165,24 @@ const schemas = [organizationSchema, websiteSchema, breadcrumbSchema, ...structu
     ></script>
   </body>
 </html>
+
+<style is:global>
+  .skip-link {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    z-index: 1000;
+    transform: translateY(-120%);
+    border-radius: 0 0 0.5rem 0.5rem;
+    background: #111827;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    transition: transform 150ms ease;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+</style>
