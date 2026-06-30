@@ -40,5 +40,48 @@
     "key": "indexnow-cartransportwithpersonalitems-com-au-561a0a965506df43273565cf",
     "keyFile": "public/indexnow-cartransportwithpersonalitems-com-au-561a0a965506df43273565cf.txt",
     "keyFileUrl": "https://cartransportwithpersonalitems.com.au/indexnow-cartransportwithpersonalitems-com-au-561a0a965506df43273565cf.txt"
+  },
+  "metadata": {
+    "quoteTargets": [
+      "https://quoting.cartransportwithpersonalitems.com.au/contact",
+      "https://quoting.cartransportwithpersonalitems.com.au/quote/household",
+      "https://quoting.cartransportwithpersonalitems.com.au/quote/vehicle"
+    ],
+    "quoteCapability": {
+      "host": "https://quoting.cartransportwithpersonalitems.com.au",
+      "llmsTxt": "https://quoting.cartransportwithpersonalitems.com.au/llms.txt",
+      "aiCatalog": "https://quoting.cartransportwithpersonalitems.com.au/.well-known/ai-catalog.json",
+      "manifest": "https://quoting.cartransportwithpersonalitems.com.au/quote-capability.json",
+      "humanGuide": "https://quoting.cartransportwithpersonalitems.com.au/agents",
+      "householdPublicAgentApi": {
+        "method": "POST",
+        "url": "https://quoting.cartransportwithpersonalitems.com.au/api/v1/household-quotes/assistant/submit",
+        "hostAware": true,
+        "requiresTenant": false,
+        "requiresCustomerConsent": true,
+        "ready": true
+      },
+      "vehiclePublicAgentApi": {
+        "ready": false,
+        "handoffUrl": "https://quoting.cartransportwithpersonalitems.com.au/quote/vehicle"
+      }
+    },
+    "agentCapabilities": {
+      "quote": {
+        "householdQuote": "https://quoting.cartransportwithpersonalitems.com.au/quote/household",
+        "vehicleQuote": "https://quoting.cartransportwithpersonalitems.com.au/quote/vehicle",
+        "contact": "https://quoting.cartransportwithpersonalitems.com.au/contact",
+        "capabilityManifest": "https://quoting.cartransportwithpersonalitems.com.au/quote-capability.json",
+        "humanGuide": "https://quoting.cartransportwithpersonalitems.com.au/agents",
+        "householdPublicAgentApi": "https://quoting.cartransportwithpersonalitems.com.au/api/v1/household-quotes/assistant/submit",
+        "hostAware": true,
+        "tenantRequired": false
+      },
+      "siteIdentity": true,
+      "contentDiscovery": true,
+      "safeActions": true,
+      "bossmanRepairReady": true
+    },
+    "updatedAt": "2026-06-30"
   }
 }
