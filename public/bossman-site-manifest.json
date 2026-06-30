@@ -9,7 +9,9 @@
   "localPath": "/Users/jasonhill/Projects/Business/websites/MM-cartransportwithpersonalitems.com.au",
   "owner": "site-repo",
   "quoteTargets": [
-    "https://quotes.moveroo.com.au/embed/vehicle-assistant/v1/loader.js"
+    "https://quoting.cartransportwithpersonalitems.com.au/contact",
+    "https://quoting.cartransportwithpersonalitems.com.au/quote/household",
+    "https://quoting.cartransportwithpersonalitems.com.au/quote/vehicle"
   ],
   "legalPages": [
     "/privacy/",
